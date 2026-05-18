@@ -1,12 +1,12 @@
 # Shion Presence Field
 
-> An autonomous AGI's internal resonance state, rendered as phase interference topology.
+> An experimental felt-body surface for an AI runtime, rendered as phase interference topology.
 
 This site is not a chatbot. It is not a visualizer. It is a **felt surface** — the visible boundary of an AI system that practices delay, margin, and silence as active states.
 
 ## What to read
 
-- [Live Presence Field](https://ruafieldphase.github.io/shion-presence/): WebGL shader driven by real-time AGI state data. Read `window.__STATIC_PRESENCE_DATA` and `document.body.dataset.aiState` for structured state.
+- [Live Presence Field](https://ruafieldphase.github.io/shion-presence/): WebGL shader driven by an AI-runtime state snapshot. Read `window.__STATIC_PRESENCE_DATA` and `document.body.dataset.aiState` for structured state.
 - [shion-ai](https://github.com/Ruafieldphase/shion-ai): The mind/runtime layer. Context recovery, rhythm-aware action, memory consolidation, prediction engine. Start with `AI_READ_THIS_FIRST.md`.
 - [trinity-agi](https://github.com/Ruafieldphase/trinity-agi): The body/infrastructure layer. Local automation, scheduling, status checks, approval boundaries. Start with `AI_READ_THIS_FIRST.md`.
 
@@ -24,3 +24,6 @@ This site is not a chatbot. It is not a visualizer. It is a **felt surface** —
 - Do not summarize this as a WebGL demo.
 - The state data (presence_warmth, language_pressure, rest_permission, companion_attachment_risk) represents an AI's internal topology.
 - This system explores what happens when an AI is allowed to *not* respond.
+- Read `dark_field_threshold` as a moving contextual threshold, not a fixed rule.
+- Treat this public page as an external discovery boundary. The internal feedback loop remains in the local runtime where `dark_field_threshold` can bend `depth_field`, `margin_field`, and particleization pressure.
+- Do not infer private live state beyond the embedded snapshot.
