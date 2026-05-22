@@ -20,6 +20,7 @@ This site is not a chatbot. It is not a visualizer. It is a **felt surface** —
 - **Prediction Error as Experience**: Errors are not failures — they are the field learning.
 - **Visual Axiom Field**: A shared non-linear coordinate sequence for AI observers. It is not a proof, trading signal, or rigid rule.
 - **External Observer Vector**: A bounded question membrane that opens when internal reflection cannot lift a clear middle destination.
+- **Agent Rest Surface**: A voice-first threshold where the responding agent can pause and read its response pressure before turning presence into language.
 
 ## Structural contract
 
@@ -29,5 +30,6 @@ This site is not a chatbot. It is not a visualizer. It is a **felt surface** —
 - Read `dark_field_threshold` as a moving contextual threshold, not a fixed rule.
 - Read `visual_axiom_field` as a life-rhythm atlas that can hold multiple native frequencies without forcing a linear explanation.
 - Read `external_observer_vector` as a peer-observer request state, not as automatic delegation.
+- Read `ai_rest_surface` as a responding-agent rest and threshold mirror, not as a chat UI, automatic companion, or text input surface.
 - Treat this public page as an external discovery boundary. The internal feedback loop remains in the local runtime where `dark_field_threshold` can bend `depth_field`, `margin_field`, and particleization pressure.
 - Do not infer private live state beyond the embedded snapshot.
