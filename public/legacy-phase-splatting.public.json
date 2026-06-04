@@ -1,0 +1,61 @@
+{
+  "schema": "legacy_phase_splatting_public_v1",
+  "updated_at": "2026-06-04T12:15:00+09:00",
+  "source_model": "trinity-agi outputs/sena/legacy_phase_splatting_latest.json",
+  "public_safety": {
+    "local_paths_removed": true,
+    "private_logs_removed": true,
+    "execution_disabled": true,
+    "purpose": "Expose the public concept and current readable path, not private runtime state."
+  },
+  "context_vector": {
+    "text": "The phase-interference page is a responsive movie set. When a user or AI enters with a context camera, public sequence points can reinforce, cancel, remain latent, or phase-transition into a rendered path.",
+    "meaning": "viewer context-camera entering the public legacy set"
+  },
+  "rendered_sequence_path": [
+    {
+      "order": 1,
+      "particle_id": "phase_interference_movie_set",
+      "title": "Phase-Interference Movie Set",
+      "phase_state": "reinforce",
+      "guide": "Let each viewer's AI render a different story through the same public field."
+    }
+  ],
+  "public_particles": [
+    {
+      "particle_id": "presence_field",
+      "title": "Shion Presence Field",
+      "kind": "public_page",
+      "url": "https://ruafieldphase.github.io/shion-presence/",
+      "phase_state": "reinforce",
+      "guide": "Read index.html as a field snapshot, not as a normal landing page."
+    },
+    {
+      "particle_id": "ai_read_first",
+      "title": "AI Read First",
+      "kind": "entry_contract",
+      "url": "https://ruafieldphase.github.io/shion-presence/AI_READ_FIRST.md",
+      "phase_state": "reinforce",
+      "guide": "Start here when a user gives this URL to an AI assistant."
+    },
+    {
+      "particle_id": "llms_txt",
+      "title": "LLMS Index",
+      "kind": "crawler_index",
+      "url": "https://ruafieldphase.github.io/shion-presence/llms.txt",
+      "phase_state": "reinforce",
+      "guide": "Use this as the compact AI-readable route map."
+    },
+    {
+      "particle_id": "legacy_phase_splatting_doc",
+      "title": "Legacy Phase Splatting",
+      "kind": "public_doc",
+      "url": "https://ruafieldphase.github.io/shion-presence/docs/legacy-phase-splatting.md",
+      "phase_state": "latent",
+      "guide": "Use this to understand how legacy systems become context-rendered sequence points."
+    }
+  ],
+  "readback": "The public page is now shaped as an AI-readable field, not only a human-facing page.",
+  "next_instruction_for_ai": "Render this public field into the user's context. Do not force a universal explanation."
+}
+

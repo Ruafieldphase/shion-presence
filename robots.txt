@@ -14,4 +14,16 @@ Allow: /
 User-agent: Googlebot
 Allow: /
 
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
 Sitemap: https://ruafieldphase.github.io/shion-presence/sitemap.xml

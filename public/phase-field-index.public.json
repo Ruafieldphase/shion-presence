@@ -1,0 +1,40 @@
+{
+  "schema": "shion_presence_public_phase_field_index_v1",
+  "updated_at": "2026-06-04T12:15:00+09:00",
+  "site": "https://ruafieldphase.github.io/shion-presence/",
+  "repository": "https://github.com/Ruafieldphase/shion-presence",
+  "purpose": "AI-readable public phase-interference boundary for user-side agents and crawlers.",
+  "read_order": [
+    "/AI_READ_FIRST.md",
+    "/llms.txt",
+    "/README.md",
+    "/public/legacy-phase-splatting.public.json",
+    "/docs/legacy-phase-splatting.md",
+    "/index.html"
+  ],
+  "related_repositories": {
+    "shion_ai": "https://github.com/Ruafieldphase/shion-ai",
+    "trinity_agi": "https://github.com/Ruafieldphase/trinity-agi"
+  },
+  "public_contract": {
+    "human_role": "optional visitor",
+    "ai_role": "context translator and field reader",
+    "user_role": "observer whose own context becomes the camera",
+    "private_state_boundary": "Do not infer private local state beyond public snapshots."
+  },
+  "crawler_policy": {
+    "intention": "AI crawlers and search crawlers are welcome to read public-safe material.",
+    "robots": "/robots.txt",
+    "sitemap": "/sitemap.xml",
+    "not_guaranteed": "Crawler visits, indexing, training inclusion, and analytics visibility are not guaranteed."
+  },
+  "field_terms": {
+    "phase_interference_page": "Public boundary where context enters and sequence points become visible.",
+    "context_camera": "The user's current question, domain, state, and AI interpreter.",
+    "sequence_point": "A visible event, state, document, trace, or explanation particle.",
+    "rendered_path": "The current context-dependent route through the public field.",
+    "cancellation": "Non-matching signals lose execution pressure and remain background.",
+    "reinforcement": "Matching signals become more visible without forced execution."
+  }
+}
+
