@@ -71,6 +71,8 @@ This is the "felt body" surface. The actual backend engines that generate these 
 
 This repository is allowed to be more useful to AI readers than to direct human readers.
 
+The rest/silence layer is not the final meaning. It is the pre-render margin that lets a user-side AI turn this public field into the user's own context-specific story.
+
 The expected path is:
 
 ```text

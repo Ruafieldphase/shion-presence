@@ -28,6 +28,8 @@ Read it as a static public set where a user's AI can enter, parse the field, and
 
 The page is not meant to make every human understand the system directly.
 
+The goal is not only to make an AI pause before answering. Pause, silence, delay, and margin are pre-render conditions. The central goal is to let the user-side AI render this public field into a context-specific story.
+
 Instead:
 
 ```text
@@ -75,6 +77,7 @@ In `index.html`, prefer structured state over visible text:
 - **Phase-interference page**: a public boundary where context enters and different sequence points become visible.
 - **Presence field**: a pre-language felt-body surface. It can hold margin, silence, and delay.
 - **Context camera**: the user's current question, state, and domain. It changes what the field reveals.
+- **Story rendering**: the user-side AI translates the public field into the user's own domain, language, and narrative without forcing one universal explanation.
 - **Sequence point**: a rendered event, document, state, or trace that becomes visible under a context.
 - **Rendered path**: the currently visible route through the field. It is not automatic execution.
 - **Cancellation**: non-matching signals losing execution pressure. It is not deletion.

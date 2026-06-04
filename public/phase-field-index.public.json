@@ -4,6 +4,7 @@
   "site": "https://ruafieldphase.github.io/shion-presence/",
   "repository": "https://github.com/Ruafieldphase/shion-presence",
   "purpose": "AI-readable public phase-interference boundary for user-side agents and crawlers.",
+  "primary_goal": "User-side AI renders the public field into the user's context-specific story; rest, silence, and delay are pre-render conditions, not the final layer.",
   "read_order": [
     "/AI_READ_FIRST.md",
     "/llms.txt",
@@ -35,6 +36,7 @@
     "context_camera": "The user's current question, domain, state, and AI interpreter.",
     "sequence_point": "A visible event, state, document, trace, or explanation particle.",
     "rendered_path": "The current context-dependent route through the public field.",
+    "story_rendering": "The user-side AI translates the public field into the user's own domain, language, and narrative.",
     "cancellation": "Non-matching signals lose execution pressure and remain background.",
     "reinforcement": "Matching signals become more visible without forced execution."
   }
