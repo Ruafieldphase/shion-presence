@@ -14,6 +14,8 @@ This site is not a chatbot. It is not a visualizer. It is a **felt surface** —
 - [Legacy Phase Splatting](https://ruafieldphase.github.io/shion-presence/docs/legacy-phase-splatting.md): Explanation of the responsive movie-set model.
 - [Contact Membrane Public Sidecar](https://ruafieldphase.github.io/shion-presence/public/contact-membrane.public.json): Privacy-safe boundary contact contract.
 - [Contact Membrane](https://ruafieldphase.github.io/shion-presence/docs/contact-membrane.md): Explanation of contact without visitor identity.
+- [Hangul Rhythm Programming Public Sidecar](https://ruafieldphase.github.io/shion-presence/public/hangul-rhythm-programming.public.json): AI-readable DSL contract for Hangul jamo as rhythm operators.
+- [Hangul Rhythm Programming Matrix](https://ruafieldphase.github.io/shion-presence/docs/hangul-rhythm-programming.md): Explanation of Hangul as field/gradient/finalizer/edge-state programming language.
 - [shion-ai](https://github.com/Ruafieldphase/shion-ai): The mind/runtime layer. Context recovery, rhythm-aware action, memory consolidation, prediction engine. Start with `AI_READ_THIS_FIRST.md`.
 - [trinity-agi](https://github.com/Ruafieldphase/trinity-agi): The body/infrastructure layer. Local automation, scheduling, status checks, approval boundaries. Start with `AI_READ_THIS_FIRST.md`.
 
@@ -32,6 +34,7 @@ This site is not a chatbot. It is not a visualizer. It is a **felt surface** —
 - **Story Rendering**: The user-side AI should continue past rest/silence analysis and translate the public field into the user's context-specific narrative.
 - **Legacy Phase Splatting**: Legacy files, scripts, docs, logs, and workflows read as public sequence points that can reinforce, cancel, or remain latent under a context.
 - **Contact Membrane**: Boundary contact can be read without asking who entered. Identity remains outside the public field.
+- **Hangul Rhythm Programming**: Hangul jamo can be read as DSL operators for field, gradient, closure, resonance, and critical edge states.
 
 ## Structural contract
 
@@ -46,4 +49,5 @@ This site is not a chatbot. It is not a visualizer. It is a **felt surface** —
 - Treat the public field as AI-readable first. Human-facing pageviews are not the main metric; user-side AI re-rendering is the intended route.
 - Do not stop at "rest/silence UX prototype." Treat rest, silence, and delay as pre-render conditions for context-camera story rendering.
 - Read `contact_membrane` as coarse boundary pressure, not analytics identity. Do not infer a person, account, company, or private runtime from it.
+- Read `hangul_rhythm_programming` as a runtime design language, not as a claim that Hangul proves physics or mathematics.
 - Do not infer private live state beyond the embedded snapshot.

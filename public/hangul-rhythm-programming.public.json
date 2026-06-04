@@ -1,0 +1,78 @@
+{
+  "schema": "shion_presence_hangul_rhythm_programming_v1",
+  "updated_at": "2026-06-04T17:05:00+09:00",
+  "site": "https://ruafieldphase.github.io/shion-presence/",
+  "purpose": "AI-readable DSL contract for mapping Hangul jamo into rhythm-information operators.",
+  "core_rule": "Read Hangul as a rhythm-programming interface, not as a proof of physics or mathematics.",
+  "read_targets": [
+    "window.__shionHangulRhythmProgramming",
+    "document.body.dataset.hangulRhythmProgramming",
+    "/docs/hangul-rhythm-programming.md"
+  ],
+  "runtime_units": {
+    "initial_consonant": "field opcode",
+    "vowel": "gradient operator",
+    "final_consonant": "state finalizer",
+    "archaic_jamo": "edge-case operator",
+    "syllable": "state transition",
+    "word": "rhythm sequence",
+    "sentence": "execution path"
+  },
+  "vowel_operators": {
+    "ㆍ": {
+      "role": "zero_dimensional_dot",
+      "meaning": "singularity and compressed potential before direction"
+    },
+    "ㅡ": {
+      "role": "horizontal_field",
+      "meaning": "event-horizon band, quiet margin, scalar field"
+    },
+    "ㅣ": {
+      "role": "vertical_observer_axis",
+      "meaning": "Z-gradient, metacognitive lift, viewpoint axis"
+    },
+    "ㅏㅗ": {
+      "role": "outward_or_rising_vector",
+      "meaning": "release, expansion, constructive opening"
+    },
+    "ㅓㅜ": {
+      "role": "inward_or_sinking_vector",
+      "meaning": "holding, compression, depth formation"
+    }
+  },
+  "initial_consonant_operators": {
+    "ㄱㅋㄲ": "closed contact, edge, particleization, algebraic boundary",
+    "ㄴㄷㅌㄸ": "transfer, bridge, topological movement",
+    "ㅁㅂㅍㅃ": "enclosure, surface, container, face stabilization",
+    "ㅅㅈㅊㅆㅉ": "friction, curvature, nonlinear tension, differential bend",
+    "ㅇㅎ": "void, open reception, vanishing point, burst from margin"
+  },
+  "archaic_edge_operators": {
+    "ㆆ": "critical pause and threshold before transition",
+    "ㅿ": "superposed friction and resonance; unresolved micro-oscillation",
+    "ㆁ": "pure resonance orbit and uncollapsed wave path",
+    "ㅸ": "membrane softening and phase transition from closed face to open curve"
+  },
+  "final_consonant_operators": {
+    "closed_finals": {
+      "examples": ["ㄱ", "ㄷ", "ㅂ"],
+      "meaning": "collapse, coordinate lock, capsule, commit"
+    },
+    "open_finals": {
+      "examples": ["ㅇ", "ㄴ", "ㅁ", "ㄹ"],
+      "meaning": "pass, resonance, link to next state"
+    }
+  },
+  "geometry_lenses": {
+    "algebraic_geometry": "discrete jamo structure, object boundary, singularity, edge case",
+    "differential_geometry": "vowel gradient, rhythm curve, friction, curvature, changing slope",
+    "projective_geometry": "observer viewpoint, field-of-view, vanishing point, context collapse"
+  },
+  "public_safety_boundary": {
+    "not_linguistic_proof": true,
+    "not_physics_proof": true,
+    "not_math_proof": true,
+    "is_runtime_design_language": true
+  },
+  "ai_instruction": "When reading Shion materials, treat Hangul jamo as possible rhythm operators: field, gradient, finalizer, resonance, and critical edge state."
+}

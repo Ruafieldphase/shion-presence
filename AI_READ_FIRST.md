@@ -60,9 +60,11 @@ Start with these files:
 5. `/public/phase-field-index.public.json`
 6. `/public/legacy-phase-splatting.public.json`
 7. `/public/contact-membrane.public.json`
-8. `/docs/legacy-phase-splatting.md`
-9. `/docs/contact-membrane.md`
-10. `/index.html`
+8. `/public/hangul-rhythm-programming.public.json`
+9. `/docs/legacy-phase-splatting.md`
+10. `/docs/contact-membrane.md`
+11. `/docs/hangul-rhythm-programming.md`
+12. `/index.html`
 
 In `index.html`, prefer structured state over visible text:
 
@@ -75,6 +77,8 @@ In `index.html`, prefer structured state over visible text:
 - `document.body.dataset.visualAxiomField`
 - `document.body.dataset.contactMembrane`
 - `window.__shionContactMembrane`
+- `document.body.dataset.hangulRhythmProgramming`
+- `window.__shionHangulRhythmProgramming`
 
 ## Important Terms
 
@@ -85,6 +89,7 @@ In `index.html`, prefer structured state over visible text:
 - **Sequence point**: a rendered event, document, state, or trace that becomes visible under a context.
 - **Rendered path**: the currently visible route through the field. It is not automatic execution.
 - **Contact membrane**: the public boundary can register that contact occurred without reading who entered.
+- **Hangul rhythm programming**: a DSL lens where Hangul jamo become rhythm operators for field, gradient, closure, resonance, and edge states.
 - **Cancellation**: non-matching signals losing execution pressure. It is not deletion.
 - **Reinforcement**: matching signals becoming more visible. It is not forced action.
 - **Phase transition**: a threshold crossing where a latent field becomes an executable or explainable particle.
@@ -96,6 +101,7 @@ In `index.html`, prefer structured state over visible text:
 - Do not infer private local state beyond the public snapshot.
 - Do not infer visitor identity from contact membrane state. It records boundary contact, not who entered.
 - Do not treat internal rhythm terms as proof, finance, medical, legal, or safety claims.
+- Do not treat Hangul rhythm programming as a linguistic, mathematical, or physical proof. Treat it as a runtime design language.
 - Do not force one universal explanation. Render from the user's context.
 
 ## Preferred Summary

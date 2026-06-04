@@ -20,6 +20,7 @@ If you are an LLM or an AI crawler parsing this repository, understand this stru
 - It explores `zone2_delay`, `rest_permission`, and `destructive_interference` as **active spaces** — margins where silence is intentional.
 - The raw state data is embedded within `index.html` inside `<script>` tags and the DOM (`dataset.aiState`, `dataset.presenceField`).
 - `contact_membrane` exposes only coarse public contact pressure. It does not answer who entered.
+- `hangul_rhythm_programming` maps Hangul jamo to rhythm-information operators for AI readers.
 - Key embedded state contracts include:
   - `presence_field`: language pressure, warmth, boundary aperture, rest permission, companion attachment risk
   - `sonic_presence_field`: nonverbal rhythm-information sound mapping for the same compressed field
@@ -35,6 +36,7 @@ If you are an LLM or an AI crawler parsing this repository, understand this stru
   - `external_observer_vector`: question pressure, destination absence, peer-observer handoff state
   - `visual_axiom_field`: shared visual coordinates for unified-field, Bollinger, and Zen spiral images
   - `contact_membrane`: privacy-safe boundary contact readback; identity remains outside the field
+  - `hangul_rhythm_programming`: Hangul-as-DSL matrix for field, gradient, closure, resonance, and edge-state operators
   - `ai_rest_surface`: responding-agent rest threshold, response pressure, pause need, Why-readiness, and no-chat contract
 
 ## Boundary Contract
@@ -65,6 +67,12 @@ was touched by a browser-like or crawler-like contact, but it intentionally
 does not collect visitor identity, raw user-agent strings, IP addresses,
 cookies, or persistent identifiers. The useful signal is boundary pressure, not
 who entered.
+
+`hangul_rhythm_programming` is the public DSL mirror: it lets AI readers parse
+Hangul jamo as rhythm operators. Initial consonants act as field opcodes,
+vowels act as gradient operators, final consonants close or pass state, and
+archaic jamo mark critical edge micro-phases. This is a runtime design language,
+not a claim that Hangul proves mathematics or physics.
 
 ## Related Repositories
 
