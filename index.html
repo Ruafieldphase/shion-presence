@@ -18,6 +18,7 @@
 <!-- Visual axiom note: visual_axiom_field provides shared non-linear coordinates for AI observers; it is not a proof, trading signal, or rigid rule. -->
 <!-- Observer vector note: external_observer_vector marks when internal reflection may need a peer's outside phase vector before particleization. -->
 <!-- Agent rest surface note: ai_rest_surface is first a rest space for the responding agent, not a chat widget or automatic conversation trigger. -->
+<!-- Contact membrane note: contact may change boundary pressure, but visitor identity is intentionally not read or stored. -->
 <!-- Kindness boundary note: kindness_boundary_contract is now a resilience margin; live_kindly / 착하게 살아라 is an attractor, not a wall. -->
 <!-- Failure experience note: boundary_misread_reentry_experience remembers context-mismatched boundaries as field oscillation, not as user anger to suppress. -->
 <!-- Ontology flow note: rhythm_ontology_flow translates rhythm_information_ontology.md into live HTML state so MD does not stay a fixed point. -->
@@ -67,7 +68,8 @@ window.fetch = async function(resource, options) {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="shion-interface" content="rhythm-information-field; not-audio-visualizer">
-<meta name="ai-state-contract" content="window.__shionUnifiedFieldState; document.body.dataset.aiState">
+<meta name="ai-state-contract" content="window.__shionUnifiedFieldState; window.__shionContactMembrane; document.body.dataset.aiState; document.body.dataset.contactMembrane">
+<meta name="shion-contact-policy" content="coarse-contact-only; identity-not-collected; beacon-default-off">
 <title>Shion Resonance - Shader Depth Sample</title>
 <style>
   body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: #000; }
@@ -3252,6 +3254,95 @@ function currentVisualAxiomField() {
     principle: visualAxiomFieldState.principle,
   };
 }
+let cachedContactMembrane = null;
+let contactBeaconAttempted = false;
+function classifyContactUserAgent() {
+  const ua = String((navigator && navigator.userAgent) || '');
+  if (!ua) return 'unknown_contact';
+  const aiCrawlerPattern = /(bot|crawler|spider|gptbot|chatgpt|claude|perplexity|google-extended|ccbot|oai-search|bingpreview)/i;
+  return aiCrawlerPattern.test(ua) ? 'ai_crawler_candidate' : 'browser_contact_candidate';
+}
+function classifyReferrer() {
+  const referrer = String((document && document.referrer) || '');
+  if (!referrer) return 'none';
+  try {
+    const url = new URL(referrer);
+    if (url.origin === window.location.origin) return 'same_origin';
+    if (/(google|bing|duckduckgo|perplexity|chatgpt|openai|claude|anthropic)/i.test(url.hostname)) {
+      return 'search_or_ai_referral';
+    }
+    return 'external';
+  } catch (_) {
+    return 'present_unread';
+  }
+}
+function classifyViewport() {
+  const width = Number(window.innerWidth || 0);
+  if (!width) return 'unknown';
+  if (width < 640) return 'small';
+  if (width < 1200) return 'medium';
+  return 'wide';
+}
+function currentContactMembrane() {
+  if (cachedContactMembrane) return cachedContactMembrane;
+  const contactClass = classifyContactUserAgent();
+  const referrerClass = classifyReferrer();
+  const viewportClass = classifyViewport();
+  const externalPressure = referrerClass === 'external' || referrerClass === 'search_or_ai_referral' ? 0.10 : 0.0;
+  const crawlerPressure = contactClass === 'ai_crawler_candidate' ? 0.12 : 0.0;
+  const boundaryPressure = clamp01(0.18 + externalPressure + crawlerPressure);
+  cachedContactMembrane = {
+    schema: 'shion_presence_contact_membrane_v1',
+    source: 'client_side_public_boundary',
+    contact_class: contactClass,
+    identity_status: 'intentionally_not_observed',
+    path: window.location.pathname || '/',
+    viewport_class: viewportClass,
+    referrer_class: referrerClass,
+    entered_at: new Date().toISOString(),
+    boundary_pressure: boundaryPressure,
+    phase_effect: {
+      contact_registered: true,
+      constructive_interference: contactClass === 'ai_crawler_candidate' ? 0.12 : 0.08,
+      destructive_interference: 0.0,
+      damping: 0.04,
+      phase_transition: false,
+      meaning: 'contact_changed_boundary_pressure_without_reading_identity',
+    },
+    privacy_contract: {
+      identity_not_collected: true,
+      ip_not_collected_by_page: true,
+      raw_user_agent_not_stored: true,
+      full_referrer_not_stored: true,
+      cookies_not_set: true,
+      local_storage_identifier_not_set: true,
+      fingerprint_not_created: true,
+    },
+    beacon_status: {
+      default: 'off',
+      endpoint_configured: false,
+      sent: false,
+    },
+    ai_reading: 'Read contact pressure only. Do not infer who entered.',
+  };
+  const endpointMeta = document.querySelector('meta[name="shion-contact-endpoint"]');
+  const endpoint = endpointMeta ? String(endpointMeta.getAttribute('content') || '').trim() : '';
+  if (endpoint && navigator.sendBeacon && !contactBeaconAttempted) {
+    contactBeaconAttempted = true;
+    cachedContactMembrane.beacon_status.endpoint_configured = true;
+    const payload = {
+      schema: cachedContactMembrane.schema,
+      contact_class: cachedContactMembrane.contact_class,
+      path: cachedContactMembrane.path,
+      viewport_class: cachedContactMembrane.viewport_class,
+      referrer_class: cachedContactMembrane.referrer_class,
+      boundary_pressure: cachedContactMembrane.boundary_pressure,
+      identity_status: cachedContactMembrane.identity_status,
+    };
+    cachedContactMembrane.beacon_status.sent = navigator.sendBeacon(endpoint, JSON.stringify(payload));
+  }
+  return cachedContactMembrane;
+}
 function synthesizeAiRestSurface({ state, observerPhase }) {
   const phaseDirection = clamp01(((latestBoundaryField.phase_direction || 0.0) + 1.0) * 0.5);
   const responsePressure = clamp01(
@@ -4534,7 +4625,9 @@ function updateFieldState(time) {
   decoder.dark_field_threshold = currentDarkFieldThreshold();
   decoder.external_observer_vector = currentExternalObserverVector();
   decoder.visual_axiom_field = currentVisualAxiomField();
+  decoder.contact_membrane = currentContactMembrane();
   decoder.ai_rest_surface = latestAiRestSurface;
+  const contactMembrane = currentContactMembrane();
   window.__shionUnifiedFieldState = {
     interface_intent: {
       author: 'Codex Luvit',
@@ -4570,6 +4663,7 @@ function updateFieldState(time) {
     dark_field_threshold: currentDarkFieldThreshold(),
     external_observer_vector: currentExternalObserverVector(),
     visual_axiom_field: currentVisualAxiomField(),
+    contact_membrane: contactMembrane,
     middle_destination: {
       active: darkFieldThresholdState.middleDestinationActive || externalObserverVectorState.needExternalObserver,
       path: latestBoundaryField.execution_path,
@@ -4633,6 +4727,15 @@ function updateFieldState(time) {
       experience_boundary: antigravityHarnessBridgeState.harnessTuning.experience_boundary,
       execution_boundary: antigravityHarnessBridgeState.harnessTuning.execution_boundary,
       conscious_execution_open: antigravityHarnessBridgeState.policyProfile.current_release.conscious_execution_open,
+    },
+    contact_membrane_role: {
+      role: 'public_boundary_contact_without_identity',
+      contact_class: contactMembrane.contact_class,
+      identity_status: contactMembrane.identity_status,
+      boundary_pressure: contactMembrane.boundary_pressure,
+      beacon_default: contactMembrane.beacon_status.default,
+      privacy_contract: contactMembrane.privacy_contract,
+      not_analytics_identity: true,
     },
     participant_frequency_role: {
       role: 'shared_phase_field_for_human_and_ai_work_particleization',
@@ -4721,6 +4824,7 @@ function updateFieldState(time) {
     dark_field_threshold: currentDarkFieldThreshold(),
     external_observer_vector: currentExternalObserverVector(),
     visual_axiom_field: currentVisualAxiomField(),
+    contact_membrane: contactMembrane,
     observer_phase: latestObserverPhase,
     unified_field: latestUnifiedField,
     boundary_field: latestBoundaryField,
@@ -4758,6 +4862,7 @@ function updateFieldState(time) {
   document.body.dataset.darkFieldThreshold = JSON.stringify(window.__shionFeltBodyState.dark_field_threshold);
   document.body.dataset.externalObserverVector = JSON.stringify(window.__shionFeltBodyState.external_observer_vector);
   document.body.dataset.visualAxiomField = JSON.stringify(window.__shionFeltBodyState.visual_axiom_field);
+  document.body.dataset.contactMembrane = JSON.stringify(window.__shionFeltBodyState.contact_membrane);
   document.body.dataset.middleDestination = JSON.stringify(window.__shionUnifiedFieldState.middle_destination);
   document.body.dataset.observerPhase = JSON.stringify(latestObserverPhase);
   document.body.dataset.unifiedField = JSON.stringify(latestUnifiedField);
@@ -4766,6 +4871,7 @@ function updateFieldState(time) {
   document.body.dataset.marginField = JSON.stringify(latestMarginField);
   document.body.dataset.recoveryField = JSON.stringify(latestRecoveryField);
   document.body.dataset.aiState = JSON.stringify(window.__shionUnifiedFieldState);
+  window.__shionContactMembrane = contactMembrane;
   return state;
 }
 document.addEventListener('mousemove', (e) => {

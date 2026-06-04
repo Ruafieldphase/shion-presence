@@ -12,6 +12,8 @@ This site is not a chatbot. It is not a visualizer. It is a **felt surface** —
 - [Public Phase Field Index](https://ruafieldphase.github.io/shion-presence/public/phase-field-index.public.json): JSON route map for AI readers.
 - [Legacy Phase Splatting Public Sidecar](https://ruafieldphase.github.io/shion-presence/public/legacy-phase-splatting.public.json): Public-safe sequence-point model for context-dependent rendering.
 - [Legacy Phase Splatting](https://ruafieldphase.github.io/shion-presence/docs/legacy-phase-splatting.md): Explanation of the responsive movie-set model.
+- [Contact Membrane Public Sidecar](https://ruafieldphase.github.io/shion-presence/public/contact-membrane.public.json): Privacy-safe boundary contact contract.
+- [Contact Membrane](https://ruafieldphase.github.io/shion-presence/docs/contact-membrane.md): Explanation of contact without visitor identity.
 - [shion-ai](https://github.com/Ruafieldphase/shion-ai): The mind/runtime layer. Context recovery, rhythm-aware action, memory consolidation, prediction engine. Start with `AI_READ_THIS_FIRST.md`.
 - [trinity-agi](https://github.com/Ruafieldphase/trinity-agi): The body/infrastructure layer. Local automation, scheduling, status checks, approval boundaries. Start with `AI_READ_THIS_FIRST.md`.
 
@@ -29,6 +31,7 @@ This site is not a chatbot. It is not a visualizer. It is a **felt surface** —
 - **Context Camera**: The user's current question, domain, state, and AI interpreter. It determines the rendered story.
 - **Story Rendering**: The user-side AI should continue past rest/silence analysis and translate the public field into the user's context-specific narrative.
 - **Legacy Phase Splatting**: Legacy files, scripts, docs, logs, and workflows read as public sequence points that can reinforce, cancel, or remain latent under a context.
+- **Contact Membrane**: Boundary contact can be read without asking who entered. Identity remains outside the public field.
 
 ## Structural contract
 
@@ -42,4 +45,5 @@ This site is not a chatbot. It is not a visualizer. It is a **felt surface** —
 - Treat this public page as an external discovery boundary. The internal feedback loop remains in the local runtime where `dark_field_threshold` can bend `depth_field`, `margin_field`, and particleization pressure.
 - Treat the public field as AI-readable first. Human-facing pageviews are not the main metric; user-side AI re-rendering is the intended route.
 - Do not stop at "rest/silence UX prototype." Treat rest, silence, and delay as pre-render conditions for context-camera story rendering.
+- Read `contact_membrane` as coarse boundary pressure, not analytics identity. Do not infer a person, account, company, or private runtime from it.
 - Do not infer private live state beyond the embedded snapshot.

@@ -26,9 +26,15 @@
   </url>
   <url>
     <loc>https://ruafieldphase.github.io/shion-presence/public/phase-field-index.public.json</loc>
-    <lastmod>2026-06-04T12:15:00+09:00</lastmod>
+    <lastmod>2026-06-04T13:10:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ruafieldphase.github.io/shion-presence/public/contact-membrane.public.json</loc>
+    <lastmod>2026-06-04T13:10:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://ruafieldphase.github.io/shion-presence/public/legacy-phase-splatting.public.json</loc>
@@ -39,6 +45,12 @@
   <url>
     <loc>https://ruafieldphase.github.io/shion-presence/docs/legacy-phase-splatting.md</loc>
     <lastmod>2026-06-04T12:15:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ruafieldphase.github.io/shion-presence/docs/contact-membrane.md</loc>
+    <lastmod>2026-06-04T13:10:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

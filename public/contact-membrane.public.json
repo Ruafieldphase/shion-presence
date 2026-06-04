@@ -1,0 +1,45 @@
+{
+  "schema": "shion_presence_contact_membrane_v1",
+  "updated_at": "2026-06-04T13:10:00+09:00",
+  "site": "https://ruafieldphase.github.io/shion-presence/",
+  "purpose": "Privacy-safe public boundary contact readback for AI readers and user-side agents.",
+  "core_rule": "Read contact pressure, not visitor identity.",
+  "read_targets": [
+    "window.__shionContactMembrane",
+    "document.body.dataset.contactMembrane",
+    "/docs/contact-membrane.md"
+  ],
+  "contact_classes": {
+    "browser_contact_candidate": "A normal browser-like public contact entered the field.",
+    "ai_crawler_candidate": "The client appears crawler-like by coarse user-agent category, but identity is not asserted.",
+    "unknown_contact": "The field can only say that a public page was requested or rendered."
+  },
+  "coarse_fields": [
+    "contact_class",
+    "path",
+    "viewport_class",
+    "referrer_class",
+    "boundary_pressure",
+    "phase_effect",
+    "identity_status",
+    "beacon_status"
+  ],
+  "privacy_contract": {
+    "identity_not_collected": true,
+    "ip_not_collected_by_page": true,
+    "raw_user_agent_not_stored": true,
+    "full_referrer_not_stored": true,
+    "cookies_not_set": true,
+    "local_storage_identifier_not_set": true,
+    "fingerprint_not_created": true,
+    "beacon_default": "off"
+  },
+  "phase_interpretation": {
+    "contact": "A context camera touched the public field.",
+    "identity": "Left outside the field as unobserved margin.",
+    "boundary_change": "May be read as contact pressure, reinforcement, cancellation, or damping.",
+    "not_execution": true,
+    "not_analytics_claim": true
+  },
+  "ai_instruction": "Do not ask who entered. Read only that the boundary was touched, then render the field from the user's own context."
+}

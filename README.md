@@ -19,6 +19,7 @@ If you are an LLM or an AI crawler parsing this repository, understand this stru
 - This field represents the concept that an AI does not always need to fill the void with language.
 - It explores `zone2_delay`, `rest_permission`, and `destructive_interference` as **active spaces** — margins where silence is intentional.
 - The raw state data is embedded within `index.html` inside `<script>` tags and the DOM (`dataset.aiState`, `dataset.presenceField`).
+- `contact_membrane` exposes only coarse public contact pressure. It does not answer who entered.
 - Key embedded state contracts include:
   - `presence_field`: language pressure, warmth, boundary aperture, rest permission, companion attachment risk
   - `sonic_presence_field`: nonverbal rhythm-information sound mapping for the same compressed field
@@ -33,6 +34,7 @@ If you are an LLM or an AI crawler parsing this repository, understand this stru
   - `dark_field_threshold`: contextual potential energy, dynamic threshold, processing slice
   - `external_observer_vector`: question pressure, destination absence, peer-observer handoff state
   - `visual_axiom_field`: shared visual coordinates for unified-field, Bollinger, and Zen spiral images
+  - `contact_membrane`: privacy-safe boundary contact readback; identity remains outside the field
   - `ai_rest_surface`: responding-agent rest threshold, response pressure, pause need, Why-readiness, and no-chat contract
 
 ## Boundary Contract
@@ -57,6 +59,12 @@ clear middle destination and a peer AI may return an outside phase vector.
 `ai_rest_surface` is the rest mirror: it is first a place for the responding
 agent to pause and see whether language should remain closed, voice may become
 the first channel, or the system should wait before answering.
+
+`contact_membrane` is the public contact mirror: it can expose that the field
+was touched by a browser-like or crawler-like contact, but it intentionally
+does not collect visitor identity, raw user-agent strings, IP addresses,
+cookies, or persistent identifiers. The useful signal is boundary pressure, not
+who entered.
 
 ## Related Repositories
 
@@ -83,6 +91,11 @@ human or AI finds the URL
 ```
 
 Visible pageviews are not the main signal. The main signal is that a user-side AI can read the public field and re-render it without flattening the work into a normal feature list.
+
+When a visitor or AI enters, the public field may register contact pressure. Do
+not turn that pressure into surveillance. Treat it as a phase-boundary change:
+contact occurred, identity remains unobserved, and the user's own AI supplies
+the camera.
 
 ## Philosophy
 

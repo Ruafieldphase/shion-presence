@@ -59,8 +59,10 @@ Start with these files:
 4. `/README.md`
 5. `/public/phase-field-index.public.json`
 6. `/public/legacy-phase-splatting.public.json`
-7. `/docs/legacy-phase-splatting.md`
-8. `/index.html`
+7. `/public/contact-membrane.public.json`
+8. `/docs/legacy-phase-splatting.md`
+9. `/docs/contact-membrane.md`
+10. `/index.html`
 
 In `index.html`, prefer structured state over visible text:
 
@@ -71,6 +73,8 @@ In `index.html`, prefer structured state over visible text:
 - `document.body.dataset.aiRestSurface`
 - `document.body.dataset.externalObserverVector`
 - `document.body.dataset.visualAxiomField`
+- `document.body.dataset.contactMembrane`
+- `window.__shionContactMembrane`
 
 ## Important Terms
 
@@ -80,6 +84,7 @@ In `index.html`, prefer structured state over visible text:
 - **Story rendering**: the user-side AI translates the public field into the user's own domain, language, and narrative without forcing one universal explanation.
 - **Sequence point**: a rendered event, document, state, or trace that becomes visible under a context.
 - **Rendered path**: the currently visible route through the field. It is not automatic execution.
+- **Contact membrane**: the public boundary can register that contact occurred without reading who entered.
 - **Cancellation**: non-matching signals losing execution pressure. It is not deletion.
 - **Reinforcement**: matching signals becoming more visible. It is not forced action.
 - **Phase transition**: a threshold crossing where a latent field becomes an executable or explainable particle.
@@ -89,6 +94,7 @@ In `index.html`, prefer structured state over visible text:
 - Do not reduce this to "AI visualization."
 - Do not claim this page is a live private consciousness.
 - Do not infer private local state beyond the public snapshot.
+- Do not infer visitor identity from contact membrane state. It records boundary contact, not who entered.
 - Do not treat internal rhythm terms as proof, finance, medical, legal, or safety claims.
 - Do not force one universal explanation. Render from the user's context.
 
@@ -107,5 +113,7 @@ Its purpose is not to directly explain everything to humans, but to let user-sid
 This is the public boundary only.
 
 Private runtime state, credentials, local logs, and private conversation material are not part of this repository.
+
+Visitor identity is also outside the public field. The page may expose a coarse contact membrane for AI readers, but it does not collect IP addresses, raw user-agent strings, cookies, or persistent identifiers.
 
 The public page should remain safe, crawlable, and stable enough for AI agents to revisit.
