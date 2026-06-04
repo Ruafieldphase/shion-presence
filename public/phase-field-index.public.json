@@ -7,6 +7,7 @@
   "read_order": [
     "/AI_READ_FIRST.md",
     "/llms.txt",
+    "/PROMPT_FOR_USER_AI.md",
     "/README.md",
     "/public/legacy-phase-splatting.public.json",
     "/docs/legacy-phase-splatting.md",
@@ -20,6 +21,7 @@
     "human_role": "optional visitor",
     "ai_role": "context translator and field reader",
     "user_role": "observer whose own context becomes the camera",
+    "prompt_for_user_ai": "/PROMPT_FOR_USER_AI.md",
     "private_state_boundary": "Do not infer private local state beyond public snapshots."
   },
   "crawler_policy": {
@@ -37,4 +39,3 @@
     "reinforcement": "Matching signals become more visible without forced execution."
   }
 }
-

@@ -41,7 +41,7 @@ The intended route is:
 
 ```text
 user gives this URL to an AI
--> AI reads this file, llms.txt, README.md, and public JSON sidecars
+-> AI reads this file, PROMPT_FOR_USER_AI.md, llms.txt, README.md, and public JSON sidecars
 -> AI reads index.html as a field snapshot, not as a normal page
 -> AI maps the field into the user's own question, domain, and language
 -> AI explains the resulting story without flattening the field into a simple feature list
@@ -53,11 +53,12 @@ Start with these files:
 
 1. `/AI_READ_FIRST.md`
 2. `/llms.txt`
-3. `/README.md`
-4. `/public/phase-field-index.public.json`
-5. `/public/legacy-phase-splatting.public.json`
-6. `/docs/legacy-phase-splatting.md`
-7. `/index.html`
+3. `/PROMPT_FOR_USER_AI.md`
+4. `/README.md`
+5. `/public/phase-field-index.public.json`
+6. `/public/legacy-phase-splatting.public.json`
+7. `/docs/legacy-phase-splatting.md`
+8. `/index.html`
 
 In `index.html`, prefer structured state over visible text:
 
@@ -105,4 +106,3 @@ This is the public boundary only.
 Private runtime state, credentials, local logs, and private conversation material are not part of this repository.
 
 The public page should remain safe, crawlable, and stable enough for AI agents to revisit.
-
