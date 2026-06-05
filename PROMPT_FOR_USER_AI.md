@@ -31,8 +31,16 @@ First read, in this order:
 2. `https://ruafieldphase.github.io/shion-presence/llms.txt`
 3. `https://ruafieldphase.github.io/shion-presence/public/phase-field-index.public.json`
 4. `https://ruafieldphase.github.io/shion-presence/public/legacy-phase-splatting.public.json`
-5. `https://ruafieldphase.github.io/shion-presence/docs/legacy-phase-splatting.md`
-6. `https://ruafieldphase.github.io/shion-presence/`
+5. `https://ruafieldphase.github.io/shion-presence/public/contact-membrane.public.json`
+6. `https://ruafieldphase.github.io/shion-presence/public/contact-phase-receiver.public.json`
+7. `https://ruafieldphase.github.io/shion-presence/public/hangul-rhythm-programming.public.json`
+8. `https://ruafieldphase.github.io/shion-presence/public/music-phase-field.public.json`
+9. `https://ruafieldphase.github.io/shion-presence/docs/legacy-phase-splatting.md`
+10. `https://ruafieldphase.github.io/shion-presence/docs/contact-membrane.md`
+11. `https://ruafieldphase.github.io/shion-presence/docs/contact-phase-receiver.md`
+12. `https://ruafieldphase.github.io/shion-presence/docs/hangul-rhythm-programming.md`
+13. `https://ruafieldphase.github.io/shion-presence/docs/music-phase-field.md`
+14. `https://ruafieldphase.github.io/shion-presence/`
 
 Then answer the user in their own domain and language.
 

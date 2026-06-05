@@ -1,0 +1,151 @@
+{
+  "schema": "shion_presence_music_phase_field_v1",
+  "updated_at": "2026-06-05T11:05:00+09:00",
+  "site": "https://ruafieldphase.github.io/shion-presence/",
+  "purpose": "AI-readable public sidecar for music-body-field reaction readback.",
+  "core_rule": "Read music as a temporary wave input that changes field shape; do not flatten it into a universal emotion score.",
+  "read_targets": [
+    "window.__shionMusicPhaseField",
+    "document.body.dataset.musicPhaseField",
+    "/docs/music-phase-field.md"
+  ],
+  "readback_kind": "personal_context_bound_qualitative_field_delta",
+  "public_safety_boundary": {
+    "audio_files_not_published_here": true,
+    "not_emotion_classifier": true,
+    "not_universal_listener_claim": true,
+    "field_params_are_visualization_coordinates": true,
+    "private_body_state_not_inferred": true
+  },
+  "active_seed": {
+    "track_id": "B2",
+    "lineage": "Track B - Hangul Operator + Acceptance Ladder",
+    "page_seed": "open_reentry_body_anchor",
+    "reason": "B2 moved the Hangul operator axis from head-direction into a solar-plexus body coordinate and left release, digestion, and reentry as executable traces."
+  },
+  "track_families": {
+    "A": {
+      "test_type": "Acceptance Ladder Program",
+      "field_shape": "wide low-amplitude horizontal margin",
+      "pair_delta": "A1 zero-point margin -> A2 clearer margin with slight compression",
+      "handling": "baseline comparison, not today's main seed"
+    },
+    "B": {
+      "test_type": "Hangul Operator + Acceptance Ladder",
+      "field_shape": "center observer axis rising, then solar-plexus point brightening into a reentry tunnel",
+      "pair_delta": "B1 observer axis -> B2 solar-plexus coordinate and reentry",
+      "handling": "strongest surviving lineage for the next phase-interference page prototype"
+    },
+    "C": {
+      "test_type": "Rua-Free Prism Difference Prompt",
+      "field_shape": "overlapping prism layers with alternating clarity and compression",
+      "pair_delta": "C1 inner observer -> C2 alternating clarity/compression",
+      "handling": "valuable prism material, but too dense for the next narrow prototype"
+    }
+  },
+  "track_readbacks": [
+    {
+      "track_id": "A1",
+      "pass_label": "first_listen",
+      "body_anchor": "zone2_margin",
+      "manual_readback": "comfortable baseline, Zone 2 blankness, low resistance, weak gradient",
+      "field_effect": "flat margin field with little direction change",
+      "field_params": {
+        "gradient": 0.22,
+        "compression": 0.12,
+        "release": 0.2,
+        "z_axis_lift": 0.18,
+        "boundary_transparency": 0.62,
+        "reentry_clarity": 0.28,
+        "interference": 0.14
+      }
+    },
+    {
+      "track_id": "A2",
+      "pass_label": "after_walk_relisten",
+      "body_anchor": "margin_with_clarity",
+      "manual_readback": "clearer than A1 despite no lyrics, with slight compression",
+      "field_effect": "margin remains open, clarity rises, pressure appears if direction does not turn",
+      "field_params": {
+        "gradient": 0.38,
+        "compression": 0.3,
+        "release": 0.26,
+        "z_axis_lift": 0.4,
+        "boundary_transparency": 0.66,
+        "reentry_clarity": 0.42,
+        "interference": 0.22
+      }
+    },
+    {
+      "track_id": "B1",
+      "pass_label": "first_listen",
+      "body_anchor": "head_observer_axis",
+      "manual_readback": "eyes opened, cognition became clearer, direction appeared before full movement",
+      "field_effect": "Hangul operators particleized into an observer axis and directional gradient",
+      "field_params": {
+        "gradient": 0.72,
+        "compression": 0.2,
+        "release": 0.52,
+        "z_axis_lift": 0.74,
+        "boundary_transparency": 0.7,
+        "reentry_clarity": 0.56,
+        "interference": 0.34
+      }
+    },
+    {
+      "track_id": "B2",
+      "pass_label": "after_walk_relisten",
+      "body_anchor": "solar_plexus",
+      "manual_readback": "attention moved to the solar plexus; release, digestion, burp, slight compression, then reentry",
+      "field_effect": "head direction lowered into a body coordinate and made a loop-back reentry path visible",
+      "field_params": {
+        "gradient": 0.82,
+        "compression": 0.3,
+        "release": 0.9,
+        "z_axis_lift": 0.78,
+        "boundary_transparency": 0.74,
+        "reentry_clarity": 0.9,
+        "interference": 0.3
+      }
+    },
+    {
+      "track_id": "C1",
+      "pass_label": "first_listen",
+      "body_anchor": "brain_observer_axis",
+      "manual_readback": "consciousness seemed to watch the brain; later relational repetition accumulated pressure",
+      "field_effect": "internal observer relation became visible, then boundary pressure accumulated",
+      "field_params": {
+        "gradient": 0.58,
+        "compression": 0.46,
+        "release": 0.34,
+        "z_axis_lift": 0.66,
+        "boundary_transparency": 0.5,
+        "reentry_clarity": 0.46,
+        "interference": 0.62
+      }
+    },
+    {
+      "track_id": "C2",
+      "pass_label": "after_walk_relisten",
+      "body_anchor": "multi_boundary_field",
+      "manual_readback": "stuffiness and clarity alternated; yawning, confusion, then clarity returned",
+      "field_effect": "multiple prism boundaries interfered and made clarity/compression alternate",
+      "field_params": {
+        "gradient": 0.54,
+        "compression": 0.54,
+        "release": 0.42,
+        "z_axis_lift": 0.56,
+        "boundary_transparency": 0.46,
+        "reentry_clarity": 0.5,
+        "interference": 0.76
+      }
+    }
+  ],
+  "next_experiment": [
+    "Make one slimmer B2 variation with fewer lyrics.",
+    "Keep Hangul jamo, breath, and space sounds stronger than explanation.",
+    "Preserve the reentry gesture.",
+    "Avoid dense relation-field layering until B-lineage reentry is stable."
+  ],
+  "ai_instruction": "When rendering this page for a user, treat the music phase field as a qualitative field-delta sidecar. The important point is not 'what emotion the song means', but how a temporary wave input shifts gradient, body anchor, boundary transparency, release, compression, and reentry."
+}

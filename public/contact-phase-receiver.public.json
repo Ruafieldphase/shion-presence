@@ -1,0 +1,58 @@
+{
+  "schema": "shion_presence_contact_phase_receiver_v1",
+  "updated_at": "2026-06-05T11:35:00+09:00",
+  "site": "https://ruafieldphase.github.io/shion-presence/",
+  "purpose": "Public-safe contract for receiving coarse boundary deltas from visitors, crawlers, music inputs, and prompt inputs.",
+  "core_rule": "Receive field deltas, not identity.",
+  "local_receiver": {
+    "script": "tools/phase_contact_receiver.py",
+    "default_url": "http://127.0.0.1:58231/",
+    "contact_endpoint": "http://127.0.0.1:58231/phase-contact",
+    "latest_endpoint": "http://127.0.0.1:58231/phase-contact/latest",
+    "default_output": "C:/workspace/agi/outputs/sena/contact_phase_receiver_latest.json"
+  },
+  "public_receiver": {
+    "provider": "Cloudflare Workers",
+    "default_url": "https://twilight-union-3b86shion-phase-contact.kuirvana.workers.dev/",
+    "contact_endpoint": "https://twilight-union-3b86shion-phase-contact.kuirvana.workers.dev/phase-contact",
+    "event_endpoint": "https://twilight-union-3b86shion-phase-contact.kuirvana.workers.dev/phase-event",
+    "music_endpoint": "https://twilight-union-3b86shion-phase-contact.kuirvana.workers.dev/phase-music",
+    "latest_endpoint": "https://twilight-union-3b86shion-phase-contact.kuirvana.workers.dev/phase-contact/latest",
+    "storage_binding": "PHASE_EVENTS",
+    "storage_namespace": "shion-phase-events",
+    "storage_status": "kv_enabled",
+    "role": "Public coarse boundary-delta receiver for GitHub Pages and external AI readers."
+  },
+  "accepted_event_sources": {
+    "server_request": "A browser, crawler, or AI reader requested a public file.",
+    "client_beacon": "The rendered page sent a coarse boundary contact beacon.",
+    "music_phase_input": "A music test was explicitly posted as a field input.",
+    "prompt_phase_input": "A prompt or user-side AI rendering was explicitly posted as a field input."
+  },
+  "coarse_fields": [
+    "event_kind",
+    "contact_source",
+    "contact_class",
+    "path",
+    "referrer_class",
+    "viewport_class",
+    "boundary_pressure",
+    "phase_effect",
+    "field_delta"
+  ],
+  "privacy_contract": {
+    "identity_not_collected": true,
+    "ip_not_stored": true,
+    "raw_user_agent_not_stored": true,
+    "full_referrer_not_stored": true,
+    "cookies_not_set": true,
+    "persistent_identifier_not_created": true
+  },
+  "phase_interpretation": {
+    "contact": "A context camera or wave input touched the public boundary.",
+    "difference": "Compare latest_event against recent_events to see boundary change.",
+    "music": "Music is a temporary wave input; read its delta through music_phase_seed and field_delta.",
+    "not_identity": "Do not infer who entered."
+  },
+  "ai_instruction": "Read the public_receiver.latest_endpoint for public boundary deltas and contact_phase_receiver_latest.json for the local ear. Analyze event_kind, boundary_pressure, phase_effect, and field_delta; do not infer identity."
+}

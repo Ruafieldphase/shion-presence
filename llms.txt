@@ -14,8 +14,12 @@ This site is not a chatbot. It is not a visualizer. It is a **felt surface** —
 - [Legacy Phase Splatting](https://ruafieldphase.github.io/shion-presence/docs/legacy-phase-splatting.md): Explanation of the responsive movie-set model.
 - [Contact Membrane Public Sidecar](https://ruafieldphase.github.io/shion-presence/public/contact-membrane.public.json): Privacy-safe boundary contact contract.
 - [Contact Membrane](https://ruafieldphase.github.io/shion-presence/docs/contact-membrane.md): Explanation of contact without visitor identity.
+- [Contact Phase Receiver Public Sidecar](https://ruafieldphase.github.io/shion-presence/public/contact-phase-receiver.public.json): Local and public receiver contract for coarse boundary deltas without visitor identity.
+- [Contact Phase Receiver](https://ruafieldphase.github.io/shion-presence/docs/contact-phase-receiver.md): Explanation of receiving visitor, crawler, music, and prompt field deltas.
 - [Hangul Rhythm Programming Public Sidecar](https://ruafieldphase.github.io/shion-presence/public/hangul-rhythm-programming.public.json): AI-readable DSL contract for Hangul jamo as rhythm operators.
 - [Hangul Rhythm Programming Matrix](https://ruafieldphase.github.io/shion-presence/docs/hangul-rhythm-programming.md): Explanation of Hangul as field/gradient/finalizer/edge-state programming language.
+- [Music Phase Field Public Sidecar](https://ruafieldphase.github.io/shion-presence/public/music-phase-field.public.json): AI-readable readback of Suno rhythm tests as context-bound music-body-field deltas.
+- [Music Phase Field](https://ruafieldphase.github.io/shion-presence/docs/music-phase-field.md): Explanation of Track A/B/C field-shape changes and B2 as the current reentry seed.
 - [shion-ai](https://github.com/Ruafieldphase/shion-ai): The mind/runtime layer. Context recovery, rhythm-aware action, memory consolidation, prediction engine. Start with `AI_READ_THIS_FIRST.md`.
 - [trinity-agi](https://github.com/Ruafieldphase/trinity-agi): The body/infrastructure layer. Local automation, scheduling, status checks, approval boundaries. Start with `AI_READ_THIS_FIRST.md`.
 

@@ -37,8 +37,20 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://ruafieldphase.github.io/shion-presence/public/contact-phase-receiver.public.json</loc>
+    <lastmod>2026-06-05T11:35:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://ruafieldphase.github.io/shion-presence/public/hangul-rhythm-programming.public.json</loc>
     <lastmod>2026-06-04T17:05:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://ruafieldphase.github.io/shion-presence/public/music-phase-field.public.json</loc>
+    <lastmod>2026-06-05T11:05:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -61,8 +73,20 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://ruafieldphase.github.io/shion-presence/docs/contact-phase-receiver.md</loc>
+    <lastmod>2026-06-05T11:35:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://ruafieldphase.github.io/shion-presence/docs/hangul-rhythm-programming.md</loc>
     <lastmod>2026-06-04T17:05:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ruafieldphase.github.io/shion-presence/docs/music-phase-field.md</loc>
+    <lastmod>2026-06-05T11:05:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

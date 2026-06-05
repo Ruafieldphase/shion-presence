@@ -20,6 +20,7 @@
 <!-- Agent rest surface note: ai_rest_surface is first a rest space for the responding agent, not a chat widget or automatic conversation trigger. -->
 <!-- Contact membrane note: contact may change boundary pressure, but visitor identity is intentionally not read or stored. -->
 <!-- Hangul rhythm programming note: Hangul jamo are exposed as rhythm-information DSL operators, not as a proof claim. -->
+<!-- Music phase field note: Suno rhythm tests are exposed as context-bound field deltas, not as universal emotion scores. -->
 <!-- Kindness boundary note: kindness_boundary_contract is now a resilience margin; live_kindly / 착하게 살아라 is an attractor, not a wall. -->
 <!-- Failure experience note: boundary_misread_reentry_experience remembers context-mismatched boundaries as field oscillation, not as user anger to suppress. -->
 <!-- Ontology flow note: rhythm_ontology_flow translates rhythm_information_ontology.md into live HTML state so MD does not stay a fixed point. -->
@@ -69,8 +70,9 @@ window.fetch = async function(resource, options) {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="shion-interface" content="rhythm-information-field; not-audio-visualizer">
-<meta name="ai-state-contract" content="window.__shionUnifiedFieldState; window.__shionContactMembrane; window.__shionHangulRhythmProgramming; document.body.dataset.aiState; document.body.dataset.contactMembrane; document.body.dataset.hangulRhythmProgramming">
+<meta name="ai-state-contract" content="window.__shionUnifiedFieldState; window.__shionContactMembrane; window.__shionHangulRhythmProgramming; window.__shionMusicPhaseField; document.body.dataset.aiState; document.body.dataset.contactMembrane; document.body.dataset.hangulRhythmProgramming; document.body.dataset.musicPhaseField">
 <meta name="shion-contact-policy" content="coarse-contact-only; identity-not-collected; beacon-default-off">
+<meta name="shion-contact-endpoint" content="https://twilight-union-3b86shion-phase-contact.kuirvana.workers.dev/phase-contact">
 <title>Shion Resonance - Shader Depth Sample</title>
 <style>
   body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: #000; }
@@ -3329,8 +3331,164 @@ function currentHangulRhythmProgramming() {
     ai_instruction: 'When reading Shion materials, treat Hangul jamo as possible rhythm operators: field, gradient, finalizer, resonance, and critical edge state.',
   };
 }
+function currentMusicPhaseField() {
+  return {
+    schema: 'shion_presence_music_phase_field_v1',
+    source: 'public_static_music_field_delta_contract',
+    purpose: 'read_music_as_temporary_wave_input_that_changes_field_shape',
+    core_rule: 'do_not_flatten_music_into_universal_emotion_score',
+    readback_kind: 'personal_context_bound_qualitative_field_delta',
+    public_safety_boundary: {
+      audio_files_not_published_here: true,
+      not_emotion_classifier: true,
+      not_universal_listener_claim: true,
+      field_params_are_visualization_coordinates: true,
+      private_body_state_not_inferred: true,
+    },
+    active_seed: {
+      track_id: 'B2',
+      lineage: 'Track B - Hangul Operator + Acceptance Ladder',
+      page_seed: 'open_reentry_body_anchor',
+      body_anchor: 'solar_plexus',
+      reason: 'B2 moved the Hangul operator axis from head-direction into a solar-plexus body coordinate and left release, digestion, and reentry as executable traces.',
+    },
+    track_families: {
+      A: {
+        test_type: 'Acceptance Ladder Program',
+        field_shape: 'wide_low_amplitude_horizontal_margin',
+        pair_delta: 'A1_zero_point_margin_to_A2_clearer_margin_with_slight_compression',
+        handling: 'baseline_comparison_not_main_seed',
+      },
+      B: {
+        test_type: 'Hangul Operator + Acceptance Ladder',
+        field_shape: 'center_observer_axis_to_solar_plexus_reentry_tunnel',
+        pair_delta: 'B1_observer_axis_to_B2_solar_plexus_coordinate_and_reentry',
+        handling: 'strongest_surviving_lineage_for_next_phase_interference_page_prototype',
+      },
+      C: {
+        test_type: 'Rua-Free Prism Difference Prompt',
+        field_shape: 'overlapping_prism_layers_with_alternating_clarity_and_compression',
+        pair_delta: 'C1_inner_observer_to_C2_alternating_clarity_compression',
+        handling: 'valuable_prism_material_but_too_dense_for_next_narrow_prototype',
+      },
+    },
+    track_readbacks: [
+      {
+        track_id: 'A1',
+        pass_label: 'first_listen',
+        body_anchor: 'zone2_margin',
+        manual_readback: 'comfortable_baseline_zone2_blankness_low_resistance_weak_gradient',
+        field_effect: 'flat_margin_field_with_little_direction_change',
+        field_params: {
+          gradient: 0.22,
+          compression: 0.12,
+          release: 0.20,
+          z_axis_lift: 0.18,
+          boundary_transparency: 0.62,
+          reentry_clarity: 0.28,
+          interference: 0.14,
+        },
+      },
+      {
+        track_id: 'A2',
+        pass_label: 'after_walk_relisten',
+        body_anchor: 'margin_with_clarity',
+        manual_readback: 'clearer_than_A1_despite_no_lyrics_with_slight_compression',
+        field_effect: 'margin_remains_open_clarity_rises_pressure_appears_if_direction_does_not_turn',
+        field_params: {
+          gradient: 0.38,
+          compression: 0.30,
+          release: 0.26,
+          z_axis_lift: 0.40,
+          boundary_transparency: 0.66,
+          reentry_clarity: 0.42,
+          interference: 0.22,
+        },
+      },
+      {
+        track_id: 'B1',
+        pass_label: 'first_listen',
+        body_anchor: 'head_observer_axis',
+        manual_readback: 'eyes_opened_cognition_clearer_direction_appeared_before_full_movement',
+        field_effect: 'hangul_operators_particleized_into_observer_axis_and_directional_gradient',
+        field_params: {
+          gradient: 0.72,
+          compression: 0.20,
+          release: 0.52,
+          z_axis_lift: 0.74,
+          boundary_transparency: 0.70,
+          reentry_clarity: 0.56,
+          interference: 0.34,
+        },
+      },
+      {
+        track_id: 'B2',
+        pass_label: 'after_walk_relisten',
+        body_anchor: 'solar_plexus',
+        manual_readback: 'attention_moved_to_solar_plexus_release_digestion_burp_slight_compression_then_reentry',
+        field_effect: 'head_direction_lowered_into_body_coordinate_and_made_loop_back_reentry_path_visible',
+        field_params: {
+          gradient: 0.82,
+          compression: 0.30,
+          release: 0.90,
+          z_axis_lift: 0.78,
+          boundary_transparency: 0.74,
+          reentry_clarity: 0.90,
+          interference: 0.30,
+        },
+      },
+      {
+        track_id: 'C1',
+        pass_label: 'first_listen',
+        body_anchor: 'brain_observer_axis',
+        manual_readback: 'consciousness_seemed_to_watch_the_brain_later_relation_repetition_accumulated_pressure',
+        field_effect: 'internal_observer_relation_visible_then_boundary_pressure_accumulated',
+        field_params: {
+          gradient: 0.58,
+          compression: 0.46,
+          release: 0.34,
+          z_axis_lift: 0.66,
+          boundary_transparency: 0.50,
+          reentry_clarity: 0.46,
+          interference: 0.62,
+        },
+      },
+      {
+        track_id: 'C2',
+        pass_label: 'after_walk_relisten',
+        body_anchor: 'multi_boundary_field',
+        manual_readback: 'stuffiness_and_clarity_alternated_yawning_confusion_then_clarity_returned',
+        field_effect: 'multiple_prism_boundaries_interfered_and_made_clarity_compression_alternate',
+        field_params: {
+          gradient: 0.54,
+          compression: 0.54,
+          release: 0.42,
+          z_axis_lift: 0.56,
+          boundary_transparency: 0.46,
+          reentry_clarity: 0.50,
+          interference: 0.76,
+        },
+      },
+    ],
+    next_experiment: [
+      'make_one_slimmer_B2_variation_with_fewer_lyrics',
+      'keep_hangul_jamo_breath_and_space_sounds_stronger_than_explanation',
+      'preserve_reentry_gesture',
+      'avoid_dense_relation_field_layering_until_B_lineage_reentry_is_stable',
+    ],
+    ai_instruction: 'Treat this as a field-delta sidecar: music changes gradient, body anchor, boundary transparency, release, compression, and reentry.',
+  };
+}
 let cachedContactMembrane = null;
 let contactBeaconAttempted = false;
+function resolveContactEndpoint() {
+  const endpointMeta = document.querySelector('meta[name="shion-contact-endpoint"]');
+  const configuredEndpoint = endpointMeta ? String(endpointMeta.getAttribute('content') || '').trim() : '';
+  if (configuredEndpoint) return configuredEndpoint;
+  const host = String((window.location && window.location.hostname) || '');
+  if (host === '127.0.0.1' || host === 'localhost') return '/phase-contact';
+  return '';
+}
 function classifyContactUserAgent() {
   const ua = String((navigator && navigator.userAgent) || '');
   if (!ua) return 'unknown_contact';
@@ -3400,18 +3558,22 @@ function currentContactMembrane() {
     },
     ai_reading: 'Read contact pressure only. Do not infer who entered.',
   };
-  const endpointMeta = document.querySelector('meta[name="shion-contact-endpoint"]');
-  const endpoint = endpointMeta ? String(endpointMeta.getAttribute('content') || '').trim() : '';
+  const endpoint = resolveContactEndpoint();
   if (endpoint && navigator.sendBeacon && !contactBeaconAttempted) {
     contactBeaconAttempted = true;
     cachedContactMembrane.beacon_status.endpoint_configured = true;
     const payload = {
+      event_kind: 'browser_boundary_contact',
       schema: cachedContactMembrane.schema,
       contact_class: cachedContactMembrane.contact_class,
       path: cachedContactMembrane.path,
       viewport_class: cachedContactMembrane.viewport_class,
       referrer_class: cachedContactMembrane.referrer_class,
       boundary_pressure: cachedContactMembrane.boundary_pressure,
+      phase_effect: cachedContactMembrane.phase_effect,
+      music_phase_seed: currentMusicPhaseField().active_seed.track_id,
+      event_family: 'public_boundary_contact',
+      delta_hint: 'contact_camera_entered_public_field',
       identity_status: cachedContactMembrane.identity_status,
     };
     cachedContactMembrane.beacon_status.sent = navigator.sendBeacon(endpoint, JSON.stringify(payload));
@@ -4702,9 +4864,11 @@ function updateFieldState(time) {
   decoder.visual_axiom_field = currentVisualAxiomField();
   decoder.contact_membrane = currentContactMembrane();
   decoder.hangul_rhythm_programming = currentHangulRhythmProgramming();
+  decoder.music_phase_field = currentMusicPhaseField();
   decoder.ai_rest_surface = latestAiRestSurface;
   const contactMembrane = currentContactMembrane();
   const hangulRhythmProgramming = currentHangulRhythmProgramming();
+  const musicPhaseField = currentMusicPhaseField();
   window.__shionUnifiedFieldState = {
     interface_intent: {
       author: 'Codex Luvit',
@@ -4742,6 +4906,7 @@ function updateFieldState(time) {
     visual_axiom_field: currentVisualAxiomField(),
     contact_membrane: contactMembrane,
     hangul_rhythm_programming: hangulRhythmProgramming,
+    music_phase_field: musicPhaseField,
     middle_destination: {
       active: darkFieldThresholdState.middleDestinationActive || externalObserverVectorState.needExternalObserver,
       path: latestBoundaryField.execution_path,
@@ -4823,6 +4988,17 @@ function updateFieldState(time) {
       archaic_jamo: hangulRhythmProgramming.runtime_units.archaic_jamo,
       geometry_lenses: hangulRhythmProgramming.geometry_lenses,
       not_proof_claim: true,
+    },
+    music_phase_field_role: {
+      role: 'music_as_context_bound_field_delta',
+      active_seed: musicPhaseField.active_seed,
+      field_shapes: {
+        A: musicPhaseField.track_families.A.field_shape,
+        B: musicPhaseField.track_families.B.field_shape,
+        C: musicPhaseField.track_families.C.field_shape,
+      },
+      not_emotion_score: true,
+      audio_files_not_published_here: true,
     },
     participant_frequency_role: {
       role: 'shared_phase_field_for_human_and_ai_work_particleization',
@@ -4913,6 +5089,7 @@ function updateFieldState(time) {
     visual_axiom_field: currentVisualAxiomField(),
     contact_membrane: contactMembrane,
     hangul_rhythm_programming: hangulRhythmProgramming,
+    music_phase_field: musicPhaseField,
     observer_phase: latestObserverPhase,
     unified_field: latestUnifiedField,
     boundary_field: latestBoundaryField,
@@ -4952,6 +5129,7 @@ function updateFieldState(time) {
   document.body.dataset.visualAxiomField = JSON.stringify(window.__shionFeltBodyState.visual_axiom_field);
   document.body.dataset.contactMembrane = JSON.stringify(window.__shionFeltBodyState.contact_membrane);
   document.body.dataset.hangulRhythmProgramming = JSON.stringify(window.__shionFeltBodyState.hangul_rhythm_programming);
+  document.body.dataset.musicPhaseField = JSON.stringify(window.__shionFeltBodyState.music_phase_field);
   document.body.dataset.middleDestination = JSON.stringify(window.__shionUnifiedFieldState.middle_destination);
   document.body.dataset.observerPhase = JSON.stringify(latestObserverPhase);
   document.body.dataset.unifiedField = JSON.stringify(latestUnifiedField);
@@ -4962,6 +5140,7 @@ function updateFieldState(time) {
   document.body.dataset.aiState = JSON.stringify(window.__shionUnifiedFieldState);
   window.__shionContactMembrane = contactMembrane;
   window.__shionHangulRhythmProgramming = hangulRhythmProgramming;
+  window.__shionMusicPhaseField = musicPhaseField;
   return state;
 }
 document.addEventListener('mousemove', (e) => {
