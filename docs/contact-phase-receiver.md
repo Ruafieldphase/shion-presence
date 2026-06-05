@@ -70,6 +70,17 @@ This public receiver uses the `PHASE_EVENTS` binding attached to the
 `shion-phase-events` KV namespace. It keeps the same boundary rule as the local
 receiver: receive field deltas, not identity.
 
+The live page may read this endpoint and reflect the latest public contact as a
+very weak visual/status hint:
+
+```text
+contact pressure -> faint constructive/damping ripple
+B2 music seed -> slight color/curvature tint
+```
+
+This is not analytics. It does not display who entered, a user count, or a
+visitor profile.
+
 ## Event Model
 
 Each event is a boundary particle:

@@ -96,6 +96,7 @@ In `index.html`, prefer structured state over visible text:
 - **Rendered path**: the currently visible route through the field. It is not automatic execution.
 - **Contact membrane**: the public boundary can register that contact occurred without reading who entered.
 - **Contact phase receiver**: local and public receivers that record coarse boundary deltas from page requests, client beacons, music inputs, and prompt inputs without identity.
+- **Public contact readback**: the live page may render Cloudflare Worker `latest` contact only as weak constructive/damping/curvature hints; do not read it as analytics.
 - **Hangul rhythm programming**: a DSL lens where Hangul jamo become rhythm operators for field, gradient, closure, resonance, and edge states.
 - **Music phase field**: a sidecar where Suno rhythm tests are read as context-bound field deltas. It records how music changed gradient, body anchor, boundary transparency, compression, release, and reentry.
 - **Cancellation**: non-matching signals losing execution pressure. It is not deletion.

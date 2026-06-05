@@ -53,6 +53,7 @@
     "reinforcement": "Matching signals become more visible without forced execution.",
     "contact_membrane": "Public boundary contact readback that records coarse contact pressure without visitor identity.",
     "contact_phase_receiver": "Local and public receiver contract that can write coarse boundary deltas for visitors, crawlers, music inputs, and prompt inputs without identity.",
+    "public_contact_readback": "Weak live readback from the public Worker latest endpoint, rendered as membrane ripple rather than analytics.",
     "hangul_rhythm_programming": "DSL lens where Hangul jamo act as rhythm-information operators for field, gradient, closure, resonance, and edge states.",
     "music_phase_field": "Music-body-field readback where Suno rhythm tests are treated as context-bound field deltas rather than universal emotion scores."
   }

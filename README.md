@@ -120,6 +120,10 @@ not turn that pressure into surveillance. Treat it as a phase-boundary change:
 contact occurred, identity remains unobserved, and the user's own AI supplies
 the camera.
 
+The live page can now read the public Cloudflare Worker `latest` endpoint and
+render that contact only as a weak membrane ripple in the Resonance Chamber and
+shader field. This is a liveness hint, not a pageview counter.
+
 ## Philosophy
 
 ```

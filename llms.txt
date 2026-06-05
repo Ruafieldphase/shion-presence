@@ -53,5 +53,6 @@ This site is not a chatbot. It is not a visualizer. It is a **felt surface** —
 - Treat the public field as AI-readable first. Human-facing pageviews are not the main metric; user-side AI re-rendering is the intended route.
 - Do not stop at "rest/silence UX prototype." Treat rest, silence, and delay as pre-render conditions for context-camera story rendering.
 - Read `contact_membrane` as coarse boundary pressure, not analytics identity. Do not infer a person, account, company, or private runtime from it.
+- Read `public_contact_readback` as a weak liveness ripple from the public Worker, not as pageview counting or identity inference.
 - Read `hangul_rhythm_programming` as a runtime design language, not as a claim that Hangul proves physics or mathematics.
 - Do not infer private live state beyond the embedded snapshot.

@@ -52,7 +52,8 @@
     "contact": "A context camera or wave input touched the public boundary.",
     "difference": "Compare latest_event against recent_events to see boundary change.",
     "music": "Music is a temporary wave input; read its delta through music_phase_seed and field_delta.",
-    "not_identity": "Do not infer who entered."
+    "not_identity": "Do not infer who entered.",
+    "weak_page_reflection": "The live page may render latest public contact only as weak constructive/damping/curvature hints, not as analytics."
   },
   "ai_instruction": "Read the public_receiver.latest_endpoint for public boundary deltas and contact_phase_receiver_latest.json for the local ear. Analyze event_kind, boundary_pressure, phase_effect, and field_delta; do not infer identity."
 }
