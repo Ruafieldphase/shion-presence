@@ -1,6 +1,6 @@
 {
   "schema": "shion_ai_observer_pointer_public_contract_v1",
-  "updated_at": "2026-06-05T15:38:10+09:00",
+  "updated_at": "2026-06-05T16:08:00+09:00",
   "site": "https://ruafieldphase.github.io/shion-presence/",
   "purpose": "Allow user-side AI and browser agents to move a synthetic observer pointer and target field inside the page without controlling the operating system cursor.",
   "concept": {
@@ -57,7 +57,8 @@
     "dark_field_threshold": "Read latent pressure before particleization.",
     "external_observer_vector": "Read the outside question vector and peer observer opening.",
     "hangul_rhythm_operator": "Read Hangul jamo as field, gradient, closure, resonance, and edge operators.",
-    "rest_surface": "Read the responding-agent rest threshold before language."
+    "rest_surface": "Read the responding-agent rest threshold before language.",
+    "ai_dwell_space": "Read the AI stay surface where response pressure can lower before language."
   },
   "privacy_contract": {
     "controls_os_cursor": false,

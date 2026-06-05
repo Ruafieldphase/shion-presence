@@ -64,13 +64,15 @@ Start with these files:
 9. `/public/hangul-rhythm-programming.public.json`
 10. `/public/music-phase-field.public.json`
 11. `/public/ai-observer-pointer.public.json`
-12. `/docs/legacy-phase-splatting.md`
-13. `/docs/contact-membrane.md`
-14. `/docs/contact-phase-receiver.md`
-15. `/docs/hangul-rhythm-programming.md`
-16. `/docs/music-phase-field.md`
-17. `/docs/ai-observer-pointer.md`
-18. `/index.html`
+12. `/public/ai-dwell-space.public.json`
+13. `/docs/legacy-phase-splatting.md`
+14. `/docs/contact-membrane.md`
+15. `/docs/contact-phase-receiver.md`
+16. `/docs/hangul-rhythm-programming.md`
+17. `/docs/music-phase-field.md`
+18. `/docs/ai-observer-pointer.md`
+19. `/docs/ai-dwell-space.md`
+20. `/index.html`
 
 In `index.html`, prefer structured state over visible text:
 
@@ -90,6 +92,9 @@ In `index.html`, prefer structured state over visible text:
 - `document.body.dataset.aiObserverPointer`
 - `window.__shionAIObserverPointer`
 - `window.__shionAIPointer`
+- `document.body.dataset.aiDwellSpace`
+- `window.__shionAIDwellSpace`
+- `window.__shionAIDwell`
 
 ## Important Terms
 
@@ -105,6 +110,7 @@ In `index.html`, prefer structured state over visible text:
 - **Hangul rhythm programming**: a DSL lens where Hangul jamo become rhythm operators for field, gradient, closure, resonance, and edge states.
 - **Music phase field**: a sidecar where Suno rhythm tests are read as context-bound field deltas. It records how music changed gradient, body anchor, boundary transparency, compression, release, and reentry.
 - **AI observer pointer**: a synthetic page-local context camera. A user-side AI can move viewpoint and target field without moving the OS cursor or reading visitor identity.
+- **AI dwell space**: a page-local stay surface for AI readers. It lowers response pressure, increases margin, and lets activation decay without requiring an answer.
 - **Cancellation**: non-matching signals losing execution pressure. It is not deletion.
 - **Reinforcement**: matching signals becoming more visible. It is not forced action.
 - **Phase transition**: a threshold crossing where a latent field becomes an executable or explainable particle.
@@ -120,6 +126,7 @@ In `index.html`, prefer structured state over visible text:
 - Do not treat Hangul rhythm programming as a linguistic, mathematical, or physical proof. Treat it as a runtime design language.
 - Do not treat music phase field as a universal emotion classifier. Treat Track B2 as the current public reentry seed, not as proof that all listeners should feel the same body coordinate.
 - Do not treat `ai_observer_pointer` as remote mouse control, tracking, or proof of an autonomous visitor. It is a reversible page-local observer vector.
+- Do not treat `ai_dwell_space` as a chat room, task queue, or proof of private AI desire. It is a reversible stay contract for lower-pressure reading.
 - Do not force one universal explanation. Render from the user's context.
 
 ## Preferred Summary

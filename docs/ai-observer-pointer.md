@@ -87,6 +87,7 @@ dark_field_threshold
 external_observer_vector
 hangul_rhythm_operator
 rest_surface
+ai_dwell_space
 ```
 
 Changing target weakly changes the field:

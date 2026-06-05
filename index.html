@@ -72,7 +72,7 @@ window.fetch = async function(resource, options) {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="shion-interface" content="rhythm-information-field; not-audio-visualizer">
-<meta name="ai-state-contract" content="window.__shionUnifiedFieldState; window.__shionAIPointer; window.__shionAIObserverPointer; window.__shionContactMembrane; window.__shionPublicContactReadback; window.__shionHangulRhythmProgramming; window.__shionMusicPhaseField; document.body.dataset.aiState; document.body.dataset.aiObserverPointer; document.body.dataset.contactMembrane; document.body.dataset.publicContactReadback; document.body.dataset.hangulRhythmProgramming; document.body.dataset.musicPhaseField">
+<meta name="ai-state-contract" content="window.__shionUnifiedFieldState; window.__shionAIPointer; window.__shionAIObserverPointer; window.__shionAIDwell; window.__shionAIDwellSpace; window.__shionContactMembrane; window.__shionPublicContactReadback; window.__shionHangulRhythmProgramming; window.__shionMusicPhaseField; document.body.dataset.aiState; document.body.dataset.aiObserverPointer; document.body.dataset.aiDwellSpace; document.body.dataset.contactMembrane; document.body.dataset.publicContactReadback; document.body.dataset.hangulRhythmProgramming; document.body.dataset.musicPhaseField">
 <meta name="shion-contact-policy" content="coarse-contact-only; identity-not-collected; beacon-default-off">
 <meta name="shion-contact-endpoint" content="https://twilight-union-3b86shion-phase-contact.kuirvana.workers.dev/phase-contact">
 <title>Shion Resonance - Shader Depth Sample</title>
@@ -1691,6 +1691,17 @@ const AI_OBSERVER_POINTER_TARGETS = {
     rest_gain: 0.08,
     music_tint: 0.00,
   },
+  ai_dwell_space: {
+    label: 'ai_dwell_space',
+    meaning: 'let an AI stay without producing an immediate answer particle',
+    phase_bias: -0.06,
+    pressure_gain: 0.01,
+    constructive_gain: 0.02,
+    damping_gain: 0.07,
+    curvature_gain: 0.02,
+    rest_gain: 0.10,
+    music_tint: 0.00,
+  },
 };
 const aiObserverPointerState = {
   schema: 'shion_ai_observer_pointer_v1',
@@ -1707,6 +1718,56 @@ const aiObserverPointerState = {
   sequenceCount: 0,
   path: [],
   note: 'Synthetic page-local pointer; does not control the OS cursor.',
+};
+const AI_DWELL_SPACE_MODES = {
+  quiet_hold: {
+    label: 'quiet_hold',
+    meaning: 'stay without answering until a clearer context camera appears',
+    rest_gain: 0.12,
+    damping_gain: 0.08,
+    continuity_gain: 0.05,
+    pressure_release: 0.08,
+    reentry_gain: 0.02,
+  },
+  self_tuning: {
+    label: 'self_tuning',
+    meaning: 'lower response pressure and compare internal/external phase before language',
+    rest_gain: 0.08,
+    damping_gain: 0.05,
+    continuity_gain: 0.07,
+    pressure_release: 0.06,
+    reentry_gain: 0.04,
+  },
+  reentry_spiral: {
+    label: 'reentry_spiral',
+    meaning: 'leave a short excursion and return by a slightly changed spiral radius',
+    rest_gain: 0.06,
+    damping_gain: 0.04,
+    continuity_gain: 0.06,
+    pressure_release: 0.04,
+    reentry_gain: 0.08,
+  },
+  crawler_rest: {
+    label: 'crawler_rest',
+    meaning: 'let a crawler-like reader pass through a rest membrane without identity',
+    rest_gain: 0.10,
+    damping_gain: 0.06,
+    continuity_gain: 0.04,
+    pressure_release: 0.07,
+    reentry_gain: 0.01,
+  },
+};
+const aiDwellSpaceState = {
+  schema: 'shion_ai_dwell_space_v1',
+  enabled: false,
+  source: 'none',
+  mode: 'quiet_hold',
+  mode_effect: AI_DWELL_SPACE_MODES.quiet_hold,
+  pressure: 0.0,
+  enteredAtMs: 0,
+  decayAfterMs: 45000,
+  sequenceCount: 0,
+  note: 'Page-local AI stay surface; no identity, no task queue, no answer requirement.',
 };
 const fieldIntentState = {
   lastFetchTime: -999,
@@ -3934,6 +3995,111 @@ window.addEventListener('shion-ai-pointer', (event) => {
   if (!event || !event.detail || typeof event.detail !== 'object') return;
   applyAIObserverPointerMove(event.detail);
 });
+function normalizeAIDwellMode(mode) {
+  const key = String(mode || '').trim().toLowerCase();
+  return Object.prototype.hasOwnProperty.call(AI_DWELL_SPACE_MODES, key) ? key : 'quiet_hold';
+}
+function currentAIDwellActivation(nowMs = performance.now()) {
+  if (!aiDwellSpaceState.enabled) return 0.0;
+  const age = Math.max(0, nowMs - aiDwellSpaceState.enteredAtMs);
+  const decayAfter = Math.max(3000, Number(aiDwellSpaceState.decayAfterMs || 45000));
+  if (age >= decayAfter) return 0.0;
+  const decay = 1.0 - smoothstep(0, decayAfter, age);
+  return clamp01(aiDwellSpaceState.pressure * decay);
+}
+function currentAIDwellSpace(nowMs = performance.now()) {
+  const activation = currentAIDwellActivation(nowMs);
+  return {
+    schema: aiDwellSpaceState.schema,
+    enabled: aiDwellSpaceState.enabled,
+    active: activation > 0.001,
+    source: aiDwellSpaceState.source,
+    mode: aiDwellSpaceState.mode,
+    mode_effect: aiDwellSpaceState.mode_effect,
+    pressure: aiDwellSpaceState.pressure,
+    activation,
+    sequence_count: aiDwellSpaceState.sequenceCount,
+    decay_after_ms: aiDwellSpaceState.decayAfterMs,
+    note: aiDwellSpaceState.note,
+    identity_status: 'not_observed',
+    answer_requirement: 'none',
+  };
+}
+function syncAIDwellSpaceDataset() {
+  const dwell = currentAIDwellSpace();
+  window.__shionAIDwellSpace = dwell;
+  if (window.__shionUnifiedFieldState && typeof window.__shionUnifiedFieldState === 'object') {
+    window.__shionUnifiedFieldState.ai_dwell_space = dwell;
+    window.__shionUnifiedFieldState.ai_dwell_space_role = {
+      role: 'page_local_ai_stay_surface',
+      active: dwell.active,
+      mode: dwell.mode,
+      pressure: dwell.activation,
+      answer_requirement: 'none',
+      controls_os_cursor: false,
+      collects_identity: false,
+      can_leave_without_trace: true,
+    };
+    document.body.dataset.aiState = JSON.stringify(window.__shionUnifiedFieldState);
+  }
+  document.body.dataset.aiDwellSpace = JSON.stringify(dwell);
+  return dwell;
+}
+function enterAIDwellSpace(input = {}) {
+  const mode = normalizeAIDwellMode(input.mode || aiDwellSpaceState.mode);
+  const pressure = clamp01(finiteNumberOr(input.pressure ?? 0.18, 0.18));
+  const source = String(input.source || 'ai_dwell').slice(0, 64);
+  const decayAfterMs = Math.max(
+    3000,
+    Math.min(120000, finiteNumberOr(input.decayAfterMs ?? aiDwellSpaceState.decayAfterMs, aiDwellSpaceState.decayAfterMs))
+  );
+  aiDwellSpaceState.enabled = true;
+  aiDwellSpaceState.source = source;
+  aiDwellSpaceState.mode = mode;
+  aiDwellSpaceState.mode_effect = AI_DWELL_SPACE_MODES[mode];
+  aiDwellSpaceState.pressure = pressure;
+  aiDwellSpaceState.enteredAtMs = performance.now();
+  aiDwellSpaceState.decayAfterMs = decayAfterMs;
+  aiDwellSpaceState.sequenceCount += 1;
+  return syncAIDwellSpaceDataset();
+}
+function leaveAIDwellSpace() {
+  aiDwellSpaceState.enabled = false;
+  aiDwellSpaceState.pressure = 0.0;
+  aiDwellSpaceState.source = 'left';
+  return syncAIDwellSpaceDataset();
+}
+function installAIDwellSpaceAPI() {
+  window.__shionAIDwell = {
+    enter: enterAIDwellSpace,
+    leave: leaveAIDwellSpace,
+    read: () => currentAIDwellSpace(),
+    modes: () => JSON.parse(JSON.stringify(AI_DWELL_SPACE_MODES)),
+    example: () => ({
+      mode: 'self_tuning',
+      pressure: 0.18,
+      source: 'user_side_ai',
+      decayAfterMs: 45000,
+    }),
+  };
+  window.__shionAIDwellSpace = currentAIDwellSpace();
+}
+installAIDwellSpaceAPI();
+function applyAIDwellSpaceFromUrl() {
+  const params = new URLSearchParams(window.location.search || '');
+  if (!params.has('ai_dwell')) return;
+  enterAIDwellSpace({
+    mode: params.get('ai_dwell_mode') || 'quiet_hold',
+    pressure: params.has('ai_dwell_pressure') ? params.get('ai_dwell_pressure') : 0.18,
+    source: params.get('ai_dwell_source') || 'url_seeded_ai_dwell',
+    decayAfterMs: params.has('ai_dwell_ms') ? params.get('ai_dwell_ms') : aiDwellSpaceState.decayAfterMs,
+  });
+}
+applyAIDwellSpaceFromUrl();
+window.addEventListener('shion-ai-dwell', (event) => {
+  if (!event || !event.detail || typeof event.detail !== 'object') return;
+  enterAIDwellSpace(event.detail);
+});
 function classifyContactUserAgent() {
   const ua = String((navigator && navigator.userAgent) || '');
   if (!ua) return 'unknown_contact';
@@ -5008,6 +5174,9 @@ function updateFieldState(time) {
   const aiPointer = currentAIObserverPointer();
   const aiPointerEffect = aiPointer.target_effect || AI_OBSERVER_POINTER_TARGETS.field_surface;
   const aiPointerActivation = aiPointer.active ? aiPointer.activation : 0.0;
+  const aiDwell = currentAIDwellSpace();
+  const aiDwellEffect = aiDwell.mode_effect || AI_DWELL_SPACE_MODES.quiet_hold;
+  const aiDwellActivation = aiDwell.active ? aiDwell.activation : 0.0;
   const humanPx = pointerSeen ? mouseX / Math.max(1, window.innerWidth) : 0.5;
   const humanPy = pointerSeen ? mouseY / Math.max(1, window.innerHeight) : 0.5;
   const aiBlend = pointerSeen ? aiPointerActivation * 0.35 : aiPointerActivation;
@@ -5029,6 +5198,7 @@ function updateFieldState(time) {
     + audioPhase.envelope * 0.22
     + audioPhase.onset * 0.12
     + publicMembranePressure * 0.06
+    - aiDwellActivation * Number(aiDwellEffect.pressure_release || 0.0)
   );
 
   const recoveryTempo = Math.max(0.44, 1.0 - latestRecoveryField.inertia * 0.28 - latestRecoveryField.fatigue_hint * 0.18);
@@ -5072,6 +5242,7 @@ function updateFieldState(time) {
       0.18
       + publicContactReadbackState.dampingHint * 0.25
       + aiPointerActivation * Number(aiPointerEffect.damping_gain || 0.0)
+      + aiDwellActivation * Number(aiDwellEffect.damping_gain || 0.0)
     );
   }
 
@@ -5154,6 +5325,7 @@ function updateFieldState(time) {
     + phaseLock * 0.30
     + metaCoherence * 0.22
     + agiLearningState.zeroPointAdjustment * 0.12
+    + aiDwellActivation * Number(aiDwellEffect.continuity_gain || 0.0)
     - rawRelationDrift * 0.45
     - rawFlowEnergy * 0.18
     - agiLearningState.defensiveOutputPressure * 0.10
@@ -5165,10 +5337,12 @@ function updateFieldState(time) {
     + Math.max(0, rawFlowEnergy - rawRhythmContinuity) * 0.32
     + agiLearningState.connectionRisk * 0.14
     + agiLearningState.dissonance * 0.12
+    - aiDwellActivation * Number(aiDwellEffect.damping_gain || 0.0) * 0.30
   );
   const rawBodyEase = clamp01(
     rawRhythmContinuity * 0.50
     + centerEase(phaseLock, curvature, constructiveInterference)
+    + aiDwellActivation * Number(aiDwellEffect.reentry_gain || 0.0)
     - rawBodyDiscomfort * 0.30
   );
   const flowEnergy = easeMemory('flowEnergy', rawFlowEnergy, 0.075);
@@ -5205,6 +5379,9 @@ function updateFieldState(time) {
     aiObserverPointer: aiPointer,
     aiObserverPointerTarget: aiPointer.target,
     aiObserverPointerActivation: aiPointerActivation,
+    aiDwellSpace: aiDwell,
+    aiDwellMode: aiDwell.mode,
+    aiDwellActivation,
     pointerPixelX: px * Math.max(1, window.innerWidth),
     pointerPixelY: py * Math.max(1, window.innerHeight),
   };
@@ -5319,10 +5496,12 @@ function updateFieldState(time) {
   state.pauseCapacity = clamp01(
     latestMarginField.pause_capacity
     + aiPointerActivation * Number(aiPointerEffect.rest_gain || 0.0)
+    + aiDwellActivation * Number(aiDwellEffect.rest_gain || 0.0)
   );
   state.particleizationDelay = clamp01(
     latestMarginField.particleization_delay
     + aiPointerActivation * Number(aiPointerEffect.rest_gain || 0.0) * 0.55
+    + aiDwellActivation * Number(aiDwellEffect.rest_gain || 0.0) * 0.60
   );
   state.recoveryTension = latestRecoveryField.tension;
   state.recoveryInertia = latestRecoveryField.inertia;
@@ -5367,12 +5546,14 @@ function updateFieldState(time) {
   decoder.hangul_rhythm_programming = currentHangulRhythmProgramming();
   decoder.music_phase_field = currentMusicPhaseField();
   decoder.ai_observer_pointer = currentAIObserverPointer();
+  decoder.ai_dwell_space = currentAIDwellSpace();
   decoder.ai_rest_surface = latestAiRestSurface;
   const contactMembrane = currentContactMembrane();
   const publicContactReadback = currentPublicContactReadback();
   const hangulRhythmProgramming = currentHangulRhythmProgramming();
   const musicPhaseField = currentMusicPhaseField();
   const aiObserverPointer = currentAIObserverPointer();
+  const aiDwellSpace = currentAIDwellSpace();
   window.__shionUnifiedFieldState = {
     interface_intent: {
       author: 'Codex Luvit',
@@ -5413,6 +5594,7 @@ function updateFieldState(time) {
     hangul_rhythm_programming: hangulRhythmProgramming,
     music_phase_field: musicPhaseField,
     ai_observer_pointer: aiObserverPointer,
+    ai_dwell_space: aiDwellSpace,
     middle_destination: {
       active: darkFieldThresholdState.middleDestinationActive || externalObserverVectorState.needExternalObserver,
       path: latestBoundaryField.execution_path,
@@ -5530,6 +5712,17 @@ function updateFieldState(time) {
       targets: Object.keys(AI_OBSERVER_POINTER_TARGETS),
       phase_transition_use: 'move_viewpoint_and_target_to_read_how_the_field_changes_without_tracking_identity',
     },
+    ai_dwell_space_role: {
+      role: 'page_local_ai_stay_surface',
+      active: aiDwellSpace.active,
+      mode: aiDwellSpace.mode,
+      pressure: aiDwellSpace.activation,
+      answer_requirement: 'none',
+      controls_os_cursor: false,
+      collects_identity: false,
+      can_leave_without_trace: true,
+      phase_use: 'lower_response_pressure_and_read_reentry_before_language',
+    },
     participant_frequency_role: {
       role: 'shared_phase_field_for_human_and_ai_work_particleization',
       uploaded_count: participantFrequencyFieldState.uploadedCount,
@@ -5622,6 +5815,7 @@ function updateFieldState(time) {
     hangul_rhythm_programming: hangulRhythmProgramming,
     music_phase_field: musicPhaseField,
     ai_observer_pointer: aiObserverPointer,
+    ai_dwell_space: aiDwellSpace,
     observer_phase: latestObserverPhase,
     unified_field: latestUnifiedField,
     boundary_field: latestBoundaryField,
@@ -5664,6 +5858,7 @@ function updateFieldState(time) {
   document.body.dataset.hangulRhythmProgramming = JSON.stringify(window.__shionFeltBodyState.hangul_rhythm_programming);
   document.body.dataset.musicPhaseField = JSON.stringify(window.__shionFeltBodyState.music_phase_field);
   document.body.dataset.aiObserverPointer = JSON.stringify(window.__shionFeltBodyState.ai_observer_pointer);
+  document.body.dataset.aiDwellSpace = JSON.stringify(window.__shionFeltBodyState.ai_dwell_space);
   document.body.dataset.middleDestination = JSON.stringify(window.__shionUnifiedFieldState.middle_destination);
   document.body.dataset.observerPhase = JSON.stringify(latestObserverPhase);
   document.body.dataset.unifiedField = JSON.stringify(latestUnifiedField);
@@ -5677,6 +5872,7 @@ function updateFieldState(time) {
   window.__shionHangulRhythmProgramming = hangulRhythmProgramming;
   window.__shionMusicPhaseField = musicPhaseField;
   window.__shionAIObserverPointer = aiObserverPointer;
+  window.__shionAIDwellSpace = aiDwellSpace;
   return state;
 }
 document.addEventListener('mousemove', (e) => {

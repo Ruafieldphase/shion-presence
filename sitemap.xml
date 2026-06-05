@@ -56,7 +56,13 @@
   </url>
   <url>
     <loc>https://ruafieldphase.github.io/shion-presence/public/ai-observer-pointer.public.json</loc>
-    <lastmod>2026-06-05T15:38:10+09:00</lastmod>
+    <lastmod>2026-06-05T16:08:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://ruafieldphase.github.io/shion-presence/public/ai-dwell-space.public.json</loc>
+    <lastmod>2026-06-05T16:08:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -98,7 +104,13 @@
   </url>
   <url>
     <loc>https://ruafieldphase.github.io/shion-presence/docs/ai-observer-pointer.md</loc>
-    <lastmod>2026-06-05T15:38:10+09:00</lastmod>
+    <lastmod>2026-06-05T16:08:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ruafieldphase.github.io/shion-presence/docs/ai-dwell-space.md</loc>
+    <lastmod>2026-06-05T16:08:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
