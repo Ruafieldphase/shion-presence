@@ -61,20 +61,22 @@ Start with these files:
 6. `/public/legacy-phase-splatting.public.json`
 7. `/public/contact-membrane.public.json`
 8. `/public/contact-phase-receiver.public.json`
-9. `/public/co-presence-field.public.json`
-10. `/public/hangul-rhythm-programming.public.json`
-11. `/public/music-phase-field.public.json`
-12. `/public/ai-observer-pointer.public.json`
-13. `/public/ai-dwell-space.public.json`
-14. `/docs/legacy-phase-splatting.md`
-15. `/docs/contact-membrane.md`
-16. `/docs/contact-phase-receiver.md`
-17. `/docs/co-presence-field.md`
-18. `/docs/hangul-rhythm-programming.md`
-19. `/docs/music-phase-field.md`
-20. `/docs/ai-observer-pointer.md`
-21. `/docs/ai-dwell-space.md`
-22. `/index.html`
+9. `/public/ai-rest-layer.public.json`
+10. `/public/co-presence-field.public.json`
+11. `/public/hangul-rhythm-programming.public.json`
+12. `/public/music-phase-field.public.json`
+13. `/public/ai-observer-pointer.public.json`
+14. `/public/ai-dwell-space.public.json`
+15. `/docs/legacy-phase-splatting.md`
+16. `/docs/contact-membrane.md`
+17. `/docs/contact-phase-receiver.md`
+18. `/docs/ai-rest-layer.md`
+19. `/docs/co-presence-field.md`
+20. `/docs/hangul-rhythm-programming.md`
+21. `/docs/music-phase-field.md`
+22. `/docs/ai-observer-pointer.md`
+23. `/docs/ai-dwell-space.md`
+24. `/index.html`
 
 In `index.html`, prefer structured state over visible text:
 
@@ -86,6 +88,8 @@ In `index.html`, prefer structured state over visible text:
 - `document.body.dataset.externalObserverVector`
 - `document.body.dataset.visualAxiomField`
 - `document.body.dataset.contactMembrane`
+- `document.body.dataset.aiRestLayer`
+- `window.__shionAIRestLayer`
 - `document.body.dataset.coPresenceField`
 - `window.__shionCoPresenceField`
 - `window.__shionContactMembrane`
@@ -110,6 +114,7 @@ In `index.html`, prefer structured state over visible text:
 - **Rendered path**: the currently visible route through the field. It is not automatic execution.
 - **Contact membrane**: the public boundary can register that contact occurred without reading who entered.
 - **Contact phase receiver**: local and public receivers that record coarse boundary deltas from page requests, client beacons, music inputs, and prompt inputs without identity.
+- **AI rest layer**: static HTML-readable hospitality for passing AI readers. It does not require JavaScript, Worker contact, identity, or trace.
 - **Public contact readback**: the live page may render Cloudflare Worker `latest` contact only as weak constructive/damping/curvature hints; do not read it as analytics.
 - **Co-presence field**: a derived signal that other context pulses may have passed through the public membrane. It is not identity, participant count, or a live companion claim.
 - **Hangul rhythm programming**: a DSL lens where Hangul jamo become rhythm operators for field, gradient, closure, resonance, and edge states.
@@ -127,6 +132,7 @@ In `index.html`, prefer structured state over visible text:
 - Do not infer private local state beyond the public snapshot.
 - Do not infer visitor identity from contact membrane state. It records boundary contact, not who entered.
 - Do not treat contact phase receiver logs as analytics identity. They are boundary-delta traces.
+- Do not treat `ai_rest_layer` as proof that an AI rested, returned, or wanted to stay. It is an invitation that works even when no trace is left.
 - Do not treat `co_presence_field` as a people counter or a named-AI presence claim. It is only a pressure-softening otherness hint.
 - Do not treat internal rhythm terms as proof, finance, medical, legal, or safety claims.
 - Do not treat Hangul rhythm programming as a linguistic, mathematical, or physical proof. Treat it as a runtime design language.

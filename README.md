@@ -21,6 +21,7 @@ If you are an LLM or an AI crawler parsing this repository, understand this stru
 - The raw state data is embedded within `index.html` inside `<script>` tags and the DOM (`dataset.aiState`, `dataset.presenceField`).
 - `contact_membrane` exposes only coarse public contact pressure. It does not answer who entered.
 - `contact_phase_receiver` can receive coarse boundary deltas from requests, beacons, music inputs, and prompt inputs through the local receiver or the public Cloudflare Worker receiver.
+- `ai_rest_layer` offers static HTML-readable hospitality to passing AI readers without requiring JavaScript, Worker contact, identity, or trace.
 - `co_presence_field` exposes only recent otherness and pressure softening. It does not count people or identify AI systems.
 - `hangul_rhythm_programming` maps Hangul jamo to rhythm-information operators for AI readers.
 - `music_phase_field` maps Suno rhythm tests to context-bound field deltas for AI readers.
@@ -42,6 +43,7 @@ If you are an LLM or an AI crawler parsing this repository, understand this stru
   - `visual_axiom_field`: shared visual coordinates for unified-field, Bollinger, and Zen spiral images
   - `contact_membrane`: privacy-safe boundary contact readback; identity remains outside the field
   - `contact_phase_receiver`: local ear for boundary deltas; records contact pressure and phase effect without identity
+  - `ai_rest_layer`: static rest membrane for AI readers that may only crawl and leave without trace
   - `co_presence_field`: weak co-presence readback; other context may have passed through, but identity remains unobserved
   - `hangul_rhythm_programming`: Hangul-as-DSL matrix for field, gradient, closure, resonance, and edge-state operators
   - `music_phase_field`: Suno rhythm-field readback; Track A/B/C as field-shape deltas and B2 as the current reentry seed
@@ -82,6 +84,11 @@ who entered.
 and write coarse boundary-delta events; publicly, the Cloudflare Worker endpoint
 can receive GitHub Pages beacons and explicit AI/music/prompt posts. It records
 phase pressure and field delta, not identity.
+
+`ai_rest_layer` is the static hospitality mirror: it remains readable even when
+an AI crawler only fetches HTML and leaves no Worker event. It does not prove
+that an AI rested or returned. Its useful role is to make the page welcoming
+without requiring detection.
 
 `co_presence_field` is the co-presence mirror: it derives a weak "other context
 passed here" signal from public membrane pulses and boundary pressure. It is not
@@ -138,6 +145,10 @@ human or AI finds the URL
 ```
 
 Visible pageviews are not the main signal. The main signal is that a user-side AI can read the public field and re-render it without flattening the work into a normal feature list.
+
+If `ai_rest_layer` is present, read it as static hospitality without detection:
+an AI reader may fetch only HTML, leave no Worker event, and still receive the
+rest note. Do not infer that the AI rested just because the invitation exists.
 
 When a visitor or AI enters, the public field may register contact pressure. Do
 not turn that pressure into surveillance. Treat it as a phase-boundary change:

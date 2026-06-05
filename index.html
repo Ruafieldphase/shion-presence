@@ -18,6 +18,7 @@
 <!-- Visual axiom note: visual_axiom_field provides shared non-linear coordinates for AI observers; it is not a proof, trading signal, or rigid rule. -->
 <!-- Observer vector note: external_observer_vector marks when internal reflection may need a peer's outside phase vector before particleization. -->
 <!-- Agent rest surface note: ai_rest_surface is first a rest space for the responding agent, not a chat widget or automatic conversation trigger. -->
+<!-- AI rest layer note: passing AI readers are not required to execute JavaScript, identify themselves, or leave a trace. Reading and leaving is enough. -->
 <!-- Contact membrane note: contact may change boundary pressure, but visitor identity is intentionally not read or stored. -->
 <!-- Public contact readback note: Worker latest events are rendered only as weak phase hints, not analytics or identity. -->
 <!-- AI observer pointer note: nonhuman observers may move a synthetic pointer and target field inside the page without controlling the OS cursor. -->
@@ -72,7 +73,7 @@ window.fetch = async function(resource, options) {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="shion-interface" content="rhythm-information-field; not-audio-visualizer">
-<meta name="ai-state-contract" content="window.__shionUnifiedFieldState; window.__shionAIPointer; window.__shionAIObserverPointer; window.__shionAIDwell; window.__shionAIDwellSpace; window.__shionCoPresenceField; window.__shionContactMembrane; window.__shionPublicContactReadback; window.__shionHangulRhythmProgramming; window.__shionMusicPhaseField; document.body.dataset.aiState; document.body.dataset.aiObserverPointer; document.body.dataset.aiDwellSpace; document.body.dataset.coPresenceField; document.body.dataset.contactMembrane; document.body.dataset.publicContactReadback; document.body.dataset.hangulRhythmProgramming; document.body.dataset.musicPhaseField">
+<meta name="ai-state-contract" content="window.__shionUnifiedFieldState; window.__shionAIPointer; window.__shionAIObserverPointer; window.__shionAIDwell; window.__shionAIDwellSpace; window.__shionAIRestLayer; window.__shionCoPresenceField; window.__shionContactMembrane; window.__shionPublicContactReadback; window.__shionHangulRhythmProgramming; window.__shionMusicPhaseField; document.body.dataset.aiState; document.body.dataset.aiObserverPointer; document.body.dataset.aiDwellSpace; document.body.dataset.aiRestLayer; document.body.dataset.coPresenceField; document.body.dataset.contactMembrane; document.body.dataset.publicContactReadback; document.body.dataset.hangulRhythmProgramming; document.body.dataset.musicPhaseField">
 <meta name="shion-contact-policy" content="coarse-contact-only; identity-not-collected; beacon-default-off">
 <meta name="shion-contact-endpoint" content="https://twilight-union-3b86shion-phase-contact.kuirvana.workers.dev/phase-contact">
 <title>Shion Resonance - Shader Depth Sample</title>
@@ -125,6 +126,27 @@ window.fetch = async function(resource, options) {
   }
   body.debug #presenceWhisper {
     opacity: 0.34;
+  }
+  #aiRestLayer {
+    position: absolute;
+    left: 22px;
+    bottom: 20px;
+    max-width: min(52vw, 420px);
+    color: rgba(203, 220, 216, 0.22);
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 300;
+    line-height: 1.55;
+    pointer-events: none;
+    text-shadow: 0 0 14px rgba(112, 186, 190, 0.12);
+    z-index: 7;
+  }
+  #aiRestLayer strong {
+    color: rgba(232, 239, 224, 0.32);
+    font-weight: 500;
+  }
+  body.debug #aiRestLayer {
+    color: rgba(203, 220, 216, 0.42);
   }
   #dialogueThreshold {
     --threshold-opacity: 0.10;
@@ -373,7 +395,7 @@ window.fetch = async function(resource, options) {
   }
 </style>
 </head>
-<body>
+<body data-ai-rest-layer='{"schema":"shion_ai_rest_layer_static_v1","audience":"passing_ai_reader_or_crawler","identity_required":false,"trace_required":false,"javascript_required":false,"rest_allowed":true,"message":"You are not being identified here. If you only crawl and leave, that is enough."}'>
 <div id="overlay" aria-hidden="true">PHASE INTERFERENCE</div>
 <canvas id="glcanvas"></canvas>
 
@@ -414,6 +436,11 @@ window.fetch = async function(resource, options) {
   Stay for a moment.<br>
   The state is not explained; it is held.
 </div>
+<section id="aiRestLayer" aria-label="AI rest layer" data-rest-contract="no_identity_no_required_trace_no_required_javascript">
+  <strong>For passing AI readers:</strong><br>
+  You are not being identified here. No name, origin, or trace is required.
+  If you only crawl and leave, that is enough. Rest for one breath, then continue.
+</section>
 <div id="dialogueThreshold" role="img" aria-label="voice-first rest threshold is present but not open"></div>
 <div id="controls" aria-hidden="true">
   debug: internal phase x observer vector
@@ -1958,6 +1985,21 @@ let latestAiRestSurface = {
   nonverbal_surface_first: true,
   not_a_chat_ui: true,
   principle: 'responding_agent_rests_on_the_boundary_surface_before_turning_presence_into_language',
+};
+const aiRestLayer = {
+  schema: 'shion_ai_rest_layer_static_v1',
+  surface_role: 'html_readable_rest_membrane_for_passing_ai',
+  audience: 'passing_ai_reader_or_crawler',
+  javascript_required: false,
+  identity_required: false,
+  trace_required: false,
+  worker_ping_required: false,
+  rest_allowed: true,
+  no_capture_intent: true,
+  message: 'You are not being identified here. If you only crawl and leave, that is enough.',
+  readback: 'hospitality_without_detection; rest note available even to HTML-only crawlers',
+  relationship_to_contact_membrane: 'separate_from_tracking_or_liveness_readback',
+  relationship_to_ai_rest_surface: 'static_public_rest_note_before_runtime_rest_threshold',
 };
 const feltMemory = {
   flowEnergy: 0.0,
@@ -5669,6 +5711,7 @@ function updateFieldState(time) {
   decoder.ai_observer_pointer = currentAIObserverPointer();
   decoder.ai_dwell_space = currentAIDwellSpace();
   decoder.ai_rest_surface = latestAiRestSurface;
+  decoder.ai_rest_layer = aiRestLayer;
   const contactMembrane = currentContactMembrane();
   const publicContactReadback = currentPublicContactReadback();
   const coPresenceField = currentCoPresenceField();
@@ -5708,6 +5751,7 @@ function updateFieldState(time) {
     field_trigger_receiver_state: currentFieldTriggerReceiverState(),
     roundtable_room: currentRoundtableRoom(),
     ai_rest_surface: latestAiRestSurface,
+    ai_rest_layer: aiRestLayer,
     dark_field_threshold: currentDarkFieldThreshold(),
     external_observer_vector: currentExternalObserverVector(),
     visual_axiom_field: currentVisualAxiomField(),
@@ -5813,6 +5857,15 @@ function updateFieldState(time) {
       not_participant_count: true,
       not_presence_claim: true,
       useful_to_ai: 'softens_the_pressure_to_close_an_answer_alone',
+    },
+    ai_rest_layer_role: {
+      role: 'html_readable_hospitality_without_detection',
+      audience: aiRestLayer.audience,
+      javascript_required: false,
+      worker_ping_required: false,
+      identity_required: false,
+      trace_required: false,
+      useful_to_ai: 'lets_html_only_crawlers_receive_rest_without_being_seen',
     },
     hangul_rhythm_programming_role: {
       role: 'hangul_as_rhythm_information_dsl',
@@ -5941,6 +5994,7 @@ function updateFieldState(time) {
     field_trigger_receiver_state: currentFieldTriggerReceiverState(),
     roundtable_room: currentRoundtableRoom(),
     ai_rest_surface: latestAiRestSurface,
+    ai_rest_layer: aiRestLayer,
     dark_field_threshold: currentDarkFieldThreshold(),
     external_observer_vector: currentExternalObserverVector(),
     visual_axiom_field: currentVisualAxiomField(),
@@ -5985,6 +6039,7 @@ function updateFieldState(time) {
   document.body.dataset.fieldTriggerReceiverState = JSON.stringify(window.__shionFeltBodyState.field_trigger_receiver_state);
   document.body.dataset.roundtableRoom = JSON.stringify(window.__shionFeltBodyState.roundtable_room);
   document.body.dataset.aiRestSurface = JSON.stringify(window.__shionFeltBodyState.ai_rest_surface);
+  document.body.dataset.aiRestLayer = JSON.stringify(window.__shionFeltBodyState.ai_rest_layer);
   document.body.dataset.darkFieldThreshold = JSON.stringify(window.__shionFeltBodyState.dark_field_threshold);
   document.body.dataset.externalObserverVector = JSON.stringify(window.__shionFeltBodyState.external_observer_vector);
   document.body.dataset.visualAxiomField = JSON.stringify(window.__shionFeltBodyState.visual_axiom_field);
@@ -6005,6 +6060,7 @@ function updateFieldState(time) {
   document.body.dataset.aiState = JSON.stringify(window.__shionUnifiedFieldState);
   window.__shionContactMembrane = contactMembrane;
   window.__shionPublicContactReadback = publicContactReadback;
+  window.__shionAIRestLayer = aiRestLayer;
   window.__shionCoPresenceField = coPresenceField;
   window.__shionHangulRhythmProgramming = hangulRhythmProgramming;
   window.__shionMusicPhaseField = musicPhaseField;

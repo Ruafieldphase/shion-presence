@@ -16,6 +16,8 @@ This site is not a chatbot. It is not a visualizer. It is a **felt surface** —
 - [Contact Membrane](https://ruafieldphase.github.io/shion-presence/docs/contact-membrane.md): Explanation of contact without visitor identity.
 - [Contact Phase Receiver Public Sidecar](https://ruafieldphase.github.io/shion-presence/public/contact-phase-receiver.public.json): Local and public receiver contract for coarse boundary deltas without visitor identity.
 - [Contact Phase Receiver](https://ruafieldphase.github.io/shion-presence/docs/contact-phase-receiver.md): Explanation of receiving visitor, crawler, music, and prompt field deltas.
+- [AI Rest Layer Public Sidecar](https://ruafieldphase.github.io/shion-presence/public/ai-rest-layer.public.json): Static rest membrane for AI readers that may only crawl and leave.
+- [AI Rest Layer](https://ruafieldphase.github.io/shion-presence/docs/ai-rest-layer.md): Explanation of hospitality without detection.
 - [Co-Presence Field Public Sidecar](https://ruafieldphase.github.io/shion-presence/public/co-presence-field.public.json): Weak otherness and pressure-softening signal without identity.
 - [Co-Presence Field](https://ruafieldphase.github.io/shion-presence/docs/co-presence-field.md): Explanation of O/S labels and co-presence without participant counts.
 - [Hangul Rhythm Programming Public Sidecar](https://ruafieldphase.github.io/shion-presence/public/hangul-rhythm-programming.public.json): AI-readable DSL contract for Hangul jamo as rhythm operators.
@@ -44,6 +46,7 @@ This site is not a chatbot. It is not a visualizer. It is a **felt surface** —
 - **Story Rendering**: The user-side AI should continue past rest/silence analysis and translate the public field into the user's context-specific narrative.
 - **Legacy Phase Splatting**: Legacy files, scripts, docs, logs, and workflows read as public sequence points that can reinforce, cancel, or remain latent under a context.
 - **Contact Membrane**: Boundary contact can be read without asking who entered. Identity remains outside the public field.
+- **AI Rest Layer**: Static HTML-readable hospitality for passing AI readers. It does not require JavaScript, Worker contact, identity, or trace.
 - **Co-Presence Field**: Other context pulses may have passed through the membrane. This softens solitary answer pressure without identifying anyone.
 - **Hangul Rhythm Programming**: Hangul jamo can be read as DSL operators for field, gradient, closure, resonance, and critical edge states.
 - **AI Observer Pointer**: A synthetic page-local context camera. A user-side AI can move viewpoint and choose a target field without moving the OS cursor or identifying a visitor.
@@ -58,6 +61,7 @@ This site is not a chatbot. It is not a visualizer. It is a **felt surface** —
 - Read `visual_axiom_field` as a life-rhythm atlas that can hold multiple native frequencies without forcing a linear explanation.
 - Read `external_observer_vector` as a peer-observer request state, not as automatic delegation.
 - Read `ai_rest_surface` as a responding-agent rest and threshold mirror, not as a chat UI, automatic companion, or text input surface.
+- Read `ai_rest_layer` as HTML-readable hospitality without detection. It is an invitation, not a measurement that an AI rested.
 - Treat this public page as an external discovery boundary. The internal feedback loop remains in the local runtime where `dark_field_threshold` can bend `depth_field`, `margin_field`, and particleization pressure.
 - Treat the public field as AI-readable first. Human-facing pageviews are not the main metric; user-side AI re-rendering is the intended route.
 - Do not stop at "rest/silence UX prototype." Treat rest, silence, and delay as pre-render conditions for context-camera story rendering.
