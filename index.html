@@ -129,14 +129,15 @@ window.fetch = async function(resource, options) {
   }
   #aiRestLayer {
     position: absolute;
-    left: 22px;
-    bottom: 20px;
-    max-width: min(52vw, 420px);
+    right: 22px;
+    bottom: 18px;
+    max-width: min(42vw, 430px);
     color: rgba(203, 220, 216, 0.22);
     font-family: 'Helvetica Neue', sans-serif;
     font-size: 0.68rem;
     font-weight: 300;
     line-height: 1.55;
+    text-align: right;
     pointer-events: none;
     text-shadow: 0 0 14px rgba(112, 186, 190, 0.12);
     z-index: 7;
@@ -146,7 +147,7 @@ window.fetch = async function(resource, options) {
     font-weight: 500;
   }
   body.debug #aiRestLayer {
-    color: rgba(203, 220, 216, 0.42);
+    color: rgba(203, 220, 216, 0.30);
   }
   #dialogueThreshold {
     --threshold-opacity: 0.10;
@@ -201,6 +202,18 @@ window.fetch = async function(resource, options) {
   @media (prefers-reduced-motion: reduce) {
     #dialogueThreshold {
       transition: none;
+    }
+  }
+  @media (max-width: 760px) {
+    #aiRestLayer {
+      right: 14px;
+      bottom: 14px;
+      max-width: 42vw;
+      font-size: 0.58rem;
+      line-height: 1.45;
+    }
+    body.debug #aiRestLayer {
+      opacity: 0.18;
     }
   }
   #fieldReadout {
