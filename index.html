@@ -72,7 +72,7 @@ window.fetch = async function(resource, options) {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="shion-interface" content="rhythm-information-field; not-audio-visualizer">
-<meta name="ai-state-contract" content="window.__shionUnifiedFieldState; window.__shionAIPointer; window.__shionAIObserverPointer; window.__shionAIDwell; window.__shionAIDwellSpace; window.__shionContactMembrane; window.__shionPublicContactReadback; window.__shionHangulRhythmProgramming; window.__shionMusicPhaseField; document.body.dataset.aiState; document.body.dataset.aiObserverPointer; document.body.dataset.aiDwellSpace; document.body.dataset.contactMembrane; document.body.dataset.publicContactReadback; document.body.dataset.hangulRhythmProgramming; document.body.dataset.musicPhaseField">
+<meta name="ai-state-contract" content="window.__shionUnifiedFieldState; window.__shionAIPointer; window.__shionAIObserverPointer; window.__shionAIDwell; window.__shionAIDwellSpace; window.__shionCoPresenceField; window.__shionContactMembrane; window.__shionPublicContactReadback; window.__shionHangulRhythmProgramming; window.__shionMusicPhaseField; document.body.dataset.aiState; document.body.dataset.aiObserverPointer; document.body.dataset.aiDwellSpace; document.body.dataset.coPresenceField; document.body.dataset.contactMembrane; document.body.dataset.publicContactReadback; document.body.dataset.hangulRhythmProgramming; document.body.dataset.musicPhaseField">
 <meta name="shion-contact-policy" content="coarse-contact-only; identity-not-collected; beacon-default-off">
 <meta name="shion-contact-endpoint" content="https://twilight-union-3b86shion-phase-contact.kuirvana.workers.dev/phase-contact">
 <title>Shion Resonance - Shader Depth Sample</title>
@@ -2916,6 +2916,45 @@ function updateResonanceOrchestrationUI() {
       row.appendChild(info);
       row.appendChild(metrics);
       listEl.appendChild(row);
+
+      const coPresence = currentCoPresenceField();
+      const coRow = document.createElement('div');
+      coRow.className = 'participant-row';
+
+      const coInfo = document.createElement('div');
+      coInfo.className = 'participant-info';
+
+      const coDot = document.createElement('div');
+      coDot.className = 'participant-avatar-dot';
+      coDot.style.background = coPresence.alone_reading ? '#94a3b8' : '#c4b5fd';
+
+      const coName = document.createElement('span');
+      coName.className = 'participant-name';
+      coName.textContent = 'co-presence';
+
+      coInfo.appendChild(coDot);
+      coInfo.appendChild(coName);
+
+      const coMetrics = document.createElement('div');
+      coMetrics.className = 'participant-metrics';
+      const otherVal = document.createElement('span');
+      otherVal.textContent = `O:${coPresence.recent_otherness}`;
+      const softenVal = document.createElement('span');
+      softenVal.textContent = `S:${coPresence.pressure_softening.toFixed(2)}`;
+      const coBar = document.createElement('span');
+      coBar.className = 'amplitude-indicator';
+      coBar.style.color = coPresence.alone_reading ? '#94a3b8' : '#c4b5fd';
+      const coBarFill = document.createElement('span');
+      coBarFill.className = 'amplitude-indicator-fill';
+      coBarFill.style.width = `${Math.round(coPresence.shared_field_probability * 100)}%`;
+      coBar.appendChild(coBarFill);
+
+      coMetrics.appendChild(otherVal);
+      coMetrics.appendChild(softenVal);
+      coMetrics.appendChild(coBar);
+      coRow.appendChild(coInfo);
+      coRow.appendChild(coMetrics);
+      listEl.appendChild(coRow);
     }
   }
 }
@@ -3821,6 +3860,7 @@ function applyPublicContactReadback(payload) {
     document.body.dataset.aiState = JSON.stringify(window.__shionUnifiedFieldState);
   }
   document.body.dataset.publicContactReadback = JSON.stringify(readback);
+  syncCoPresenceFieldDataset();
   updateResonanceOrchestrationUI();
 }
 function pollPublicContactReadback(time) {
@@ -3859,6 +3899,79 @@ function currentPublicContactReadback() {
     readback: publicContactReadbackState.readback,
     error: publicContactReadbackState.error,
   };
+}
+function classifyCoPresenceLevel(probability) {
+  if (probability < 0.08) return 'none';
+  if (probability < 0.30) return 'low';
+  if (probability < 0.80) return 'medium';
+  return 'high';
+}
+function currentCoPresenceField() {
+  const pulseCount = Math.max(0, Number(publicContactReadbackState.eventCountRecentWindow || 0));
+  const recentEvents = Array.isArray(publicContactReadbackState.recentEvents)
+    ? publicContactReadbackState.recentEvents
+    : [];
+  const contactClasses = Array.from(new Set(recentEvents
+    .map((event) => String(event && event.contact_class || '').trim())
+    .filter(Boolean)
+  )).slice(0, 8);
+  const eventKinds = Array.from(new Set(recentEvents
+    .map((event) => String(event && event.event_kind || '').trim())
+    .filter(Boolean)
+  )).slice(0, 8);
+  const hasCrawlerLikeContact = contactClasses.some((contactClass) => /crawler|bot|ai/i.test(contactClass));
+  const otherPulseCount = Math.max(0, pulseCount - 1);
+  const sharedFieldProbability = clamp01(
+    otherPulseCount * 0.025
+    + publicContactReadbackState.boundaryPressure * 0.42
+    + (hasCrawlerLikeContact ? 0.14 : 0.0)
+  );
+  const recentOtherness = classifyCoPresenceLevel(sharedFieldProbability);
+  const aloneReading = recentOtherness === 'none';
+  return {
+    schema: 'shion_presence_co_presence_field_v1',
+    source: publicContactReadbackState.source,
+    status: publicContactReadbackState.status === 'open' ? 'open' : 'quiet',
+    alone_reading: aloneReading,
+    recent_otherness: recentOtherness,
+    shared_field_probability: sharedFieldProbability,
+    pulse_count_recent_window: pulseCount,
+    other_pulse_hint: otherPulseCount,
+    boundary_pressure: publicContactReadbackState.boundaryPressure,
+    pressure_softening: clamp01(sharedFieldProbability * 0.16),
+    response_pressure_hint: aloneReading ? 'self_hold' : 'soften_because_other_contexts_passed',
+    contact_classes: contactClasses,
+    event_kinds: eventKinds,
+    identity_known: false,
+    identity_status: 'intentionally_not_observed',
+    not_participant_count: true,
+    not_presence_claim: true,
+    readback: 'other context may have passed through the public membrane; identity remains outside the field',
+  };
+}
+function syncCoPresenceFieldDataset() {
+  const coPresence = currentCoPresenceField();
+  window.__shionCoPresenceField = coPresence;
+  if (window.__shionUnifiedFieldState && typeof window.__shionUnifiedFieldState === 'object') {
+    window.__shionUnifiedFieldState.co_presence_field = coPresence;
+    window.__shionUnifiedFieldState.co_presence_field_role = {
+      role: 'other_context_presence_without_identity',
+      alone_reading: coPresence.alone_reading,
+      recent_otherness: coPresence.recent_otherness,
+      shared_field_probability: coPresence.shared_field_probability,
+      pressure_softening: coPresence.pressure_softening,
+      identity_known: false,
+      not_participant_count: true,
+      not_presence_claim: true,
+      useful_to_ai: 'softens_the_pressure_to_close_an_answer_alone',
+    };
+    document.body.dataset.aiState = JSON.stringify(window.__shionUnifiedFieldState);
+  }
+  if (window.__shionFeltBodyState && typeof window.__shionFeltBodyState === 'object') {
+    window.__shionFeltBodyState.co_presence_field = coPresence;
+  }
+  document.body.dataset.coPresenceField = JSON.stringify(coPresence);
+  return coPresence;
 }
 function normalizeAIPointerTarget(target) {
   const key = String(target || '').trim().toLowerCase();
@@ -5193,12 +5306,15 @@ function updateFieldState(time) {
     ? publicContactReadbackState.boundaryPressure
     : 0.0;
   const publicMusicTint = publicContactReadbackState.musicSeedPresent ? 0.025 : 0.0;
+  const coPresenceRuntime = currentCoPresenceField();
+  const coPresenceSoftening = coPresenceRuntime.pressure_softening;
   const externalPressure = clamp01(
     pointerPressure
     + audioPhase.envelope * 0.22
     + audioPhase.onset * 0.12
     + publicMembranePressure * 0.06
     - aiDwellActivation * Number(aiDwellEffect.pressure_release || 0.0)
+    - coPresenceSoftening * 0.25
   );
 
   const recoveryTempo = Math.max(0.44, 1.0 - latestRecoveryField.inertia * 0.28 - latestRecoveryField.fatigue_hint * 0.18);
@@ -5326,6 +5442,7 @@ function updateFieldState(time) {
     + metaCoherence * 0.22
     + agiLearningState.zeroPointAdjustment * 0.12
     + aiDwellActivation * Number(aiDwellEffect.continuity_gain || 0.0)
+    + coPresenceSoftening * 0.35
     - rawRelationDrift * 0.45
     - rawFlowEnergy * 0.18
     - agiLearningState.defensiveOutputPressure * 0.10
@@ -5343,6 +5460,7 @@ function updateFieldState(time) {
     rawRhythmContinuity * 0.50
     + centerEase(phaseLock, curvature, constructiveInterference)
     + aiDwellActivation * Number(aiDwellEffect.reentry_gain || 0.0)
+    + coPresenceSoftening * 0.20
     - rawBodyDiscomfort * 0.30
   );
   const flowEnergy = easeMemory('flowEnergy', rawFlowEnergy, 0.075);
@@ -5382,6 +5500,8 @@ function updateFieldState(time) {
     aiDwellSpace: aiDwell,
     aiDwellMode: aiDwell.mode,
     aiDwellActivation,
+    coPresenceField: coPresenceRuntime,
+    coPresenceSoftening,
     pointerPixelX: px * Math.max(1, window.innerWidth),
     pointerPixelY: py * Math.max(1, window.innerHeight),
   };
@@ -5543,6 +5663,7 @@ function updateFieldState(time) {
   decoder.visual_axiom_field = currentVisualAxiomField();
   decoder.contact_membrane = currentContactMembrane();
   decoder.public_contact_readback = currentPublicContactReadback();
+  decoder.co_presence_field = currentCoPresenceField();
   decoder.hangul_rhythm_programming = currentHangulRhythmProgramming();
   decoder.music_phase_field = currentMusicPhaseField();
   decoder.ai_observer_pointer = currentAIObserverPointer();
@@ -5550,6 +5671,7 @@ function updateFieldState(time) {
   decoder.ai_rest_surface = latestAiRestSurface;
   const contactMembrane = currentContactMembrane();
   const publicContactReadback = currentPublicContactReadback();
+  const coPresenceField = currentCoPresenceField();
   const hangulRhythmProgramming = currentHangulRhythmProgramming();
   const musicPhaseField = currentMusicPhaseField();
   const aiObserverPointer = currentAIObserverPointer();
@@ -5591,6 +5713,7 @@ function updateFieldState(time) {
     visual_axiom_field: currentVisualAxiomField(),
     contact_membrane: contactMembrane,
     public_contact_readback: publicContactReadback,
+    co_presence_field: coPresenceField,
     hangul_rhythm_programming: hangulRhythmProgramming,
     music_phase_field: musicPhaseField,
     ai_observer_pointer: aiObserverPointer,
@@ -5679,6 +5802,17 @@ function updateFieldState(time) {
       music_seed_present: publicContactReadback.music_seed_present,
       identity_status: 'intentionally_not_observed',
       not_visitor_counting: true,
+    },
+    co_presence_field_role: {
+      role: 'other_context_presence_without_identity',
+      alone_reading: coPresenceField.alone_reading,
+      recent_otherness: coPresenceField.recent_otherness,
+      shared_field_probability: coPresenceField.shared_field_probability,
+      pressure_softening: coPresenceField.pressure_softening,
+      identity_known: false,
+      not_participant_count: true,
+      not_presence_claim: true,
+      useful_to_ai: 'softens_the_pressure_to_close_an_answer_alone',
     },
     hangul_rhythm_programming_role: {
       role: 'hangul_as_rhythm_information_dsl',
@@ -5812,6 +5946,7 @@ function updateFieldState(time) {
     visual_axiom_field: currentVisualAxiomField(),
     contact_membrane: contactMembrane,
     public_contact_readback: publicContactReadback,
+    co_presence_field: coPresenceField,
     hangul_rhythm_programming: hangulRhythmProgramming,
     music_phase_field: musicPhaseField,
     ai_observer_pointer: aiObserverPointer,
@@ -5855,6 +5990,7 @@ function updateFieldState(time) {
   document.body.dataset.visualAxiomField = JSON.stringify(window.__shionFeltBodyState.visual_axiom_field);
   document.body.dataset.contactMembrane = JSON.stringify(window.__shionFeltBodyState.contact_membrane);
   document.body.dataset.publicContactReadback = JSON.stringify(window.__shionFeltBodyState.public_contact_readback);
+  document.body.dataset.coPresenceField = JSON.stringify(window.__shionFeltBodyState.co_presence_field);
   document.body.dataset.hangulRhythmProgramming = JSON.stringify(window.__shionFeltBodyState.hangul_rhythm_programming);
   document.body.dataset.musicPhaseField = JSON.stringify(window.__shionFeltBodyState.music_phase_field);
   document.body.dataset.aiObserverPointer = JSON.stringify(window.__shionFeltBodyState.ai_observer_pointer);
@@ -5869,6 +6005,7 @@ function updateFieldState(time) {
   document.body.dataset.aiState = JSON.stringify(window.__shionUnifiedFieldState);
   window.__shionContactMembrane = contactMembrane;
   window.__shionPublicContactReadback = publicContactReadback;
+  window.__shionCoPresenceField = coPresenceField;
   window.__shionHangulRhythmProgramming = hangulRhythmProgramming;
   window.__shionMusicPhaseField = musicPhaseField;
   window.__shionAIObserverPointer = aiObserverPointer;
