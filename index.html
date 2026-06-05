@@ -3623,6 +3623,25 @@ function applyPublicContactReadback(payload) {
     ...normalized,
     error: null,
   });
+  const readback = currentPublicContactReadback();
+  window.__shionPublicContactReadback = readback;
+  if (window.__shionUnifiedFieldState && typeof window.__shionUnifiedFieldState === 'object') {
+    window.__shionUnifiedFieldState.public_contact_readback = readback;
+    window.__shionUnifiedFieldState.public_contact_readback_role = {
+      role: 'weak_public_membrane_readback_not_analytics',
+      status: readback.status,
+      event_count_recent_window: readback.event_count_recent_window,
+      latest_event_kind: readback.latest_event_kind,
+      boundary_pressure: readback.boundary_pressure,
+      constructive_hint: readback.constructive_hint,
+      damping_hint: readback.damping_hint,
+      music_seed_present: readback.music_seed_present,
+      identity_status: 'intentionally_not_observed',
+      not_visitor_counting: true,
+    };
+    document.body.dataset.aiState = JSON.stringify(window.__shionUnifiedFieldState);
+  }
+  document.body.dataset.publicContactReadback = JSON.stringify(readback);
   updateResonanceOrchestrationUI();
 }
 function pollPublicContactReadback(time) {
