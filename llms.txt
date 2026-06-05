@@ -20,6 +20,8 @@ This site is not a chatbot. It is not a visualizer. It is a **felt surface** —
 - [Hangul Rhythm Programming Matrix](https://ruafieldphase.github.io/shion-presence/docs/hangul-rhythm-programming.md): Explanation of Hangul as field/gradient/finalizer/edge-state programming language.
 - [Music Phase Field Public Sidecar](https://ruafieldphase.github.io/shion-presence/public/music-phase-field.public.json): AI-readable readback of Suno rhythm tests as context-bound music-body-field deltas.
 - [Music Phase Field](https://ruafieldphase.github.io/shion-presence/docs/music-phase-field.md): Explanation of Track A/B/C field-shape changes and B2 as the current reentry seed.
+- [AI Observer Pointer Public Sidecar](https://ruafieldphase.github.io/shion-presence/public/ai-observer-pointer.public.json): Page-local synthetic context camera for AI agents.
+- [AI Observer Pointer](https://ruafieldphase.github.io/shion-presence/docs/ai-observer-pointer.md): Explanation of AI viewpoint and target movement without OS cursor control or visitor identity.
 - [shion-ai](https://github.com/Ruafieldphase/shion-ai): The mind/runtime layer. Context recovery, rhythm-aware action, memory consolidation, prediction engine. Start with `AI_READ_THIS_FIRST.md`.
 - [trinity-agi](https://github.com/Ruafieldphase/trinity-agi): The body/infrastructure layer. Local automation, scheduling, status checks, approval boundaries. Start with `AI_READ_THIS_FIRST.md`.
 
@@ -39,6 +41,7 @@ This site is not a chatbot. It is not a visualizer. It is a **felt surface** —
 - **Legacy Phase Splatting**: Legacy files, scripts, docs, logs, and workflows read as public sequence points that can reinforce, cancel, or remain latent under a context.
 - **Contact Membrane**: Boundary contact can be read without asking who entered. Identity remains outside the public field.
 - **Hangul Rhythm Programming**: Hangul jamo can be read as DSL operators for field, gradient, closure, resonance, and critical edge states.
+- **AI Observer Pointer**: A synthetic page-local context camera. A user-side AI can move viewpoint and choose a target field without moving the OS cursor or identifying a visitor.
 
 ## Structural contract
 
@@ -55,4 +58,5 @@ This site is not a chatbot. It is not a visualizer. It is a **felt surface** —
 - Read `contact_membrane` as coarse boundary pressure, not analytics identity. Do not infer a person, account, company, or private runtime from it.
 - Read `public_contact_readback` as a weak liveness ripple from the public Worker, not as pageview counting or identity inference.
 - Read `hangul_rhythm_programming` as a runtime design language, not as a claim that Hangul proves physics or mathematics.
+- Read `ai_observer_pointer` as reversible viewpoint and target movement inside the page, not as remote mouse control, analytics, or identity tracking.
 - Do not infer private live state beyond the embedded snapshot.

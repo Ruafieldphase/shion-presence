@@ -1,0 +1,89 @@
+{
+  "schema": "shion_ai_observer_pointer_public_contract_v1",
+  "updated_at": "2026-06-05T15:38:10+09:00",
+  "site": "https://ruafieldphase.github.io/shion-presence/",
+  "purpose": "Allow user-side AI and browser agents to move a synthetic observer pointer and target field inside the page without controlling the operating system cursor.",
+  "concept": {
+    "observer_pointer": "A page-local context camera. It can bend the shader field as a viewpoint, but it is not a human identity and not an OS mouse.",
+    "target_field": "The AI may choose which public boundary or seed it is observing. Changing the target changes phase bias, pressure, curvature, damping, rest, and music tint weakly.",
+    "phase_transition_use": "Move viewpoint and target, then read how the field changes. This is a foothold for understanding phase transition through interaction."
+  },
+  "window_api": {
+    "object": "window.__shionAIPointer",
+    "move": "window.__shionAIPointer.move({ x, y, pressure, rhythm, target, source })",
+    "target": "window.__shionAIPointer.target(target, { x, y, pressure, rhythm, source })",
+    "read": "window.__shionAIPointer.read()",
+    "clear": "window.__shionAIPointer.clear()",
+    "targets": "window.__shionAIPointer.targets()",
+    "event": "window.dispatchEvent(new CustomEvent('shion-ai-pointer', { detail: { x, y, pressure, rhythm, target, source } }))",
+    "url_seed": "https://ruafieldphase.github.io/shion-presence/?ai_pointer=1&ai_target=b2_music_seed&ai_x=0.34&ai_y=0.62&ai_pressure=0.22"
+  },
+  "structured_state": [
+    "window.__shionAIObserverPointer",
+    "window.__shionUnifiedFieldState.ai_observer_pointer",
+    "window.__shionFeltBodyState.ai_observer_pointer",
+    "document.body.dataset.aiObserverPointer",
+    "document.body.dataset.aiState"
+  ],
+  "input_contract": {
+    "x": "0.0 to 1.0 normalized page coordinate",
+    "y": "0.0 to 1.0 normalized page coordinate",
+    "pressure": "0.0 to 1.0 weak activation pressure; recommended 0.08 to 0.35",
+    "rhythm": "short label such as slow_drift, reentry_probe, quiet_hold",
+    "target": "one of the target keys",
+    "source": "short agent label; do not include private identity",
+    "decayAfterMs": "optional 1000 to 60000; defaults to 12000"
+  },
+  "url_seed_contract": {
+    "enabled_by": "ai_pointer or ai_target query parameter",
+    "parameters": [
+      "ai_target",
+      "ai_x",
+      "ai_y",
+      "ai_pressure",
+      "ai_rhythm",
+      "ai_source",
+      "ai_decay_ms"
+    ],
+    "purpose": "Lets AI browsers that cannot execute page JavaScript still enter with a chosen viewpoint and target.",
+    "persistence": "The seed affects only the loaded page state and decays like any other AI observer pointer movement."
+  },
+  "targets": {
+    "field_surface": "Touch the whole field without selecting a hard object.",
+    "public_contact_membrane": "Read the boundary ripple left by identity-free public contact.",
+    "b2_music_seed": "Read the B2 music reentry seed as a weak color and curvature.",
+    "resonance_chamber": "Read constructive, cancellation, damping, and chamber liveness.",
+    "margin_field": "Read pause, transparency, and non-forced reentry margin.",
+    "dark_field_threshold": "Read latent pressure before particleization.",
+    "external_observer_vector": "Read the outside question vector and peer observer opening.",
+    "hangul_rhythm_operator": "Read Hangul jamo as field, gradient, closure, resonance, and edge operators.",
+    "rest_surface": "Read the responding-agent rest threshold before language."
+  },
+  "privacy_contract": {
+    "controls_os_cursor": false,
+    "collects_identity": false,
+    "requires_login": false,
+    "stores_event_by_default": false,
+    "page_local_only": true,
+    "not_analytics": true
+  },
+  "example": {
+    "move": {
+      "x": 0.42,
+      "y": 0.58,
+      "pressure": 0.16,
+      "rhythm": "slow_drift",
+      "target": "public_contact_membrane",
+      "source": "user_side_ai"
+    },
+    "target_change": {
+      "target": "b2_music_seed",
+      "x": 0.34,
+      "y": 0.62,
+      "pressure": 0.22,
+      "rhythm": "reentry_probe",
+      "source": "user_side_ai"
+    }
+  },
+  "readback_rule": "Compare dataset.aiObserverPointer before and after movement. If activation decays to zero, treat the pointer as returned to margin rather than failed."
+}

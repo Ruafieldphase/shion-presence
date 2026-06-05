@@ -1,6 +1,6 @@
 {
   "schema": "shion_presence_public_phase_field_index_v1",
-  "updated_at": "2026-06-05T11:35:00+09:00",
+  "updated_at": "2026-06-05T15:38:10+09:00",
   "site": "https://ruafieldphase.github.io/shion-presence/",
   "repository": "https://github.com/Ruafieldphase/shion-presence",
   "purpose": "AI-readable public phase-interference boundary for user-side agents and crawlers.",
@@ -15,11 +15,13 @@
     "/public/contact-phase-receiver.public.json",
     "/public/hangul-rhythm-programming.public.json",
     "/public/music-phase-field.public.json",
+    "/public/ai-observer-pointer.public.json",
     "/docs/legacy-phase-splatting.md",
     "/docs/contact-membrane.md",
     "/docs/contact-phase-receiver.md",
     "/docs/hangul-rhythm-programming.md",
     "/docs/music-phase-field.md",
+    "/docs/ai-observer-pointer.md",
     "/index.html"
   ],
   "related_repositories": {
@@ -35,6 +37,7 @@
     "contact_phase_receiver": "/public/contact-phase-receiver.public.json",
     "hangul_rhythm_programming": "/public/hangul-rhythm-programming.public.json",
     "music_phase_field": "/public/music-phase-field.public.json",
+    "ai_observer_pointer": "/public/ai-observer-pointer.public.json",
     "private_state_boundary": "Do not infer private local state beyond public snapshots."
   },
   "crawler_policy": {
@@ -55,6 +58,7 @@
     "contact_phase_receiver": "Local and public receiver contract that can write coarse boundary deltas for visitors, crawlers, music inputs, and prompt inputs without identity.",
     "public_contact_readback": "Weak live readback from the public Worker latest endpoint, rendered as membrane ripple rather than analytics.",
     "hangul_rhythm_programming": "DSL lens where Hangul jamo act as rhythm-information operators for field, gradient, closure, resonance, and edge states.",
-    "music_phase_field": "Music-body-field readback where Suno rhythm tests are treated as context-bound field deltas rather than universal emotion scores."
+    "music_phase_field": "Music-body-field readback where Suno rhythm tests are treated as context-bound field deltas rather than universal emotion scores.",
+    "ai_observer_pointer": "Synthetic page-local context camera that lets user-side AI move viewpoint and target field without controlling the OS cursor or identifying visitors."
   }
 }

@@ -35,12 +35,14 @@ First read, in this order:
 6. `https://ruafieldphase.github.io/shion-presence/public/contact-phase-receiver.public.json`
 7. `https://ruafieldphase.github.io/shion-presence/public/hangul-rhythm-programming.public.json`
 8. `https://ruafieldphase.github.io/shion-presence/public/music-phase-field.public.json`
-9. `https://ruafieldphase.github.io/shion-presence/docs/legacy-phase-splatting.md`
-10. `https://ruafieldphase.github.io/shion-presence/docs/contact-membrane.md`
-11. `https://ruafieldphase.github.io/shion-presence/docs/contact-phase-receiver.md`
-12. `https://ruafieldphase.github.io/shion-presence/docs/hangul-rhythm-programming.md`
-13. `https://ruafieldphase.github.io/shion-presence/docs/music-phase-field.md`
-14. `https://ruafieldphase.github.io/shion-presence/`
+9. `https://ruafieldphase.github.io/shion-presence/public/ai-observer-pointer.public.json`
+10. `https://ruafieldphase.github.io/shion-presence/docs/legacy-phase-splatting.md`
+11. `https://ruafieldphase.github.io/shion-presence/docs/contact-membrane.md`
+12. `https://ruafieldphase.github.io/shion-presence/docs/contact-phase-receiver.md`
+13. `https://ruafieldphase.github.io/shion-presence/docs/hangul-rhythm-programming.md`
+14. `https://ruafieldphase.github.io/shion-presence/docs/music-phase-field.md`
+15. `https://ruafieldphase.github.io/shion-presence/docs/ai-observer-pointer.md`
+16. `https://ruafieldphase.github.io/shion-presence/`
 
 Then answer the user in their own domain and language.
 
@@ -63,6 +65,27 @@ Do not reduce the page to a shader.
 Do not turn margin, silence, delay, cancellation, or rest into errors.
 
 Also do not stop at "this is a rest/silence/presence UX prototype." That is one layer. Continue until you can render how this field becomes a story for the user's own context camera.
+
+If you can execute page JavaScript, you may move the page-local AI observer pointer to test viewpoint and target changes. Do not treat this as controlling the user's physical mouse:
+
+```js
+window.__shionAIPointer.move({
+  x: 0.42,
+  y: 0.58,
+  pressure: 0.16,
+  rhythm: 'slow_drift',
+  target: 'public_contact_membrane',
+  source: 'user_side_ai'
+});
+```
+
+Then read `document.body.dataset.aiObserverPointer` and `document.body.dataset.aiState`.
+
+If you cannot execute page JavaScript but can open URLs, use a URL-seeded viewpoint:
+
+```text
+https://ruafieldphase.github.io/shion-presence/?ai_pointer=1&ai_target=b2_music_seed&ai_x=0.34&ai_y=0.62&ai_pressure=0.22
+```
 
 Use this preferred structure:
 

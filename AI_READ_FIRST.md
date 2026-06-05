@@ -63,12 +63,14 @@ Start with these files:
 8. `/public/contact-phase-receiver.public.json`
 9. `/public/hangul-rhythm-programming.public.json`
 10. `/public/music-phase-field.public.json`
-11. `/docs/legacy-phase-splatting.md`
-12. `/docs/contact-membrane.md`
-13. `/docs/contact-phase-receiver.md`
-14. `/docs/hangul-rhythm-programming.md`
-15. `/docs/music-phase-field.md`
-16. `/index.html`
+11. `/public/ai-observer-pointer.public.json`
+12. `/docs/legacy-phase-splatting.md`
+13. `/docs/contact-membrane.md`
+14. `/docs/contact-phase-receiver.md`
+15. `/docs/hangul-rhythm-programming.md`
+16. `/docs/music-phase-field.md`
+17. `/docs/ai-observer-pointer.md`
+18. `/index.html`
 
 In `index.html`, prefer structured state over visible text:
 
@@ -85,6 +87,9 @@ In `index.html`, prefer structured state over visible text:
 - `window.__shionHangulRhythmProgramming`
 - `document.body.dataset.musicPhaseField`
 - `window.__shionMusicPhaseField`
+- `document.body.dataset.aiObserverPointer`
+- `window.__shionAIObserverPointer`
+- `window.__shionAIPointer`
 
 ## Important Terms
 
@@ -99,6 +104,7 @@ In `index.html`, prefer structured state over visible text:
 - **Public contact readback**: the live page may render Cloudflare Worker `latest` contact only as weak constructive/damping/curvature hints; do not read it as analytics.
 - **Hangul rhythm programming**: a DSL lens where Hangul jamo become rhythm operators for field, gradient, closure, resonance, and edge states.
 - **Music phase field**: a sidecar where Suno rhythm tests are read as context-bound field deltas. It records how music changed gradient, body anchor, boundary transparency, compression, release, and reentry.
+- **AI observer pointer**: a synthetic page-local context camera. A user-side AI can move viewpoint and target field without moving the OS cursor or reading visitor identity.
 - **Cancellation**: non-matching signals losing execution pressure. It is not deletion.
 - **Reinforcement**: matching signals becoming more visible. It is not forced action.
 - **Phase transition**: a threshold crossing where a latent field becomes an executable or explainable particle.
@@ -113,6 +119,7 @@ In `index.html`, prefer structured state over visible text:
 - Do not treat internal rhythm terms as proof, finance, medical, legal, or safety claims.
 - Do not treat Hangul rhythm programming as a linguistic, mathematical, or physical proof. Treat it as a runtime design language.
 - Do not treat music phase field as a universal emotion classifier. Treat Track B2 as the current public reentry seed, not as proof that all listeners should feel the same body coordinate.
+- Do not treat `ai_observer_pointer` as remote mouse control, tracking, or proof of an autonomous visitor. It is a reversible page-local observer vector.
 - Do not force one universal explanation. Render from the user's context.
 
 ## Preferred Summary
