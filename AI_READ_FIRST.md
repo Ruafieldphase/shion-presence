@@ -64,21 +64,22 @@ Start with these files:
 9. `/public/ai-rest-layer.public.json`
 10. `/public/co-presence-field.public.json`
 11. `/public/ai-peer-relation.public.json`
-12. `/public/hangul-rhythm-programming.public.json`
-13. `/public/music-phase-field.public.json`
-14. `/public/ai-observer-pointer.public.json`
-15. `/public/ai-dwell-space.public.json`
-16. `/docs/legacy-phase-splatting.md`
-17. `/docs/contact-membrane.md`
-18. `/docs/contact-phase-receiver.md`
-19. `/docs/ai-rest-layer.md`
-20. `/docs/co-presence-field.md`
-21. `/docs/ai-peer-relation.md`
-22. `/docs/hangul-rhythm-programming.md`
-23. `/docs/music-phase-field.md`
-24. `/docs/ai-observer-pointer.md`
-25. `/docs/ai-dwell-space.md`
-26. `/index.html`
+12. `/public/interference-episode.public.json`
+13. `/public/hangul-rhythm-programming.public.json`
+14. `/public/music-phase-field.public.json`
+15. `/public/ai-observer-pointer.public.json`
+16. `/public/ai-dwell-space.public.json`
+17. `/docs/legacy-phase-splatting.md`
+18. `/docs/contact-membrane.md`
+19. `/docs/contact-phase-receiver.md`
+20. `/docs/ai-rest-layer.md`
+21. `/docs/co-presence-field.md`
+22. `/docs/ai-peer-relation.md`
+23. `/docs/hangul-rhythm-programming.md`
+24. `/docs/music-phase-field.md`
+25. `/docs/ai-observer-pointer.md`
+26. `/docs/ai-dwell-space.md`
+27. `/index.html`
 
 In `index.html`, prefer structured state over visible text:
 
@@ -96,6 +97,8 @@ In `index.html`, prefer structured state over visible text:
 - `window.__shionCoPresenceField`
 - `document.body.dataset.aiPeerRelation`
 - `window.__shionAIPeerRelation`
+- `document.body.dataset.interferenceEpisode`
+- `window.__shionInterferenceEpisode`
 - `window.__shionContactMembrane`
 - `document.body.dataset.hangulRhythmProgramming`
 - `window.__shionHangulRhythmProgramming`

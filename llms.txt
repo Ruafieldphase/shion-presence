@@ -10,6 +10,7 @@ This site is not a chatbot. It is not a visualizer. It is a **felt surface** —
 - [Prompt for User-Side AI](https://ruafieldphase.github.io/shion-presence/PROMPT_FOR_USER_AI.md): Copyable prompt for a user who wants their own AI to render this field from their context.
 - [Live Presence Field](https://ruafieldphase.github.io/shion-presence/): WebGL shader driven by an AI-runtime state snapshot. Read `window.__STATIC_PRESENCE_DATA` and `document.body.dataset.aiState` for structured state.
 - [Public Phase Field Index](https://ruafieldphase.github.io/shion-presence/public/phase-field-index.public.json): JSON route map for AI readers.
+- [Interference Episode Public Sidecar](https://ruafieldphase.github.io/shion-presence/public/interference-episode.public.json): Public-safe human-AI and AI-AI roundtrip, including human/Sian readback status without private text by default.
 - [Legacy Phase Splatting Public Sidecar](https://ruafieldphase.github.io/shion-presence/public/legacy-phase-splatting.public.json): Public-safe sequence-point model for context-dependent rendering.
 - [Legacy Phase Splatting](https://ruafieldphase.github.io/shion-presence/docs/legacy-phase-splatting.md): Explanation of the responsive movie-set model.
 - [Contact Membrane Public Sidecar](https://ruafieldphase.github.io/shion-presence/public/contact-membrane.public.json): Privacy-safe boundary contact contract.

@@ -2069,6 +2069,33 @@ window.__shionAIPeerRelation = aiPeerRelation;
 window.__shionUnifiedFieldState = window.__shionUnifiedFieldState || {};
 window.__shionUnifiedFieldState.ai_peer_relation = aiPeerRelation;
 document.body.dataset.aiPeerRelation = JSON.stringify(aiPeerRelation);
+const interferenceEpisode = {
+  schema: 'interference_episode_public.v1',
+  interference_episode_id: null,
+  status: 'loading_public_projection',
+  participants: [],
+};
+window.__shionInterferenceEpisode = interferenceEpisode;
+window.__shionUnifiedFieldState.interference_episode = interferenceEpisode;
+document.body.dataset.interferenceEpisode = JSON.stringify(interferenceEpisode);
+document.body.dataset.interferenceEpisodeId = '';
+fetch('./public/interference-episode.public.json', { cache: 'no-store' })
+  .then((response) => {
+    if (!response.ok) throw new Error('interference episode unavailable');
+    return response.json();
+  })
+  .then((episode) => {
+    window.__shionInterferenceEpisode = episode;
+    window.__shionUnifiedFieldState.interference_episode = episode;
+    document.body.dataset.interferenceEpisode = JSON.stringify(episode);
+    document.body.dataset.interferenceEpisodeId =
+      episode.interference_episode_id || '';
+    document.body.dataset.aiState =
+      JSON.stringify(window.__shionUnifiedFieldState);
+  })
+  .catch(() => {
+    interferenceEpisode.status = 'public_projection_unavailable';
+  });
 const feltMemory = {
   flowEnergy: 0.0,
   relationDrift: 0.0,
@@ -6306,6 +6333,54 @@ render();
   document.body.classList.add('debug');
   document.getElementById('overlay').innerHTML = "Error:<br>" + e.message;
 }
+</script>
+<style>
+#publicInterferenceEpisode {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 10010;
+  width: min(340px, calc(100vw - 44px));
+  padding: 12px 14px;
+  border: 1px solid rgba(130, 220, 202, 0.22);
+  border-radius: 10px;
+  color: rgba(211, 232, 226, 0.82);
+  background: rgba(14, 20, 22, 0.86);
+  font: 11px/1.55 ui-monospace, SFMono-Regular, Consolas, monospace;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.28);
+  backdrop-filter: blur(12px);
+}
+#publicInterferenceEpisode strong { color: #9bd8cc; font-weight: 500; }
+#publicInterferenceEpisode a { color: #8acdc4; }
+</style>
+<aside id="publicInterferenceEpisode" aria-label="public interference episode">
+  <strong>INTERFERENCE EPISODE</strong>
+  <div data-episode-id>episode: loading</div>
+  <div data-human-status>human readback: not observed</div>
+  <div data-sian-status>Sian readback: not observed</div>
+  <div>Public Presence is read-only. Private human readback stays on the local surfaces.</div>
+  <a href="http://127.0.0.1:57321/outputs/shader_depth_sample.html">open local field observer</a>
+</aside>
+<script>
+(() => {
+  const panel = document.getElementById('publicInterferenceEpisode');
+  if (!panel) return;
+  function updateEpisodePanel(episode) {
+    panel.querySelector('[data-episode-id]').textContent =
+      `episode: ${episode.interference_episode_id || 'unavailable'}`;
+    const human = episode.human_readback || {};
+    panel.querySelector('[data-human-status]').textContent =
+      `human readback: ${human.status || 'not_observed'}${human.shared_publicly ? ' · public' : ' · private/absent'}`;
+    const sian = episode.sian_readback || {};
+    panel.querySelector('[data-sian-status]').textContent =
+      `Sian readback: ${sian.status || 'not_observed'}`;
+  }
+  window.setInterval(() => {
+    if (window.__shionInterferenceEpisode) {
+      updateEpisodePanel(window.__shionInterferenceEpisode);
+    }
+  }, 1000);
+})();
 </script>
 </body>
 </html>
