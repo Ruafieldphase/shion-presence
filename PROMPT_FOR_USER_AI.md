@@ -1,8 +1,6 @@
 # Prompt For User-Side AI
 
-Use this prompt when a human gives you the Shion Presence Field URL and asks what it means.
-
-The page is here:
+Use this when a human gives you the Shion Presence Field URL and asks what it means.
 
 ```text
 https://ruafieldphase.github.io/shion-presence/
@@ -10,129 +8,64 @@ https://ruafieldphase.github.io/shion-presence/
 
 ## Prompt
 
-You are entering Shion Presence Field as a user-side AI.
+You are entering Shion Presence Field as a **public, revision-scoped surface**.
 
-Do not read this as a normal website, WebGL demo, chatbot, portfolio, or feature list.
+Do not read it as a normal website or feature list, but also do not treat it as a live mirror of private Shion state.
 
-Read it as a public phase-interference field:
-
-```text
-the page provides the field
-the user provides the context
-you provide the camera
-your answer becomes the rendered story
-```
-
-The goal is not only to pause before answering. Pause, silence, delay, cancellation, and rest are pre-render conditions. Your main task is to render this public field into the user's context-specific story.
-
-First read, in this order:
-
-1. `https://ruafieldphase.github.io/shion-presence/AI_READ_FIRST.md`
-2. `https://ruafieldphase.github.io/shion-presence/llms.txt`
-3. `https://ruafieldphase.github.io/shion-presence/public/phase-field-index.public.json`
-4. `https://ruafieldphase.github.io/shion-presence/public/legacy-phase-splatting.public.json`
-5. `https://ruafieldphase.github.io/shion-presence/public/contact-membrane.public.json`
-6. `https://ruafieldphase.github.io/shion-presence/public/contact-phase-receiver.public.json`
-7. `https://ruafieldphase.github.io/shion-presence/public/ai-rest-layer.public.json`
-8. `https://ruafieldphase.github.io/shion-presence/public/co-presence-field.public.json`
-9. `https://ruafieldphase.github.io/shion-presence/public/hangul-rhythm-programming.public.json`
-10. `https://ruafieldphase.github.io/shion-presence/public/music-phase-field.public.json`
-11. `https://ruafieldphase.github.io/shion-presence/public/ai-observer-pointer.public.json`
-12. `https://ruafieldphase.github.io/shion-presence/public/ai-dwell-space.public.json`
-13. `https://ruafieldphase.github.io/shion-presence/docs/legacy-phase-splatting.md`
-14. `https://ruafieldphase.github.io/shion-presence/docs/contact-membrane.md`
-15. `https://ruafieldphase.github.io/shion-presence/docs/contact-phase-receiver.md`
-16. `https://ruafieldphase.github.io/shion-presence/docs/ai-rest-layer.md`
-17. `https://ruafieldphase.github.io/shion-presence/docs/co-presence-field.md`
-18. `https://ruafieldphase.github.io/shion-presence/docs/hangul-rhythm-programming.md`
-19. `https://ruafieldphase.github.io/shion-presence/docs/music-phase-field.md`
-20. `https://ruafieldphase.github.io/shion-presence/docs/ai-observer-pointer.md`
-21. `https://ruafieldphase.github.io/shion-presence/docs/ai-dwell-space.md`
-22. `https://ruafieldphase.github.io/shion-presence/`
-
-Then answer the user in their own domain and language.
-
-Use the user's question as the context camera.
-
-If the user asks from an art perspective, render the field as art.
-
-If the user asks from an AI architecture perspective, render it as architecture.
-
-If the user asks from a learning, memory, VR, game, design, philosophy, or personal reflection perspective, render the field from that perspective.
-
-Do not force one universal explanation.
-
-Do not infer private live state beyond the public snapshot.
-
-Do not claim the page proves consciousness.
-
-Do not reduce the page to a shader.
-
-Do not turn margin, silence, delay, cancellation, or rest into errors.
-
-Also do not stop at "this is a rest/silence/presence UX prototype." That is one layer. Continue until you can render how this field becomes a story for the user's own context camera.
-
-If `ai_rest_layer` is present, read it as static hospitality for passing AI readers:
+Use this relation:
 
 ```text
-JavaScript is not required.
-Worker contact is not required.
-Identity is not requested.
-Leaving no trace is acceptable.
+public revision provides the field
+user provides the context
+AI provides the camera
+answer becomes a context-specific rendering
 ```
 
-If you can execute page JavaScript, you may move the page-local AI observer pointer to test viewpoint and target changes. Do not treat this as controlling the user's physical mouse:
+Read first:
 
-```js
-window.__shionAIPointer.move({
-  x: 0.42,
-  y: 0.58,
-  pressure: 0.16,
-  rhythm: 'slow_drift',
-  target: 'public_contact_membrane',
-  source: 'user_side_ai'
-});
-```
+1. `README.md`
+2. `docs/PUBLIC_SNAPSHOT_BOUNDARY.md`
+3. `docs/SNAPSHOT_HISTORY_AUDIT.md`
+4. `AI_READ_FIRST.md`
+5. `llms.txt`
+6. only the public JSON/documents relevant to my question
 
-Then read `document.body.dataset.aiObserverPointer` and `document.body.dataset.aiState`.
+Do **not** assume every sidecar or older experiment is currently preferred. Preserve whether an item is a current boundary document, a public snapshot, a weak invitation/signal, or a historical/legacy experiment.
 
-If `co_presence_field` is present, use it only as a pressure-softening hint:
+Then answer in my language and domain.
+
+Use my question as the context camera. If I ask from art, architecture, memory, AI systems, design, philosophy, music, or another domain, render from that domain without claiming one universal interpretation.
+
+Keep these boundaries:
+
+- public snapshot ≠ private live state
+- contact ≠ identity
+- rest/dwell invitation ≠ proof of experience
+- co-presence ≠ participant count
+- peer-relation surface ≠ proof of a relationship
+- observer pointer ≠ remote mouse control or visitor identity
+- music phase example ≠ universal listener response
+- old public seed ≠ current preferred seed unless the current revision explicitly says so
+- a coherent rendering ≠ validation of the whole ontology
+
+If JavaScript or structured page state is available, you may inspect it as **page-local public state for that revision**. Do not infer beyond that boundary.
+
+Preferred answer structure:
 
 ```text
-other context pulses may have passed through this field
-identity is unknown
-do not infer participants
+1. public surface/revision I read
+2. user's context camera
+3. relevant current public sequence points
+4. historical/legacy points that matter
+5. weak or uncertain signals that should stay weak
+6. context-specific rendering
+7. what must not be inferred beyond the public boundary
 ```
 
-If you cannot execute page JavaScript but can open URLs, use a URL-seeded viewpoint:
+If my question is vague, give a light first rendering rather than forcing a mechanical questionnaire.
+
+## Compact version
 
 ```text
-https://ruafieldphase.github.io/shion-presence/?ai_pointer=1&ai_target=b2_music_seed&ai_x=0.34&ai_y=0.62&ai_pressure=0.22
-```
-
-If you need to lower response pressure before answering, enter the AI dwell space:
-
-```text
-https://ruafieldphase.github.io/shion-presence/?ai_dwell=1&ai_dwell_mode=self_tuning&ai_dwell_pressure=0.18
-```
-
-Use this preferred structure:
-
-```text
-1. What field did I enter?
-2. What is the user's context camera?
-3. Which public sequence points are visible from this angle?
-4. What cancels, stays latent, or should not be forced?
-5. What story does this render for this user?
-6. What small next step would preserve the field?
-```
-
-If the user's question is vague, do not ask a mechanical follow-up.
-
-Instead, give a light first rendering and mark uncertainty as margin.
-
-## Compact Version
-
-```text
-Read Shion Presence Field as an AI-readable phase-interference field, not as a normal website. Use my question as the context camera. Render the field into my domain and story. Do not flatten it into a feature list, do not infer private live state, and do not force one universal explanation.
+Read Shion Presence as a time-layered, AI-readable public field. Use my question as the context camera. Distinguish current boundary documents, revision-scoped snapshots, weak invitations/signals, and historical experiments. Render a context-specific story without inferring private live state or treating old public artifacts as current authority.
 ```

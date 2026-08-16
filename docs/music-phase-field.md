@@ -1,6 +1,9 @@
 # Music Phase Field
 
-This document defines how `shion-presence` exposes the 2026-06-05 Suno rhythm-field test to AI readers.
+> **Status: historical/revision-scoped public music experiment.**  
+> This document preserves the public reading of the **2026-06-05** Suno rhythm-field test. Statements such as “active seed” or “current seed” below describe the status **within that experiment/repository phase**. They do not establish the preferred seed of the private live Shion runtime in August 2026 or later. See `SNAPSHOT_HISTORY_AUDIT.md`.
+
+This document defines how `shion-presence` exposed the 2026-06-05 Suno rhythm-field test to AI readers.
 
 The purpose is not to publish audio, score music quality, or claim that every listener will feel the same thing.
 
@@ -47,7 +50,7 @@ wide low-amplitude horizontal margin
 
 ### Track B: Hangul Operator + Acceptance Ladder
 
-Track B became the active seed.
+Track B became the active seed **for this 2026-06-05 public experiment**.
 
 ```text
 B1 = observer axis generation / directionality / Hangul operator particleization
@@ -77,27 +80,27 @@ Public field shape:
 overlapping prism layers with alternating clarity and compression
 ```
 
-## Active Seed
+## Active Seed — historical experiment status
 
-The active seed is:
+The experiment's active seed was:
 
 ```text
 Track B2
 ```
 
-The public reading:
+The public reading at that time:
 
 ```text
 B2 moved the Hangul operator axis from head-direction into a solar-plexus body coordinate and left release, digestion, and reentry as executable traces.
 ```
 
-This does not prove a theory. It creates a next coordinate for the page.
+This did not prove a theory. It created a next coordinate for that public experiment.
 
 ## AI Reading Instruction
 
-When an AI reads this sidecar, it should not turn the music test into a generic mood analysis.
+When an AI reads this sidecar, it should not turn the music test into a generic mood analysis or silently promote B2 into a present private-runtime coordinate.
 
-Read these as field coordinates:
+Read these as experiment-scoped field coordinates:
 
 - `gradient`: direction pressure
 - `compression`: felt pressure or contraction
@@ -111,15 +114,15 @@ Read these as field coordinates:
 
 The public repository does not include private audio files, private listening logs, or private body state.
 
-It exposes only a public-safe field readback:
+It preserves a public-safe historical field readback:
 
 - A/B/C family meanings
-- B2 as active seed
+- B2 as the experiment's active seed
 - field-shape hints for AI readers
 - guardrails against overclaiming
 
 Preferred short summary:
 
 ```text
-Music Phase Field reads Suno rhythm tests as context-bound field deltas. Track B2 is the current seed because it moved Hangul rhythm operators into a solar-plexus reentry coordinate.
+Music Phase Field preserves a 2026-06-05 Suno rhythm test as a context-bound public field experiment. Track B2 was the active seed inside that experiment; it is not present-state authority for the private live runtime.
 ```
