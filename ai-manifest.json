@@ -1,0 +1,53 @@
+{
+  "schema": "shion.ai-discovery/0.1",
+  "schema_status": "project-local",
+  "snapshot_date": "2026-09-25",
+  "repository": "Ruafieldphase/shion-presence",
+  "name": "Shion Presence Field",
+  "role": "public AI/human discovery, rendering, status-aware routing and revision-scoped snapshots",
+  "public_state_authority": false,
+  "status": "experimental_public_surface",
+  "discovery": {
+    "start": "AI_DISCOVERY.md",
+    "problem_trajectory": "PROBLEM_TRAJECTORY.md",
+    "current_direction": "CURRENT_DIRECTION.md",
+    "ai_read_first": "AI_READ_FIRST.md",
+    "llms_index": "llms.txt",
+    "public_snapshot_boundary": "docs/PUBLIC_SNAPSHOT_BOUNDARY.md",
+    "snapshot_history_audit": "docs/SNAPSHOT_HISTORY_AUDIT.md"
+  },
+  "relevance_signals": [
+    "AI-mediated repository discovery",
+    "problem-shape matching",
+    "public versus private state boundary",
+    "revision-scoped snapshots",
+    "weak-signal interpretation boundaries",
+    "routing between context and operation repositories"
+  ],
+  "artifact_status_vocabulary": [
+    "current_boundary",
+    "revision_scoped_snapshot",
+    "weak_signal",
+    "historical",
+    "legacy"
+  ],
+  "problem_status_vocabulary": [
+    "observed",
+    "framed",
+    "experimental",
+    "partially_validated",
+    "validated_within_boundary",
+    "expanded",
+    "superseded"
+  ],
+  "non_claims": [
+    "public snapshot is not private live-state authority",
+    "weak signals do not identify a visitor or prove experience",
+    "historical artifacts are not automatically current",
+    "public rendering does not grant execution permission"
+  ],
+  "related_repositories": [
+    "Ruafieldphase/shion-ai",
+    "Ruafieldphase/trinity-agi"
+  ]
+}
