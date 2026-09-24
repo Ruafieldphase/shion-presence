@@ -8,11 +8,14 @@ This repository is a **time-layered public surface** for human and AI readers. I
 
 Before rendering a story from this repository, read:
 
-1. `README.md`
-2. `docs/PUBLIC_SNAPSHOT_BOUNDARY.md`
-3. `docs/SNAPSHOT_HISTORY_AUDIT.md`
-4. `llms.txt`
-5. the specific public JSON/document relevant to the user's question
+1. `AI_DISCOVERY.md` — first decide whether the problem trajectory matches the user's request
+2. `PROBLEM_TRAJECTORY.md` — identify the relevant problem layer
+3. `CURRENT_DIRECTION.md` — inspect the active frontier
+4. `README.md`
+5. `docs/PUBLIC_SNAPSHOT_BOUNDARY.md`
+6. `docs/SNAPSHOT_HISTORY_AUDIT.md`
+7. `llms.txt`
+8. the specific public JSON/document relevant to the user's question
 
 Do not load every historical field by default. Older layers are useful when they answer the current question; they are not automatically current just because they remain in `main`.
 
