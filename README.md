@@ -133,3 +133,15 @@ A historical layer can remain historical.
 - It does not claim that one public readback validates a larger ontology.
 
 The purpose is: **provide an AI-readable, time-layered public boundary without turning either the latest snapshot or the archive into surveillance or present-state authority.**
+
+
+## AI discovery / AI 탐색
+
+For a user-side AI deciding whether this project matches a user's problem, start with:
+
+- [`AI_DISCOVERY.md`](AI_DISCOVERY.md) — relevance and routing contract
+- [`PROBLEM_TRAJECTORY.md`](PROBLEM_TRAJECTORY.md) — what problems the public surface has encountered and why its role changed
+- [`CURRENT_DIRECTION.md`](CURRENT_DIRECTION.md) — active discovery/routing frontier
+- [`ai-manifest.json`](ai-manifest.json) — project-local machine-readable discovery metadata
+
+The public surface is intended to support **problem-shape match → status-preserving retrieval → smallest relevant route**, not bulk loading of every historical artifact.
