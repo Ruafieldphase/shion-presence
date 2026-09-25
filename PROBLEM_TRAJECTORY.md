@@ -2,25 +2,42 @@
 
 Snapshot: 2026-09-25.
 
-This document explains why a public presence surface exists and how its job has changed.
+This document explains why a public presence surface exists, what public evidence exists, and how its job has changed.
+
+Canonical shared status semantics are defined in [AI_DISCOVERY_CONTRACT.md](AI_DISCOVERY_CONTRACT.md) v0.1.
 
 ## S0 — Make the work publicly discoverable
 
 **Problem shape:** the underlying work existed across code, documents, conversations, and experiments, but an outside reader had no small public surface from which to orient.
 
-**Status:** `partially_validated`
+**Maturity:** `partially_validated`  
+**Activity:** `active`
 
-**Response:** create a public rendering/discovery surface readable by humans and AI.
+**Evidence:**
+- `implementation`: [index.html](index.html) provides the public rendered surface
+- `implementation`: [llms.txt](llms.txt) provides an AI-readable index
+- `implementation`: [AI_READ_FIRST.md](AI_READ_FIRST.md) provides an AI reading contract
+- `history_anchor`: [2026-08-16 snapshot/history audit commit](https://github.com/Ruafieldphase/shion-presence/commit/af7c48b81e45fbbc6103db443cb538fd01e3a7bf)
+
+**Boundary:** this validates the existence of a public human/AI-readable surface, not that search engines or fresh external AIs will discover or route it correctly.
 
 **What this exposed next:** a public page can be mistaken for the private live system.
 
 ## S1 — Public snapshot mistaken for live state
 
-**Problem shape:** a visible artifact looks current even when it only represents one repository revision or one public experiment.
+**Problem shape:** a visible artifact can look current even when it only represents one repository revision or one public experiment.
 
-**Status:** `validated_within_boundary` as a public reading rule.
+**Maturity:** `framed`  
+**Activity:** `active`
 
-**Response:**
+**Evidence:**
+- `design`: [docs/PUBLIC_SNAPSHOT_BOUNDARY.md](docs/PUBLIC_SNAPSHOT_BOUNDARY.md)
+- `design`: [docs/SNAPSHOT_HISTORY_AUDIT.md](docs/SNAPSHOT_HISTORY_AUDIT.md)
+- `design`: [README.md](README.md)
+
+**Boundary:** these documents define the reading rule; they do not empirically prove that every downstream AI preserves it.
+
+**Current rule:**
 
 ```text
 public artifact
@@ -34,9 +51,15 @@ public artifact
 
 **Problem shape:** contact, dwell, co-presence, observer-pointer, music-field, or other experimental surfaces can be over-read into identity, intent, experience, or autonomous action.
 
-**Status:** `partially_validated`
+**Maturity:** `framed`  
+**Activity:** `active`
 
-**Response:** preserve weak-signal rules and explicit non-claims.
+**Evidence:**
+- `design`: [docs/PUBLIC_SNAPSHOT_BOUNDARY.md](docs/PUBLIC_SNAPSHOT_BOUNDARY.md), sections on contact, invitation, identity, and provenance
+- `design`: [AI_READ_FIRST.md](AI_READ_FIRST.md), weak-signal rules
+- `design`: [PROMPT_FOR_USER_AI.md](PROMPT_FOR_USER_AI.md)
+
+**Boundary:** the public interpretation boundary is explicit, but external-AI adherence has not yet been prospectively tested.
 
 **What this exposed next:** old weak-signal experiments can coexist with newer boundaries and confuse retrieval.
 
@@ -44,11 +67,15 @@ public artifact
 
 **Problem shape:** keeping history is valuable, but old artifacts can look equally current when an AI retrieves them without temporal/status context.
 
-**Status:** `partially_validated`
+**Maturity:** `framed`  
+**Activity:** `active`
 
-**Response:** snapshot/history audit, revision-scoped reading, current-boundary documents, and status-aware AI entry.
+**Evidence:**
+- `observation`: [docs/SNAPSHOT_HISTORY_AUDIT.md](docs/SNAPSHOT_HISTORY_AUDIT.md) inventories current boundary, revision-scoped public artifacts, and historical/legacy classes
+- `design`: [llms.txt](llms.txt) preserves revision-scoped reading rules
+- `history_anchor`: [2026-08-16 audit commit](https://github.com/Ruafieldphase/shion-presence/commit/af7c48b81e45fbbc6103db443cb538fd01e3a7bf)
 
-**What remains open:** making those distinctions cheap enough for external AI retrieval.
+**Boundary:** repository classification exists, but reliable retrieval-time status preservation by external agents remains open.
 
 ## S4 — User-side AI as the first visitor
 
@@ -57,21 +84,38 @@ public artifact
 The AI therefore needs more than a feature list. It needs:
 
 - what problem started the work;
-- what was bounded;
+- what public evidence exists;
 - what remains open;
 - where the work is heading;
 - which repository owns which problem layer;
 - whether this trajectory fits the user's request.
 
-**Status:** `framed / active frontier`
+**Maturity:** `experimental`  
+**Activity:** `frontier`
 
-**Response:** AI discovery entry, problem trajectory, current direction, machine-readable manifest, and `llms.txt` routing.
+**Evidence:**
+- `implementation`: [AI_DISCOVERY.md](AI_DISCOVERY.md)
+- `implementation`: [ai-manifest.json](ai-manifest.json)
+- `implementation`: [AI_DISCOVERY_CONTRACT.md](AI_DISCOVERY_CONTRACT.md)
+- `prospective_test`: [DISCOVERY_EVAL.md](DISCOVERY_EVAL.md), declared before merge
+- `metadata_plan`: [REPOSITORY_DISCOVERY_METADATA.md](REPOSITORY_DISCOVERY_METADATA.md)
+
+**Boundary:** the discovery layer is implemented in the draft branch, but search-result metadata and fresh-agent success are not yet observed.
 
 ## S5 — Public field as a relevance router, not just a renderer
 
 **Problem shape:** a public site that only renders artifacts is less useful to an AI than a surface that can route the user's problem to the right evidence and repository.
 
-**Status:** `experimental frontier`
+**Maturity:** `experimental`  
+**Activity:** `frontier`
+
+**Evidence:**
+- `implementation`: [AI_DISCOVERY.md](AI_DISCOVERY.md), repository routing
+- `implementation`: [llms.txt](llms.txt), AI read-order/routing index
+- `design`: [CURRENT_DIRECTION.md](CURRENT_DIRECTION.md)
+- `prospective_test`: [DISCOVERY_EVAL.md](DISCOVERY_EVAL.md), cases A–E
+
+**Boundary:** routing quality is a hypothesis under prospective test until fresh external AI results are recorded.
 
 **Direction:**
 
@@ -83,4 +127,4 @@ user problem
 → bounded introduction
 ```
 
-The goal is not to make Shion Presence a universal answer layer. The goal is to make it a **legible public index of trajectories, boundaries, and directions**.
+The goal is not to make Shion Presence a universal answer layer. The goal is to make it a **legible public index of trajectories, boundaries, evidence, and directions**.
