@@ -100,7 +100,7 @@ The AI therefore needs more than a feature list. It needs:
 - `evaluation_plan`: [DISCOVERY_EVAL.md](DISCOVERY_EVAL.md), declared before fresh-agent testing
 - `metadata_plan`: [REPOSITORY_DISCOVERY_METADATA.md](REPOSITORY_DISCOVERY_METADATA.md)
 
-**Boundary:** the discovery interface exists in the draft branch, but search-result metadata and fresh-agent success are not yet observed.
+**Boundary:** the v0.1 discovery interface exists in the current publication candidate. Publication to the default branch does not by itself establish search discoverability or fresh-agent routing success; those remain unobserved until the prospective evaluation runs.
 
 ## S5 — Public field as a relevance router, not just a renderer
 
