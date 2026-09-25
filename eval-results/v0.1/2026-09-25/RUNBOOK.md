@@ -7,9 +7,12 @@ This runbook operationalizes `DISCOVERY_EVAL.md`. It does not change the scoring
 - discovery documents: published to all three default branches
 - repository metadata replacement plan: **not applied**
 - pre-metadata target state: captured
-- Track 2: not yet scored
-- Track 1A: not yet scored
-- Track 1B: blocked until Track 1A completes and metadata is applied
+- Track 2: contamination-risk pilot completed; content threshold met, formal independence not qualified
+- Track 1A: formal pre-metadata run set completed
+  - positive cases A/B/C/E: 0/4 cases met the 2-of-3 threshold
+  - Case D false-positive observations: 0/3
+  - failure layer: public search discoverability on the tested Perplexity surface
+- Track 1B: blocked until repository metadata plan is applied and post-metadata target state is captured
 
 ## Independence rule
 
