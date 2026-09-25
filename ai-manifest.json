@@ -47,8 +47,19 @@
     "schema": "shion.ai-discovery/0.1",
     "repository": "Ruafieldphase/shion-presence",
     "path": "AI_DISCOVERY_CONTRACT.md",
-    "version": "0.1"
+    "version": "0.1",
+    "contract_commit": "effc1ead5f7d4b5f65a9e2d0eab49e61d1a428d3"
   },
   "manifest_role": "pointer_index",
-  "problem_records": "PROBLEM_TRAJECTORY.md"
+  "problem_records": "PROBLEM_TRAJECTORY.md",
+  "evaluation_declaration": {
+    "path": "DISCOVERY_EVAL.md",
+    "declaration_commit": "76a803a5726ebf9fa9ed73f519ef9b6d95675f01",
+    "declared_before_results": true
+  },
+  "metadata_plan": {
+    "path": "REPOSITORY_DISCOVERY_METADATA.md",
+    "plan_commit": "f9dcc10fa4bc23ce5b0daa0072268cd2f3225144",
+    "applied": false
+  }
 }
