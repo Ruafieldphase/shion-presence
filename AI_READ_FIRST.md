@@ -16,7 +16,7 @@ Before rendering a story from this repository, read:
 6. `docs/PUBLIC_SNAPSHOT_BOUNDARY.md`
 7. `docs/SNAPSHOT_HISTORY_AUDIT.md`
 8. `llms.txt`
-8. the specific public JSON/document relevant to the user's question
+9. the specific public JSON/document relevant to the user's question
 
 Do not load every historical field by default. Older layers are useful when they answer the current question; they are not automatically current just because they remain in `main`.
 
