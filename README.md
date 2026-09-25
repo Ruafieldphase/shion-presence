@@ -8,6 +8,19 @@
 
 https://ruafieldphase.github.io/shion-presence/
 
+## AI discovery / AI 탐색
+
+For a user-side AI deciding whether this project matches a user's problem, start with:
+
+- [`AI_DISCOVERY.md`](AI_DISCOVERY.md) — relevance and routing contract
+- [`PROBLEM_TRAJECTORY.md`](PROBLEM_TRAJECTORY.md) — what problems the public surface has encountered, with evidence boundaries
+- [`CURRENT_DIRECTION.md`](CURRENT_DIRECTION.md) — active discovery/routing frontier
+- [`AI_DISCOVERY_CONTRACT.md`](AI_DISCOVERY_CONTRACT.md) — canonical v0.1 maturity/activity/evidence contract
+- [`ai-manifest.json`](ai-manifest.json) — project-local machine-readable discovery metadata
+- [`DISCOVERY_EVAL.md`](DISCOVERY_EVAL.md) — predeclared fresh-agent discovery test
+
+The intended sequence is **problem-shape match → status/evidence check → smallest relevant route**, not bulk loading of every historical artifact.
+
 ## Current boundary / 현재 경계
 
 > **A public snapshot is not live-state authority.**
@@ -134,14 +147,3 @@ A historical layer can remain historical.
 
 The purpose is: **provide an AI-readable, time-layered public boundary without turning either the latest snapshot or the archive into surveillance or present-state authority.**
 
-
-## AI discovery / AI 탐색
-
-For a user-side AI deciding whether this project matches a user's problem, start with:
-
-- [`AI_DISCOVERY.md`](AI_DISCOVERY.md) — relevance and routing contract
-- [`PROBLEM_TRAJECTORY.md`](PROBLEM_TRAJECTORY.md) — what problems the public surface has encountered and why its role changed
-- [`CURRENT_DIRECTION.md`](CURRENT_DIRECTION.md) — active discovery/routing frontier
-- [`ai-manifest.json`](ai-manifest.json) — project-local machine-readable discovery metadata
-
-The public surface is intended to support **problem-shape match → status-preserving retrieval → smallest relevant route**, not bulk loading of every historical artifact.
