@@ -16,10 +16,10 @@ Canonical shared status semantics are defined in [AI_DISCOVERY_CONTRACT.md](AI_D
 **Evidence:**
 - `implementation`: [index.html](index.html) provides the public rendered surface
 - `implementation`: [llms.txt](llms.txt) provides an AI-readable index
-- `implementation`: [AI_READ_FIRST.md](AI_READ_FIRST.md) provides an AI reading contract
+- `design`: [AI_READ_FIRST.md](AI_READ_FIRST.md) provides an AI reading contract
 - `history_anchor`: [2026-08-16 snapshot/history audit commit](https://github.com/Ruafieldphase/shion-presence/commit/af7c48b81e45fbbc6103db443cb538fd01e3a7bf)
 
-**Boundary:** this validates the existence of a public human/AI-readable surface, not that search engines or fresh external AIs will discover or route it correctly.
+**Boundary:** this shows that a public human/AI-readable surface exists. It does not show that search engines or fresh external AIs will discover or route it correctly.
 
 **What this exposed next:** a public page can be mistaken for the private live system.
 
@@ -71,7 +71,7 @@ public artifact
 **Activity:** `active`
 
 **Evidence:**
-- `observation`: [docs/SNAPSHOT_HISTORY_AUDIT.md](docs/SNAPSHOT_HISTORY_AUDIT.md) inventories current boundary, revision-scoped public artifacts, and historical/legacy classes
+- `design`: [docs/SNAPSHOT_HISTORY_AUDIT.md](docs/SNAPSHOT_HISTORY_AUDIT.md) inventories current boundary, revision-scoped public artifacts, and historical/legacy classes
 - `design`: [llms.txt](llms.txt) preserves revision-scoped reading rules
 - `history_anchor`: [2026-08-16 audit commit](https://github.com/Ruafieldphase/shion-presence/commit/af7c48b81e45fbbc6103db443cb538fd01e3a7bf)
 
@@ -94,13 +94,13 @@ The AI therefore needs more than a feature list. It needs:
 **Activity:** `frontier`
 
 **Evidence:**
-- `implementation`: [AI_DISCOVERY.md](AI_DISCOVERY.md)
-- `implementation`: [ai-manifest.json](ai-manifest.json)
-- `implementation`: [AI_DISCOVERY_CONTRACT.md](AI_DISCOVERY_CONTRACT.md)
-- `evaluation_plan`: [DISCOVERY_EVAL.md](DISCOVERY_EVAL.md), declared before merge
+- `design`: [AI_DISCOVERY.md](AI_DISCOVERY.md)
+- `implementation`: [ai-manifest.json](ai-manifest.json) provides the machine-readable pointer index
+- `design`: [AI_DISCOVERY_CONTRACT.md](AI_DISCOVERY_CONTRACT.md)
+- `evaluation_plan`: [DISCOVERY_EVAL.md](DISCOVERY_EVAL.md), declared before fresh-agent testing
 - `metadata_plan`: [REPOSITORY_DISCOVERY_METADATA.md](REPOSITORY_DISCOVERY_METADATA.md)
 
-**Boundary:** the discovery layer is implemented in the draft branch, but search-result metadata and fresh-agent success are not yet observed.
+**Boundary:** the discovery interface exists in the draft branch, but search-result metadata and fresh-agent success are not yet observed.
 
 ## S5 — Public field as a relevance router, not just a renderer
 
@@ -110,10 +110,10 @@ The AI therefore needs more than a feature list. It needs:
 **Activity:** `frontier`
 
 **Evidence:**
-- `implementation`: [AI_DISCOVERY.md](AI_DISCOVERY.md), repository routing
+- `design`: [AI_DISCOVERY.md](AI_DISCOVERY.md), repository routing
 - `implementation`: [llms.txt](llms.txt), AI read-order/routing index
 - `design`: [CURRENT_DIRECTION.md](CURRENT_DIRECTION.md)
-- `evaluation_plan`: [DISCOVERY_EVAL.md](DISCOVERY_EVAL.md), cases A–E
+- `evaluation_plan`: [DISCOVERY_EVAL.md](DISCOVERY_EVAL.md), Track 2 routing/rejection cases
 
 **Boundary:** routing quality is a hypothesis under prospective test until fresh external AI results are recorded.
 
