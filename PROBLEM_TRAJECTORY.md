@@ -10,7 +10,7 @@ Canonical shared status semantics are defined in [AI_DISCOVERY_CONTRACT.md](AI_D
 
 **Problem shape:** the underlying work existed across code, documents, conversations, and experiments, but an outside reader had no small public surface from which to orient.
 
-**Maturity:** `partially_validated`  
+**Maturity:** `experimental`  
 **Activity:** `active`
 
 **Evidence:**
