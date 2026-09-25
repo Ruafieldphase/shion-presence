@@ -6,6 +6,8 @@
   "name": "Shion Presence Field",
   "role": "public AI/human discovery, rendering, status-aware routing and revision-scoped snapshots",
   "public_state_authority": false,
+  "manifest_role": "pointer_index",
+  "problem_records": "PROBLEM_TRAJECTORY.md",
   "discovery": {
     "start": "AI_DISCOVERY.md",
     "problem_trajectory": "PROBLEM_TRAJECTORY.md",
@@ -14,9 +16,9 @@
     "llms_index": "llms.txt",
     "public_snapshot_boundary": "docs/PUBLIC_SNAPSHOT_BOUNDARY.md",
     "snapshot_history_audit": "docs/SNAPSHOT_HISTORY_AUDIT.md",
-    "contract": "AI_DISCOVERY_CONTRACT.md",
-    "evaluation": "DISCOVERY_EVAL.md",
-    "repository_metadata_plan": "REPOSITORY_DISCOVERY_METADATA.md"
+    "contract": "https://github.com/Ruafieldphase/shion-presence/blob/e5005b38b7a452c73602c634ead71484a7a2e609/AI_DISCOVERY_CONTRACT.md",
+    "evaluation": "https://github.com/Ruafieldphase/shion-presence/blob/8d68d9e68e6c68f8a1de1caccc8d8db4f98a6d54/DISCOVERY_EVAL.md",
+    "repository_metadata_plan": "https://github.com/Ruafieldphase/shion-presence/blob/4bb48282739831e0a9eb82555ae4d0a9d1759550/REPOSITORY_DISCOVERY_METADATA.md"
   },
   "relevance_signals": [
     "AI-mediated repository discovery",
@@ -25,13 +27,6 @@
     "revision-scoped snapshots",
     "weak-signal interpretation boundaries",
     "routing between context and operation repositories"
-  ],
-  "artifact_status_vocabulary": [
-    "current_boundary",
-    "revision_scoped_snapshot",
-    "weak_signal",
-    "historical",
-    "legacy"
   ],
   "non_claims": [
     "public snapshot is not private live-state authority",
@@ -45,21 +40,8 @@
   ],
   "status_contract": {
     "schema": "shion.ai-discovery/0.1",
-    "repository": "Ruafieldphase/shion-presence",
-    "path": "AI_DISCOVERY_CONTRACT.md",
     "version": "0.1",
-    "contract_commit": "effc1ead5f7d4b5f65a9e2d0eab49e61d1a428d3"
-  },
-  "manifest_role": "pointer_index",
-  "problem_records": "PROBLEM_TRAJECTORY.md",
-  "evaluation_declaration": {
-    "path": "DISCOVERY_EVAL.md",
-    "declaration_commit": "76a803a5726ebf9fa9ed73f519ef9b6d95675f01",
-    "declared_before_results": true
-  },
-  "metadata_plan": {
-    "path": "REPOSITORY_DISCOVERY_METADATA.md",
-    "plan_commit": "f9dcc10fa4bc23ce5b0daa0072268cd2f3225144",
-    "applied": false
+    "url": "https://github.com/Ruafieldphase/shion-presence/blob/e5005b38b7a452c73602c634ead71484a7a2e609/AI_DISCOVERY_CONTRACT.md",
+    "snapshot_commit": "e5005b38b7a452c73602c634ead71484a7a2e609"
   }
 }
