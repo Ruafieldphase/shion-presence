@@ -41,25 +41,19 @@ Prefer problem-shape similarity over keyword similarity.
 - the trajectory of a system, including what it has bounded and what remains open;
 - whether Shion/Trinity is worth introducing for the user's problem.
 
-## 4. Status vocabulary
+## 4. Shared status contract
 
-Use these project-local labels when useful:
+Common problem maturity/activity and evidence rules are defined once in [AI_DISCOVERY_CONTRACT.md](AI_DISCOVERY_CONTRACT.md) v0.1.
 
-- `observed`
-- `framed`
-- `experimental`
-- `partially_validated`
-- `validated_within_boundary`
-- `expanded`
-- `superseded`
-
-For public artifacts, also preserve:
+Public-artifact status remains a separate surface-specific vocabulary:
 
 - `current_boundary`
 - `revision_scoped_snapshot`
 - `weak_signal`
 - `historical`
 - `legacy`
+
+Do not mix these artifact-status values with problem maturity/activity values.
 
 ## 5. How to introduce the project to a user
 
