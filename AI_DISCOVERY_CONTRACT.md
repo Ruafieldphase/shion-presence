@@ -86,8 +86,7 @@ Evidence:
 - type: linked artifact
 
 Boundary:
-tested / directly supported: ...
-not tested / unresolved: ...
+...
 
 What changed:
 ...
@@ -95,6 +94,17 @@ What changed:
 What this exposed next:
 ...
 ```
+
+When a maturity claim uses direct validation evidence (`partially_validated` or `validated_within_boundary`), the Boundary SHOULD explicitly separate:
+
+```text
+tested / directly supported: ...
+not tested / unresolved: ...
+```
+
+For `observed`, `framed`, or `experimental` entries, one explicit boundary paragraph is sufficient when no direct validation claim is being made.
+
+`What changed` and `What this exposed next` are recommended trajectory fields when they add useful causal sequence, but they are not required for every entry.
 
 `PROBLEM_TRAJECTORY.md` is the canonical v0.1 problem-record surface for each repository.
 
@@ -116,6 +126,8 @@ It SHOULD contain:
 It SHOULD NOT duplicate every problem's maturity/activity/evidence. User-side AIs should follow the manifest to `PROBLEM_TRAJECTORY.md` for those records.
 
 The undefined top-level field `status` is not part of v0.1 and should be omitted.
+
+Stable repository-specific extensions MAY be included when their semantics are explicit and do not represent mutable live state. Mutable fields such as "metadata already applied" SHOULD NOT be frozen into the manifest snapshot.
 
 ## 5. Discovery decision
 
@@ -149,7 +161,9 @@ current authorized readback → authority for claims that may have changed
 
 Do not duplicate a shared vocabulary when a canonical contract can be referenced.
 
-For a published v0.1 cross-repository reference, prefer a **full immutable GitHub URL pinned to a commit (or immutable version ref)**. Do not let the meaning of "v0.1" silently move with another repository's `main`.
+For a published v0.1 cross-repository reference, prefer a **full immutable GitHub URL pinned to a commit (or preserved version ref)**. Do not let the meaning of "v0.1" silently move with another repository's `main`.
+
+The commit used as the public v0.1 snapshot MUST remain reachable after merge. Preserve it through a dedicated version branch/tag or a merge strategy that keeps the commit reachable. Do not rely on a transient pull-request branch that may later be deleted.
 
 ## 8. Contract evolution
 
