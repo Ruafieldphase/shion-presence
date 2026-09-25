@@ -14,7 +14,10 @@
     "ai_read_first": "AI_READ_FIRST.md",
     "llms_index": "llms.txt",
     "public_snapshot_boundary": "docs/PUBLIC_SNAPSHOT_BOUNDARY.md",
-    "snapshot_history_audit": "docs/SNAPSHOT_HISTORY_AUDIT.md"
+    "snapshot_history_audit": "docs/SNAPSHOT_HISTORY_AUDIT.md",
+    "contract": "AI_DISCOVERY_CONTRACT.md",
+    "evaluation": "DISCOVERY_EVAL.md",
+    "repository_metadata_plan": "REPOSITORY_DISCOVERY_METADATA.md"
   },
   "relevance_signals": [
     "AI-mediated repository discovery",
@@ -31,15 +34,6 @@
     "historical",
     "legacy"
   ],
-  "problem_status_vocabulary": [
-    "observed",
-    "framed",
-    "experimental",
-    "partially_validated",
-    "validated_within_boundary",
-    "expanded",
-    "superseded"
-  ],
   "non_claims": [
     "public snapshot is not private live-state authority",
     "weak signals do not identify a visitor or prove experience",
@@ -49,5 +43,11 @@
   "related_repositories": [
     "Ruafieldphase/shion-ai",
     "Ruafieldphase/trinity-agi"
-  ]
+  ],
+  "status_contract": {
+    "schema": "shion.ai-discovery/0.1",
+    "repository": "Ruafieldphase/shion-presence",
+    "path": "AI_DISCOVERY_CONTRACT.md",
+    "version": "0.1"
+  }
 }
