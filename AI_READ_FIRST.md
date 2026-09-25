@@ -11,10 +11,11 @@ Before rendering a story from this repository, read:
 1. `AI_DISCOVERY.md` — first decide whether the problem trajectory matches the user's request
 2. `PROBLEM_TRAJECTORY.md` — identify the relevant problem layer
 3. `CURRENT_DIRECTION.md` — inspect the active frontier
-4. `README.md`
-5. `docs/PUBLIC_SNAPSHOT_BOUNDARY.md`
-6. `docs/SNAPSHOT_HISTORY_AUDIT.md`
-7. `llms.txt`
+4. `AI_DISCOVERY_CONTRACT.md` — shared maturity/activity/evidence semantics
+5. `README.md`
+6. `docs/PUBLIC_SNAPSHOT_BOUNDARY.md`
+7. `docs/SNAPSHOT_HISTORY_AUDIT.md`
+8. `llms.txt`
 8. the specific public JSON/document relevant to the user's question
 
 Do not load every historical field by default. Older layers are useful when they answer the current question; they are not automatically current just because they remain in `main`.
