@@ -5,14 +5,15 @@ This runbook operationalizes `DISCOVERY_EVAL.md`. It does not change the scoring
 ## Current phase
 
 - discovery documents: published to all three default branches
-- repository metadata replacement plan: **not applied**
+- repository metadata replacement plan: **applied 2026-09-25T06:43:18Z**
 - pre-metadata target state: captured
+- post-metadata target state: captured
 - Track 2: contamination-risk pilot completed; content threshold met, formal independence not qualified
 - Track 1A: formal pre-metadata run set completed
   - positive cases A/B/C/E: 0/4 cases met the 2-of-3 threshold
   - Case D false-positive observations: 0/3
   - failure layer: public search discoverability on the tested Perplexity surface
-- Track 1B: blocked until repository metadata plan is applied and post-metadata target state is captured
+- Track 1B: **ready to run** using the same v0.1 cases and clean-room procedure
 
 ## Independence rule
 
