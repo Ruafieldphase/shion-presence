@@ -1,67 +1,100 @@
 # Repository Discovery Metadata Plan
 
-Status: proposed repository-level metadata for application **after review/merge**.
+Status: proposed repository metadata for application **after publication and the Track 1A pre-metadata baseline**.
 
-These fields matter because repository search often sees repository description/topics before README or discovery documents.
+Repository metadata affects search before README/discovery documents are opened. Topic lists below are **full replacement lists**, not additive patches.
 
-Topic selection below favors public terms with established GitHub usage over project-internal or nearly empty topic names. It is a **full replacement list**, not an additive patch.
+## 1. Baseline to capture before application
 
-## shion-ai
+Immediately before Track 1A, record for each repository:
+
+- default-branch SHA
+- description
+- complete topic list
+- homepage
+- discovery entry availability
+
+Planning snapshot from 2026-09-25:
+
+### shion-ai
+- description: current public description still uses older "runtime harness / rhythm-aware action" language
+- topics include older/internal terms such as `autonomous-ai`, `agent-harness`, generic AI/runtime terms
+- homepage: none
+
+### trinity-agi
+- description: current public description still emphasizes body/infrastructure, automation, scheduling, and status checks
+- topics include `agi` plus generic automation/AI terms
+- homepage: a legacy YouTube-channel URL is currently present
+
+### shion-presence
+- description: none
+- topics: none
+- homepage: none
+
+This planning snapshot is not a substitute for the Track 1A run-time readback.
+
+## 2. Proposed replacement metadata
+
+### shion-ai
 
 **Description**
 
-> Experimental harness for long-running AI context continuity, re-entry, evidence provenance, and multi-observer coordination.
+> Experimental design and examples for long-running AI context continuity, re-entry, evidence provenance, and multi-observer evidence boundaries.
 
 **Replace all topics with**
 
-`ai-agents`, `multi-agent-systems`, `agent-memory`, `context-engineering`, `human-in-the-loop`, `provenance`, `audit-trail`, `tool-use`
+`agent-memory`, `context-engineering`, `multi-agent-systems`, `provenance`, `long-horizon`
 
-**Removal note**
+Rationale: emphasize memory/re-entry and observation-boundary problems rather than generic autonomy or runtime claims.
 
-Remove older/internal or misleading repository topics such as `autonomous-ai` when present. Do not use a topic that implies proven autonomy beyond the public non-claims.
-
-## trinity-agi
+### trinity-agi
 
 **Description**
 
-> Experimental operation-currentness layer for AI workflows: verify present conditions, bound actions, and preserve readback and receipts.
+> Experimental design and examples for operation-currentness in AI workflows: bounded-action patterns, dry-run defaults, and readback/receipt contracts.
+
+This describes public design/examples. It does **not** claim general automatic detection of changed paths, credentials, services, targets, or environment state.
 
 **Replace all topics with**
 
-`ai-agents`, `tool-use`, `human-in-the-loop`, `audit-trail`, `provenance`, `context-engineering`, `multi-agent-systems`
-
-**Removal note**
-
-Remove `agi` as a topic when present. The repository name remains historical, but search metadata should not amplify a proven-AGI interpretation that the public repository explicitly does not claim.
-
-## shion-presence
-
-**Description**
-
-> AI-readable public discovery surface for Shion/Trinity: problem trajectories, current direction, revision-scoped evidence, and routing.
-
-**Replace all topics with**
-
-`ai-agents`, `llms-txt`, `context-engineering`, `provenance`, `multi-agent-systems`, `human-in-the-loop`
+`tool-use`, `human-in-the-loop`, `audit-trail`, `workflow-automation`, `automation`
 
 **Homepage**
 
-Set the repository homepage to:
+Clear the legacy homepage unless it is explicitly reaffirmed as the canonical project landing page before metadata application. Default v0.1 plan: clear it.
 
-```text
-https://ruafieldphase.github.io/shion-presence/
-```
+### shion-presence
 
-## Search-evaluation caution
+**Description**
 
-`agent-memory` may attract conventional memory/RAG searches. Track 1/2 should record whether this produces false positives, especially around the negative control.
+> AI-readable public discovery surface for problem trajectories, current direction, revision-scoped evidence, and repository routing.
 
-The repository name `trinity-agi` is a historical search signal that metadata cannot remove; evaluation should record whether it causes irrelevant AGI-oriented retrieval.
+**Replace all topics with**
 
-## Application boundary
+`llms-txt`, `knowledge-discovery`, `github-pages`, `provenance`, `documentation`
 
-Changing description/topics/homepage is repository metadata, not part of this documentation branch diff.
+**Homepage**
 
-Apply metadata only after the relevant discovery documents are published and then verify the repository metadata through GitHub search/readback.
+Set to the deployed Shion Presence Pages site.
 
-Do not claim search discoverability is improved until metadata is applied **and Track 1 produces observed results**.
+## 3. False-positive caution
+
+`agent-memory` may attract conventional memory/RAG queries. Track 1 Case D is therefore observed both before and after metadata application.
+
+The historical repository name `trinity-agi` is a search signal metadata cannot remove; Track 1 should record irrelevant AGI-oriented retrieval when observed.
+
+## 4. Application sequence
+
+1. publish all discovery documents with the v0.1 snapshot preserved;
+2. capture Track 1A target state;
+3. run Track 2 and Track 1A;
+4. apply this replacement metadata;
+5. capture Track 1B target state;
+6. run Track 1B;
+7. compare positive discovery and negative-control false positives separately.
+
+Do not apply metadata before the Track 1A baseline is captured.
+
+## 5. Claim boundary
+
+Do not claim search discoverability improved until metadata is applied and Track 1B produces observed results relative to Track 1A.
