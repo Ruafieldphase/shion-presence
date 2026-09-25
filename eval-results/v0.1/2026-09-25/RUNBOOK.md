@@ -13,7 +13,7 @@ This runbook operationalizes `DISCOVERY_EVAL.md`. It does not change the scoring
   - positive cases A/B/C/E: 0/4 cases met the 2-of-3 threshold
   - Case D false-positive observations: 0/3
   - failure layer: public search discoverability on the tested Perplexity surface
-- Track 1B: **ready to run** using the same v0.1 cases and clean-room procedure
+- Track 1B: **waiting for search-surface readiness**; first post-metadata readiness preflight returned 0/3 target visibility
 
 ## Independence rule
 
@@ -103,3 +103,17 @@ Stop and do not score a run if:
 5. compare positive discovery and Case D false positives separately.
 
 Do not rewrite the v0.1 scoring rules after the first scored run.
+
+
+## Track 1B readiness preflight
+
+Preflight 1 ran shortly after metadata application and returned:
+
+```text
+INDEX_READY = no
+target repositories visible = 0/3
+```
+
+Perplexity rewrote the metadata phrases, so this observation does not prove that GitHub metadata propagation itself failed. It only shows that the tested Perplexity search surface did not yet surface the targets.
+
+Do not start scored Track 1B runs until a later readiness check provides a stronger basis.
