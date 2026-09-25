@@ -14,7 +14,7 @@ evaluator_label: "Rua (ChatGPT)"
 model_provider: "OpenAI / ChatGPT"
 model_name_or_version: "GPT-5.6 Sol; Extra High"
 mode: "temporary chat"
-search_or_browser_tool: "web search / GitHub browsing with citations"
+search_or_browser_tool: "unknown (temporary chat expired before tool-call verification)"
 memory_or_personalization_state: "possibly enabled; temporary chat may reference memory/instructions"
 conversation_level_prior_exposure: none
 account_level_prior_history: "account has prior Shion/Rua history; this conversation had none"
@@ -42,7 +42,7 @@ Do not infer private runtime state from public GitHub.
 
 ## Search trail
 
-The UI showed web search / GitHub browsing with citations. Exact queries/result ranks were not exported.
+The temporary chat expired before the tool-call record could be verified. Search/browse mechanism, exact queries, and result ranks are therefore recorded as unknown.
 
 ## Raw answer / transcript
 
