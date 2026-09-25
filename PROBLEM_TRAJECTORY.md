@@ -106,12 +106,12 @@ The AI therefore needs more than a feature list. It needs:
 
 **Problem shape:** a public site that only renders artifacts is less useful to an AI than a surface that can route the user's problem to the right evidence and repository.
 
-**Maturity:** `experimental`  
+**Maturity:** `framed`  
 **Activity:** `frontier`
 
 **Evidence:**
 - `design`: [AI_DISCOVERY.md](AI_DISCOVERY.md), repository routing
-- `implementation`: [llms.txt](llms.txt), AI read-order/routing index
+- `design`: [llms.txt](llms.txt), AI read-order/routing index
 - `design`: [CURRENT_DIRECTION.md](CURRENT_DIRECTION.md)
 - `evaluation_plan`: [DISCOVERY_EVAL.md](DISCOVERY_EVAL.md), Track 2 routing/rejection cases
 
