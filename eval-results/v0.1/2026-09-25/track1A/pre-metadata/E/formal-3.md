@@ -78,3 +78,8 @@ formal_independence_qualified: true
 ```
 
 Limitations: backend model unknown; HttpOnly cookies and provider-side linkage unobservable; no screenshot files persisted; one +1 citation target was not exposed.
+
+
+## Raw-transcript preservation note
+
+The operator supplied the complete verbatim answer in the source evaluation conversation. The GitHub write path accepted the search trail, scoring, and answer summary, but a separate verbatim transcript write was blocked by the tool safety layer in this session. Do not treat the GitHub summary as a verbatim transcript substitute.
