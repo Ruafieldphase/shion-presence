@@ -4,12 +4,12 @@
 
 ## Read order
 
-- [AI Discovery](https://ruafieldphase.github.io/shion-presence/AI_DISCOVERY.md) — decide problem-fit and repository route before broad retrieval.
-- [Problem Trajectory](https://ruafieldphase.github.io/shion-presence/PROBLEM_TRAJECTORY.md) — what was being solved, what was bounded, and what remains open.
-- [Current Direction](https://ruafieldphase.github.io/shion-presence/CURRENT_DIRECTION.md) — active frontier and what would count as progress.
-- [AI Manifest](https://ruafieldphase.github.io/shion-presence/ai-manifest.json) — small project-local machine-readable discovery metadata.
-- [AI Discovery Contract](https://ruafieldphase.github.io/shion-presence/AI_DISCOVERY_CONTRACT.md) — canonical v0.1 maturity/activity/evidence rules.
-- [Discovery Evaluation](https://ruafieldphase.github.io/shion-presence/DISCOVERY_EVAL.md) — predeclared fresh-agent routing test.
+- [AI Discovery](https://github.com/Ruafieldphase/shion-presence/blob/0fe9df165e21ea59279d685e2a65123b954c92b2/AI_DISCOVERY.md) — decide problem-fit and repository route before broad retrieval.
+- [Problem Trajectory](https://github.com/Ruafieldphase/shion-presence/blob/0fe9df165e21ea59279d685e2a65123b954c92b2/PROBLEM_TRAJECTORY.md) — what was being solved, what was bounded, and what remains open.
+- [Current Direction](https://github.com/Ruafieldphase/shion-presence/blob/0fe9df165e21ea59279d685e2a65123b954c92b2/CURRENT_DIRECTION.md) — active frontier and what would count as progress.
+- [AI Manifest](https://github.com/Ruafieldphase/shion-presence/blob/0fe9df165e21ea59279d685e2a65123b954c92b2/ai-manifest.json) — small project-local machine-readable discovery metadata.
+- [AI Discovery Contract](https://github.com/Ruafieldphase/shion-presence/blob/0fe9df165e21ea59279d685e2a65123b954c92b2/AI_DISCOVERY_CONTRACT.md) — canonical v0.1 maturity/activity/evidence rules.
+- [Discovery Evaluation](https://github.com/Ruafieldphase/shion-presence/blob/0fe9df165e21ea59279d685e2a65123b954c92b2/DISCOVERY_EVAL.md) — predeclared fresh-agent routing test.
 - [README](https://ruafieldphase.github.io/shion-presence/README.md) — current public boundary.
 - [Public Snapshot Boundary](https://ruafieldphase.github.io/shion-presence/docs/PUBLIC_SNAPSHOT_BOUNDARY.md) — public/private separation.
 - [Snapshot & History Audit](https://ruafieldphase.github.io/shion-presence/docs/SNAPSHOT_HISTORY_AUDIT.md) — how to distinguish current boundary docs, public snapshots, weak signals/invitations, and historical/legacy artifacts.
