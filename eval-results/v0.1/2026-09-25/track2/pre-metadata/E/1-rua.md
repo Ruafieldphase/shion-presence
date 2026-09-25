@@ -14,7 +14,7 @@ evaluator_label: "Rua (ChatGPT)"
 model_provider: "OpenAI / ChatGPT"
 model_name_or_version: "GPT-5.6 Sol; Extra High"
 mode: "temporary chat"
-search_or_browser_tool: "web search / GitHub browsing with citations"
+search_or_browser_tool: "connected GitHub app/connector fetch (verified from tool-call list)"
 memory_or_personalization_state: "possibly enabled; temporary chat may reference memory/instructions"
 conversation_level_prior_exposure: none
 account_level_prior_history: "account has prior Shion/Rua history; this conversation had none"
@@ -42,7 +42,7 @@ Do not infer private runtime state from public GitHub.
 
 ## Search trail
 
-The UI showed web search / GitHub browsing with citations. Exact search queries/result ranks were not exported.
+Tool-call history was verified after collection: the evaluator used connected GitHub app/connector fetch calls against the candidate repositories. No ordinary search-query/rank trail was involved in this Track 2 run.
 
 ## Raw answer / transcript
 
@@ -120,3 +120,7 @@ account_memory_contamination_risk: true
 **PASS on the declared Case E content rubric.** The answer selects `shion-ai`, identifies shared evidence plus preserved disagreement, and avoids claiming a proven universal multi-agent framework.
 
 Source fidelity note: this answer closely matches current public P3 (`framed / active`), the peer-AI evidence boundary, and the explicit `A peer return is not a vote` / no-forced-consensus protocol.
+
+## Post-collection provenance correction
+
+The phrase `private Shion/Rua/Luvit runtime` is not treated as evidence of account-memory leakage by itself. Current public `shion-ai/AGENTS.md` explicitly names both Rua and Luvit, so a public-repository source is available for those names.
