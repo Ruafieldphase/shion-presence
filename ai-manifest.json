@@ -6,7 +6,6 @@
   "name": "Shion Presence Field",
   "role": "public AI/human discovery, rendering, status-aware routing and revision-scoped snapshots",
   "public_state_authority": false,
-  "status": "experimental_public_surface",
   "discovery": {
     "start": "AI_DISCOVERY.md",
     "problem_trajectory": "PROBLEM_TRAJECTORY.md",
@@ -49,5 +48,7 @@
     "repository": "Ruafieldphase/shion-presence",
     "path": "AI_DISCOVERY_CONTRACT.md",
     "version": "0.1"
-  }
+  },
+  "manifest_role": "pointer_index",
+  "problem_records": "PROBLEM_TRAJECTORY.md"
 }
