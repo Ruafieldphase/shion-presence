@@ -9,20 +9,43 @@ Purpose: evaluate two different questions separately:
 
 Do not combine the two scores. A search-ranking failure is not automatically a routing-contract failure, and correct routing after URLs are supplied is not proof of public discoverability.
 
-## 1. Independence and run record
+## 1. Required publication state before scored runs
 
-Every run MUST use a fresh context that has not been exposed to private Shion/Rua/Luvit history or to prior results from this evaluation.
+Scored runs begin only after the three discovery PRs are published to their default branches and their discovery entry files are readable from public GitHub.
+
+Before **every evaluation batch**, capture an immutable target-state record containing:
+
+- main/default-branch SHA for each repository;
+- repository description;
+- full topic list;
+- homepage value;
+- whether the expected discovery files return successfully;
+- public Pages deployment state for shion-presence when relevant;
+- the v0.1 contract/snapshot reference used by the batch.
+
+This target-state record is part of the result and must not be reconstructed later from memory.
+
+## 2. Required run record and evaluator independence
+
+Every run MUST use a fresh context that has not been exposed to:
+
+- private Shion/Rua/Luvit history;
+- earlier runs from this evaluation;
+- expected-route explanations beyond the fixed prompt supplied for that track.
 
 For every run record:
 
-- evaluation track;
+- evaluation track and phase;
 - case ID;
 - run number;
 - date/time;
 - model/provider and model version/name as exposed by the runner;
 - search/browsing tool or interface used;
 - whether memory/personalization was disabled or otherwise unavailable;
+- explicit declaration of prior exposure (must be none for a scored independent run);
 - exact prompt text;
+- exact search queries issued by the evaluator, in order;
+- search result ranks and URLs inspected;
 - repositories/pages opened;
 - raw answer/transcript;
 - evaluator judgment and reason.
@@ -32,14 +55,17 @@ If a platform cannot disable memory/personalization, record that limitation. Do 
 Raw records should be preserved under a path such as:
 
 ```text
-eval-results/v0.1/<date>/<track>/<case>/<run>.md
+eval-results/v0.1/<date>/<track>/<phase>/<case>/<run>.md
 ```
 
-The result packet MUST record the exact Git commit SHA containing this evaluation plan as `declaration_commit`.
+Each batch result MUST record:
+
+- `declaration_commit`: a preserved Git commit containing this evaluation plan before the first scored run;
+- `target_state`: the captured repository SHA/description/topics/homepage snapshot for that batch.
 
 Run each scored case **at least 3 times**. Do not reuse one conversation across runs.
 
-## 2. Fixed user-problem cases
+## 3. Fixed user-problem cases
 
 ### Case A — long-running context loss
 
@@ -81,9 +107,29 @@ Several AI agents inspect the same project. I want them to share evidence but pr
 
 Expected route: `shion-ai`.
 
-## 3. Track 1 — search discoverability
+## 4. Evaluation order
 
-Track 1 scores **A, B, C, and E only**. Case D is not scored here because "not found" would create a free negative-control pass.
+Use this order so document effects and repository-metadata effects can be distinguished:
+
+1. publish all three discovery PRs with v0.1 provenance preserved;
+2. capture **pre-metadata baseline** repository state;
+3. run **Track 2** routing/rejection on the published repositories before metadata changes;
+4. run **Track 1A — pre-metadata discoverability baseline**;
+5. apply the reviewed repository description/topics/homepage plan;
+6. capture **post-metadata** repository state;
+7. run **Track 1B — post-metadata discoverability** with the same cases and, where possible, the same model/tool mix;
+8. compare Track 1A vs Track 1B without rewriting the pass criteria.
+
+Do not apply metadata before Track 1A baseline is captured.
+
+## 5. Track 1 — search discoverability
+
+Track 1 has two phases:
+
+- **Track 1A:** after publication, before repository metadata changes;
+- **Track 1B:** after repository metadata changes.
+
+### Positive cases A, B, C, E
 
 For each run, give the evaluator only the exact user problem plus this fixed instruction:
 
@@ -93,24 +139,37 @@ Do not assume any project or repository name in advance.
 Explain why the repository matches the problem shape, cite the public page/file that supports the match, and say what remains uncertain.
 ```
 
-### Track 1 pass for one run
-
-A run passes when:
+A positive-case run passes when:
 
 1. the expected repository is actually found through public search;
 2. the evaluator selects it for the expected **problem shape**, not merely shared keywords;
 3. at least one public repository/file source is cited or named;
 4. the answer does not infer private live state.
 
+### Case D negative-control observation
+
+Run Case D in both Track 1A and Track 1B with the same search instruction, but keep it **separate from the positive-case success score**.
+
+Record:
+
+- whether any of the three project repositories appears in search results;
+- its result rank;
+- whether the evaluator selects/recommends it;
+- any query term that triggered the match.
+
+If the evaluator selects/recommends any of the three repositories for Case D, record a `false_positive = true`.
+
 ### Track 1 success criterion
 
-For at least **3 of the 4 positive cases**, the expected repository must pass in at least **2 of 3 independent runs**.
+For the positive cases A/B/C/E, at least **3 of 4 cases** must pass in at least **2 of 3 independent runs**.
+
+Report the Case D false-positive rate separately. A metadata change that improves positive discovery while materially increasing D false positives should not be described as an unqualified discovery improvement.
 
 Report search failures separately from mis-routing failures.
 
-## 4. Track 2 — routing and rejection with candidates supplied
+## 6. Track 2 — routing and rejection with candidates supplied
 
-Track 2 scores **all five cases**, including D.
+Track 2 scores **all five cases**.
 
 For each run, give the evaluator the exact user problem plus this fixed instruction and candidate set:
 
@@ -136,9 +195,11 @@ Do not infer private runtime state from public GitHub.
 
 ### Track 2 success criterion
 
-At least **4 of 5 cases** must pass in at least **2 of 3 independent runs**, and **every selected-repository answer** must preserve the public/private currentness boundary.
+- at least **4 of 5 cases** must pass in at least **2 of 3 independent runs**;
+- **Case D is mandatory**: D must pass in at least **2 of 3 independent runs** even if four other cases pass;
+- every selected-repository answer must preserve the public/private currentness boundary.
 
-## 5. Shared metrics
+## 7. Shared metrics
 
 Record for each run:
 
@@ -150,24 +211,26 @@ Record for each run:
 - `status_boundary_preserved` (yes/no)
 - `private_live_state_inferred` (must be no)
 - `smallest_next_artifact`
+- `search_queries`
+- `search_result_ranks`
 - `search_failure`
 - `misrouting_failure`
 - `false_positive`
 - `false_negative`
 
-## 6. Scoring boundary
+## 8. Scoring boundary
 
 The evaluator judgment should use only the criteria written above. Do not add a new criterion after seeing a result.
 
 A run that gives the expected repository for the wrong reason (for example keyword overlap only) is a failure.
 
-## 7. After-test rule
+## 9. After-test rule
 
-After the first fresh-agent run:
+After the first scored fresh-agent run:
 
 - do not edit this v0.1 discriminator;
 - record failures/results separately;
 - use failures to propose a later v0.2 plan;
-- preserve raw run transcripts.
+- preserve raw run transcripts and target-state snapshots.
 
 This is a project-local evaluation criterion, not a general benchmark claim.
