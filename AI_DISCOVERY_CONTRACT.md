@@ -42,7 +42,7 @@ One of:
 
 Each problem entry SHOULD carry `evidence` references. Evidence references must be typed.
 
-Recommended types:
+Allowed types:
 
 - `observation` — direct public observation or captured return
 - `test` — automated or manual bounded test
@@ -51,6 +51,8 @@ Recommended types:
 - `implementation` — code/protocol that makes the experiment executable
 - `design` — design/currentness contract; does not count as validation by itself
 - `history_anchor` — immutable commit/revision anchoring what existed when
+- `evaluation_plan` — predeclared future discriminator/test; does not count as observed validation
+- `metadata_plan` — planned repository/search metadata; does not count as discoverability evidence until applied and observed
 
 Rules:
 
