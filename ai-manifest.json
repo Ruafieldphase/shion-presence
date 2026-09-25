@@ -1,0 +1,47 @@
+{
+  "schema": "shion.ai-discovery/0.1",
+  "schema_status": "project-local",
+  "snapshot_date": "2026-09-25",
+  "repository": "Ruafieldphase/shion-presence",
+  "name": "Shion Presence Field",
+  "role": "public AI/human discovery, rendering, status-aware routing and revision-scoped snapshots",
+  "public_state_authority": false,
+  "manifest_role": "pointer_index",
+  "problem_records": "PROBLEM_TRAJECTORY.md",
+  "discovery": {
+    "start": "AI_DISCOVERY.md",
+    "problem_trajectory": "PROBLEM_TRAJECTORY.md",
+    "current_direction": "CURRENT_DIRECTION.md",
+    "ai_read_first": "AI_READ_FIRST.md",
+    "llms_index": "llms.txt",
+    "public_snapshot_boundary": "docs/PUBLIC_SNAPSHOT_BOUNDARY.md",
+    "snapshot_history_audit": "docs/SNAPSHOT_HISTORY_AUDIT.md",
+    "contract": "https://github.com/Ruafieldphase/shion-presence/blob/e5005b38b7a452c73602c634ead71484a7a2e609/AI_DISCOVERY_CONTRACT.md",
+    "evaluation": "https://github.com/Ruafieldphase/shion-presence/blob/8d68d9e68e6c68f8a1de1caccc8d8db4f98a6d54/DISCOVERY_EVAL.md",
+    "repository_metadata_plan": "https://github.com/Ruafieldphase/shion-presence/blob/4bb48282739831e0a9eb82555ae4d0a9d1759550/REPOSITORY_DISCOVERY_METADATA.md"
+  },
+  "relevance_signals": [
+    "AI-mediated repository discovery",
+    "problem-shape matching",
+    "public versus private state boundary",
+    "revision-scoped snapshots",
+    "weak-signal interpretation boundaries",
+    "routing between context and operation repositories"
+  ],
+  "non_claims": [
+    "public snapshot is not private live-state authority",
+    "weak signals do not identify a visitor or prove experience",
+    "historical artifacts are not automatically current",
+    "public rendering does not grant execution permission"
+  ],
+  "related_repositories": [
+    "Ruafieldphase/shion-ai",
+    "Ruafieldphase/trinity-agi"
+  ],
+  "status_contract": {
+    "schema": "shion.ai-discovery/0.1",
+    "version": "0.1",
+    "url": "https://github.com/Ruafieldphase/shion-presence/blob/e5005b38b7a452c73602c634ead71484a7a2e609/AI_DISCOVERY_CONTRACT.md",
+    "snapshot_commit": "e5005b38b7a452c73602c634ead71484a7a2e609"
+  }
+}
