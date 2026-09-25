@@ -18,6 +18,8 @@ Before rendering a story from this repository, read:
 8. `llms.txt`
 9. the specific public JSON/document relevant to the user's question
 
+If steps 1–3 show that this repository does not match the user's problem, stop there. Do not load steps 4–9 merely to make the repository seem relevant.
+
 Do not load every historical field by default. Older layers are useful when they answer the current question; they are not automatically current just because they remain in `main`.
 
 ## What this repository is
