@@ -1,6 +1,6 @@
 # AI Discovery / AI 탐색
 
-Status: public discovery contract v0.1, snapshot 2026-09-25.
+Status: public AI discovery entry v0.1, snapshot 2026-09-25.
 
 Shion Presence is the **public discovery/rendering surface** of the Shion/Trinity work. This file is intentionally optimized for a user-side AI that found the repository while trying to help a person.
 
