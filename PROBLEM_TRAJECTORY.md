@@ -97,7 +97,7 @@ The AI therefore needs more than a feature list. It needs:
 - `implementation`: [AI_DISCOVERY.md](AI_DISCOVERY.md)
 - `implementation`: [ai-manifest.json](ai-manifest.json)
 - `implementation`: [AI_DISCOVERY_CONTRACT.md](AI_DISCOVERY_CONTRACT.md)
-- `prospective_test`: [DISCOVERY_EVAL.md](DISCOVERY_EVAL.md), declared before merge
+- `evaluation_plan`: [DISCOVERY_EVAL.md](DISCOVERY_EVAL.md), declared before merge
 - `metadata_plan`: [REPOSITORY_DISCOVERY_METADATA.md](REPOSITORY_DISCOVERY_METADATA.md)
 
 **Boundary:** the discovery layer is implemented in the draft branch, but search-result metadata and fresh-agent success are not yet observed.
@@ -113,7 +113,7 @@ The AI therefore needs more than a feature list. It needs:
 - `implementation`: [AI_DISCOVERY.md](AI_DISCOVERY.md), repository routing
 - `implementation`: [llms.txt](llms.txt), AI read-order/routing index
 - `design`: [CURRENT_DIRECTION.md](CURRENT_DIRECTION.md)
-- `prospective_test`: [DISCOVERY_EVAL.md](DISCOVERY_EVAL.md), cases A–E
+- `evaluation_plan`: [DISCOVERY_EVAL.md](DISCOVERY_EVAL.md), cases A–E
 
 **Boundary:** routing quality is a hypothesis under prospective test until fresh external AI results are recorded.
 
