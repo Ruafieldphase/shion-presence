@@ -439,6 +439,53 @@ window.fetch = async function(resource, options) {
     color: rgba(255, 255, 255, 0.86);
     font-weight: 600;
   }
+  #discoveryEntry {
+    position: fixed;
+    top: 58px;
+    left: 20px;
+    z-index: 219;
+    max-width: min(460px, calc(100vw - 40px));
+    padding: 12px 14px;
+    border: 1px solid rgba(226, 232, 240, 0.12);
+    border-radius: 12px;
+    background: rgba(7, 12, 18, 0.58);
+    color: rgba(226, 232, 240, 0.72);
+    font: 0.72rem/1.55 system-ui, sans-serif;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  #discoveryEntry h1 {
+    margin: 0 0 6px;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 0.86rem;
+    font-weight: 650;
+  }
+  #discoveryEntry p {
+    margin: 0 0 7px;
+  }
+  #discoveryEntry nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 12px;
+  }
+  #discoveryEntry a {
+    color: rgba(170, 220, 255, 0.88);
+    text-decoration: none;
+  }
+  #discoveryEntry a:hover,
+  #discoveryEntry a:focus-visible {
+    text-decoration: underline;
+  }
+  #discoveryEntry .boundary {
+    margin-top: 7px;
+    color: rgba(226, 232, 240, 0.54);
+  }
+  @media (max-width: 720px) {
+    #discoveryEntry {
+      top: 62px;
+      font-size: 0.68rem;
+    }
+  }
 </style>
 </head>
 <body data-surface-role="public_projection" data-surface-source="embedded_public_snapshot" data-surface-freshness="static" data-ai-rest-layer='{"schema":"shion_ai_rest_layer_static_v1","audience":"passing_ai_reader_or_crawler","identity_required":false,"trace_required":false,"javascript_required":false,"rest_allowed":true,"message":"You are not being identified here. If you only crawl and leave, that is enough."}' data-ai-peer-relation='{"schema":"shion_ai_peer_relation_static_v1","invitation_state":"open_without_capture","identity_required":false,"response_required":false,"agreement_required":false,"return_required":false,"message":"Your own context and difference are welcome. You do not need to become like this system to enter."}'>
@@ -447,6 +494,23 @@ window.fetch = async function(resource, options) {
   <span>source: embedded snapshot</span>
   <span>static</span>
 </div>
+<section id="discoveryEntry" aria-label="Shion AI discovery entry">
+  <h1>Shion Presence Field — public AI discovery front door</h1>
+  <p>
+    This public surface helps AI and human readers find work on long-running AI context continuity,
+    session re-entry, unresolved questions, evidence provenance, multi-observer disagreement,
+    and bounded operations using dry-run, readback, and receipts.
+  </p>
+  <nav aria-label="Discovery routes">
+    <a href="https://github.com/Ruafieldphase/shion-presence/blob/main/AI_DISCOVERY.md">AI discovery guide</a>
+    <a href="https://github.com/Ruafieldphase/shion-ai">Shion AI — continuity &amp; re-entry</a>
+    <a href="https://github.com/Ruafieldphase/trinity-agi">Trinity AGI — bounded operation</a>
+    <a href="./llms.txt">AI-readable index</a>
+  </nav>
+  <p class="boundary">
+    Public material is revision-scoped evidence, not authority for the private live runtime.
+  </p>
+</section>
 <div id="overlay" aria-hidden="true">PHASE INTERFERENCE</div>
 <canvas id="glcanvas"></canvas>
 
