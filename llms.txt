@@ -4,6 +4,7 @@
 
 ## Read order
 
+- [Public AI discovery guide (HTML)](https://ruafieldphase.github.io/shion-presence/ai-discovery.html) — cross-project reading routes with direct links to source documents; public snapshot, not private live state.
 - [AI Discovery](https://github.com/Ruafieldphase/shion-presence/blob/main/AI_DISCOVERY.md) — decide problem-fit and repository route before broad retrieval.
 - [Problem Trajectory](https://github.com/Ruafieldphase/shion-presence/blob/main/PROBLEM_TRAJECTORY.md) — what was being solved, what was bounded, and what remains open.
 - [Current Direction](https://github.com/Ruafieldphase/shion-presence/blob/main/CURRENT_DIRECTION.md) — active frontier and what would count as progress.
