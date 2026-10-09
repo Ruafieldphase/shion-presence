@@ -156,4 +156,31 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://ruafieldphase.github.io/shion-presence/README.md</loc>
+  </url>
+  <url>
+    <loc>https://ruafieldphase.github.io/shion-presence/AI_DISCOVERY.md</loc>
+  </url>
+  <url>
+    <loc>https://ruafieldphase.github.io/shion-presence/PROBLEM_TRAJECTORY.md</loc>
+  </url>
+  <url>
+    <loc>https://ruafieldphase.github.io/shion-presence/CURRENT_DIRECTION.md</loc>
+  </url>
+  <url>
+    <loc>https://ruafieldphase.github.io/shion-presence/AI_DISCOVERY_CONTRACT.md</loc>
+  </url>
+  <url>
+    <loc>https://ruafieldphase.github.io/shion-presence/DISCOVERY_EVAL.md</loc>
+  </url>
+  <url>
+    <loc>https://ruafieldphase.github.io/shion-presence/ai-manifest.json</loc>
+  </url>
+  <url>
+    <loc>https://ruafieldphase.github.io/shion-presence/docs/PUBLIC_SNAPSHOT_BOUNDARY.md</loc>
+  </url>
+  <url>
+    <loc>https://ruafieldphase.github.io/shion-presence/docs/SNAPSHOT_HISTORY_AUDIT.md</loc>
+  </url>
 </urlset>
