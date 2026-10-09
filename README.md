@@ -8,6 +8,8 @@
 
 https://ruafieldphase.github.io/shion-presence/
 
+Public AI discovery guide (HTML): https://ruafieldphase.github.io/shion-presence/ai-discovery.html
+
 ## AI discovery / AI 탐색
 
 For a user-side AI deciding whether this project matches a user's problem, start with:
